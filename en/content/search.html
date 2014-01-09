@@ -1,0 +1,57 @@
+---
+title: SteedOS - Search Results
+id: search
+h1: Search Results
+download: true
+subnav:
+  results: Results
+---
+
+<script src="http://www.google.com/jsapi"></script>
+<script>
+
+  google.load('search', '1');
+  
+  /**
+   * Extract the user's query from the URL
+   */
+   function getQuery() {
+     var url = '' + window.location;
+     var queryStart = url.indexOf('?') + 1;
+     if (queryStart > 0) {
+       var parts = url.substr(queryStart).split('&');
+       for (var i = 0; i < parts.length; i++) {
+         if (parts[i].length > 2 && parts[i].substr(0, 2) == 'q=') {
+           return decodeURIComponent(
+           parts[i].split('=')[1].replace(/\+/g, ' '));
+         }
+       }
+     }
+     return '';
+   }
+   
+   /**
+    * Create a custom search control
+    */
+   function onLoad() {
+     
+     // Create a custom search control that uses a CSE restricted to *.sproutcore.com
+     var customSearchControl = new google.search.CustomSearchControl('010803036737098308835:zpz3rt7h_7y');
+
+     // Draw the control in "results" div
+     customSearchControl.draw('results');
+
+     // Run a query
+     customSearchControl.execute(getQuery());
+   };
+
+   google.setOnLoadCallback(onLoad);
+   
+</script>
+<section id="results" class="visible">
+  <p>Loading results...</p>
+</section>
+
+<% content_for :modals do %>
+
+<% end %>

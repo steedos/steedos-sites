@@ -1,0 +1,8 @@
+<nav>
+  <ul>
+    <% @item[:subnav].each do |slug,name| %>
+    <li><a href="<%= slug %>"><%= name %></a></li>
+    <% end if @item[:subnav] %>
+  </ul>
+</nav>
+

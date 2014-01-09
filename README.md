@@ -1,4 +1,4 @@
-steedos-sites
-=============
+SteedOS Websites
+=========================
 
-Website for SteedOS Apps
+Website for SteedOS Apps. use nanoc
