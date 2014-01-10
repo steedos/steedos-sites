@@ -1,0 +1,22 @@
+<% render 'default_cn' do %>
+  <article role="main" class="container">
+    <h1><%= @item[:h1] %>
+    <% if @item[:download] %>
+      <ul id="action">
+        <li><a href="https://steedos.com" class="button primary" target="_blank"><span class="download">Sign Up</span></a></li>
+      </ul>
+    <% end %>
+    </h1>
+    <div id="tabs">
+      <%= render "subnav" %>
+      <div id="clip">
+        <div id="left" class="clip-border"></div>
+        <div id="right" class="clip-border"></div>
+        <div id="panel" style="display: none;">
+        <%= yield %>
+      </div>
+      </div>
+    </div>
+    <div id="tabs-back"></div>
+  </article>  
+<% end %>
