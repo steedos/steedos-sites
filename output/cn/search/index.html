@@ -2,35 +2,37 @@
 <html lang="en" class="no-js">
 <head>
   <meta charset="utf-8" />
-  <title>SteedOS - Search Results - SteedOS</title>
+  <title>骏马 － 搜索结果</title>
   <meta name="description" content="SteedOS Apps for Business is a cloud-based productivity suite that helps you and your team connect and get work done from anywhere on any device. " />
   <meta name="viewport" content="width=960" />
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/modal.css" />
+  <link rel="stylesheet" href="/contents/css/style.css" />
+  <link rel="stylesheet" href="/contents/css/modal.css" />
   <!--
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu|Allan:bold|Architects+Daughter" />
   -->
-  <script src="/js/libs/modernizr-1.7.min.js"></script>
+  <script src="/contents/js/libs/modernizr-1.7.min.js"></script>
 </head>
 <body id="search-cn" class="green">
+  <!--
   <script>
     var match = document.cookie.match(/scColor=([^;]+)/);
-    document.body.className = (match && match[1]) || 'blue';
+    document.body.className = (match && match[1]) || 'green';
   </script>
+  -->
   <div id="wrap">
     <header role="banner">
       <div class="container">
         <nav role="navigation">
           <ul>
-            <li><a href="/cn/home/">首页</a></li>
+            <li><a href="/cn/">首页</a></li>
+            <li><a href="/cn/steedos/">骏马云</a></li>
             <li><a href="/cn/workflow/">审批王</a></li>
             <li><a href="/cn/chat/">享聊</a></li>
-            <li><a href="/cn/developer/">开发者</a></li>
-            <li><a href="https://steedos.com/#register">注册试用</a></li>
-            <li><a href="https://steedos.com">客户登录</a></li>
+            <li><a href="https://www.steedos.com/#register">注册试用</a></li>
+            <li><a href="https://www.steedos.com">客户登录</a></li>
           </ul>
         </nav>
-        <form action="" role="search" onSubmit="return submitQuery()">
+        <form action="" role="search" onSubmit="return submitQuery('cn')">
           <input type="text" id="query-input" />
           <input type="reset" value="Clear" />
         </form>
@@ -39,10 +41,10 @@
     <div id="main" role="main" class="container">
       
   <article role="main" class="container">
-    <h1>Search Results
+    <h1>搜索结果
     
       <ul id="action">
-        <li><a href="https://steedos.com" class="button primary" target="_blank"><span class="download">Sign Up</span></a></li>
+        <li><a href="#" class="button primary">咨询热线：400-820-1612</a></li>
       </ul>
     
     </h1>
@@ -50,7 +52,7 @@
       <nav>
   <ul>
     
-    <li><a href="results">Results</a></li>
+    <li><a href="results">搜索结果</a></li>
     
   </ul>
 </nav>
@@ -59,7 +61,7 @@
       <div id="clip">
         <div id="left" class="clip-border"></div>
         <div id="right" class="clip-border"></div>
-        <div id="panel" style="display: none;">
+        <div id="panel">
         <script src="http://www.google.com/jsapi"></script>
 <script>
 
@@ -88,8 +90,8 @@
     */
    function onLoad() {
      
-     // Create a custom search control that uses a CSE restricted to *.sproutcore.com
-     var customSearchControl = new google.search.CustomSearchControl('010803036737098308835:zpz3rt7h_7y');
+     // Create a custom search control that uses a CSE restricted to *.steedos.com
+     var customSearchControl = new google.search.CustomSearchControl('013239312594822984769:qj7npnouqyk');
 
      // Draw the control in "results" div
      customSearchControl.draw('results');
@@ -121,26 +123,29 @@
     <div class="container">
       <nav class="col">
         <ul>
-            <li><a href="/cn/home/">首页</a></li>
+            <li><a href="/cn/">首页</a></li>
+            <li><a href="/cn/steedos/">骏马云</a></li>
             <li><a href="/cn/workflow/">审批王</a></li>
             <li><a href="/cn/chat/">享聊</a></li>
             <li><a href="/cn/developer/">开发者</a></li>
-            <li><a href="https://steedos.com/#register">注册试用</a></li>
-            <li><a href="https://steedos.com">客户登录</a></li>
+            <li><a href="http://blog.steedos.cn">博客</a></li>
+            <li><a href="https://www.steedos.com/#register">注册试用</a></li>
+            <li><a href="https://www.steedos.com">客户登录</a></li>
         </ul>
       </nav>
       <nav class="col">
       </nav>
       <nav class="col">
-        <!--<a href="index.html"><img src="/img/logo_footer.png" alt="SteedOS" /></a>-->
+        <!--<a href="index.html"><img src="/contents/img/logo_footer.png" alt="SteedOS" /></a>-->
         <p id="license">
-          Copyright 2014 HotLong Software.
+          版权所有 2014 华炎软件.<br>
+          <a href="/us/">English</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/cn/">中文</a>
         </p>
       </nav>
       <a href="#wrap" class="top">Back To Top</a>
     </div>
   </footer>
-  <script>window.jQuery || document.write("<script src='/js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
+  <script>window.jQuery || document.write("<script src='/contents/js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
   <script>
     jQuery(document).ready(function() {
       setTimeout(function() {
@@ -149,16 +154,16 @@
       1);
     });
   </script>
-  <script src="/js/libs/jquery_bbq.js"></script>
-  <script src="/js/libs/jquery_cookie.js"></script>
-  <script src="/js/script.js"></script>
-  <script src="/js/modals.js"></script>
+  <script src="/contents/js/libs/jquery_bbq.js"></script>
+  <script src="/contents/js/libs/jquery_cookie.js"></script>
+  <script src="/contents/js/script.js"></script>
+  <script src="/contents/js/modals.js"></script>
   <!--
-  <script src="/js/calendar.js"></script>
+  <script src="/contents/js/calendar.js"></script>
+  <script src="/contents/js/tab_slider.js"></script>
   -->
-  <script src="/js/core_members.js"></script>
-  <script src="/js/tab_slider.js"></script>
-  <script src="/js/meetup_map.js"></script>
+  <script src="/contents/js/core_members.js"></script>
+  <script src="/contents/js/meetup_map.js"></script>
 
   
 

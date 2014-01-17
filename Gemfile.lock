@@ -12,13 +12,9 @@ GEM
     cri (2.3.0)
       colored (>= 1.2)
     fssm (0.2.10)
-    i18n (0.6.9)
     mime-types (1.23)
     nanoc (3.6.3)
       cri (~> 2.3)
-    nanoc-filesystem-i18n (0.2.0)
-      i18n (>= 0.4.1)
-      nanoc (>= 3.1.2)
     rack (1.5.2)
     sass (3.2.9)
 
@@ -31,4 +27,3 @@ DEPENDENCIES
   fssm
   mime-types
   nanoc
-  nanoc-filesystem-i18n

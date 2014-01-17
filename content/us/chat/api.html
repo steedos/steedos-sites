@@ -1,0 +1,77 @@
+---
+title: API - SteedOS Chat
+id: chat
+h1: SteedOS Chat
+download: true
+subnav:
+  /us/chat/: Features
+  /us/chat/pricing/: Pricing
+  /us/chat/compare/: Compare
+  /us/chat/api/: API
+  /us/chat/downloads/: Downloads
+---
+
+<section id="chat" class="visible">
+  <h1>SteedOS Chat API</h1>
+  <h2>Resource representations</h2>
+  <p>Room Object</p>
+  <pre><code>{
+    id: {string},
+    space: {string},
+    followers: [
+      { 
+        id: {string},
+        name: {string},
+        followed_at: {time},
+        last_read: {time}
+      }
+    ],
+    last_message: {time},
+    created: {time},
+    created_by {string},
+    modified: {time}
+  }</code></pre>
+  <br>
+  <p>Message Object</p>
+  <pre><code>{
+    id: {string},
+    room: {string},
+    body: {string},
+    attachment: {
+      filename: {string},
+      contentType: {string},
+      length: {number},
+      _rev: {string}
+    },
+    created: {time},
+    created_by {string},
+    created_by_name: {string}
+  }</code></pre>
+
+  <br>
+  <h2>Create Room</h2>
+  <p>HTTP Request<p>
+  <pre><code>POST https://chatws.steedos.com/chat/room/</code></pre>
+
+  <br>
+  <p>HTTP Request Body<p>
+  <pre><code>{room_object}</code></pre>
+
+  <br>
+  <p>HTTP Response Body</p>
+  <pre><code>{changeset}</code></pre>
+
+  <br>
+  <h2>Send Message</h2>
+  <p>HTTP Request<p>
+  <pre><code>POST https://chatws.steedos.com/chat/message/{room_id}</code></pre>
+
+  <br>
+  <p>HTTP Request Body<p>
+  <pre><code>{message_object}</code></pre>
+
+  <br>
+  <p>HTTP Response Body</p>
+  <pre><code>{changeset}</code></pre>
+
+</section>

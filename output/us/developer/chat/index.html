@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <title>Chat API - SteedOS Developer</title>
+  <meta name="description" content="SteedOS Apps for Business is a cloud-based productivity suite that helps you and your team connect and get work done from anywhere on any device. " />
+  <meta name="viewport" content="width=960" />
+  <link rel="stylesheet" href="/contents/css/style.css" />
+  <link rel="stylesheet" href="/contents/css/modal.css" />
+  <!--
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu|Allan:bold|Architects+Daughter" />
+  -->
+  <script src="/contents/js/libs/modernizr-1.7.min.js"></script>
+</head>
+<body id="developer" class="green">
+  <!--
+  <script>
+    var match = document.cookie.match(/scColor=([^;]+)/);
+    document.body.className = (match && match[1]) || 'green';
+  </script>
+  -->
+  <div id="wrap">
+    <header role="banner" class="banner">
+      <div class="container">
+        <nav role="navigation">
+          <ul>
+            <li><a href="/us/">Home</a></li>
+            <li><a href="/us/steedos/">SteedOS</a></li>
+            <li><a href="/us/workflow/">Workflow</a></li>
+            <li><a href="/us/chat/">Chat</a></li>
+            <li><a href="https://steedos.com/#register">Sign Up</a></li>
+            <li><a href="https://steedos.com">Sign In</a></li>
+          </ul>
+        </nav>
+        <form action="" role="search" onSubmit="return submitQuery('us')">
+          <input type="text" id="query-input" />
+          <input type="reset" value="Clear" />
+        </form>
+      </div>
+    </header>
+    <div id="main" role="main" class="container">
+      
+  <article role="main" class="container">
+    <h1>SteedOS Developer
+    
+      <ul id="action">
+        <li><a href="https://steedos.com" class="button primary" target="_blank"><span class="download">Sign Up</span></a></li>
+      </ul>
+    
+    </h1>
+    <div id="tabs">
+      <nav>
+  <ul>
+    
+    <li><a href="/us/developer/">Developer Guide</a></li>
+    
+    <li><a href="/us/developer/workflow/">Workflow API</a></li>
+    
+    <li><a href="/us/developer/chat/">Chat API</a></li>
+    
+    <li><a href="/us/developer/admin/">Admin API</a></li>
+    
+  </ul>
+</nav>
+
+
+      <div id="clip">
+        <div id="left" class="clip-border"></div>
+        <div id="right" class="clip-border"></div>
+        <div id="panel">
+        <section id="chat" class="visible">
+  <h1>SteedOS Chat API</h1>
+  <h2>Resource representations</h2>
+  <p>Room Object</p>
+  <pre><code>{
+    id: {string},
+    space: {string},
+    followers: [
+      { 
+        id: {string},
+        name: {string},
+        followed_at: {time},
+        last_read: {time}
+      }
+    ],
+    last_message: {time},
+    created: {time},
+    created_by {string},
+    modified: {time}
+  }</code></pre>
+  <br>
+  <p>Message Object</p>
+  <pre><code>{
+    id: {string},
+    room: {string},
+    body: {string},
+    attachment: {
+      filename: {string},
+      contentType: {string},
+      length: {number},
+      _rev: {string}
+    },
+    created: {time},
+    created_by {string},
+    created_by_name: {string}
+  }</code></pre>
+
+  <br>
+  <h2>Create Room</h2>
+  <p>HTTP Request<p>
+  <pre><code>POST https://chatws.steedos.com/chat/room/</code></pre>
+
+  <br>
+  <p>HTTP Request Body<p>
+  <pre><code>{room_object}</code></pre>
+
+  <br>
+  <p>HTTP Response Body</p>
+  <pre><code>{changeset}</code></pre>
+
+  <br>
+  <h2>Send Message</h2>
+  <p>HTTP Request<p>
+  <pre><code>POST https://chatws.steedos.com/chat/message/{room_id}</code></pre>
+
+  <br>
+  <p>HTTP Request Body<p>
+  <pre><code>{message_object}</code></pre>
+
+  <br>
+  <p>HTTP Response Body</p>
+  <pre><code>{changeset}</code></pre>
+
+</section>
+      </div>
+      </div>
+    </div>
+    <div id="tabs-back"></div>
+  </article>  
+
+    </div>
+    <div id="modals">
+      
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <nav class="col">
+        <ul>
+            <li><a href="/us/">Home</a></li>
+            <li><a href="/us/steedos/">SteedOS</a></li>
+            <li><a href="/us/workflow/">Workflow</a></li>
+            <li><a href="/us/chat/">Chat</a></li>
+            <li><a href="/us/developer/">Developer</a></li>
+            <li><a href="http://blog.steedos.com">Blog</a></li>
+            <li><a href="https://steedos.com/#register">Sign Up</a></li>
+            <li><a href="https://steedos.com">Sign In</a></li>
+        </ul>
+      </nav>
+      <nav class="col">
+      </nav>
+      <nav class="col">
+        <!--<a href="index.html"><img src="/contents/img/logo_footer.png" alt="SteedOS" /></a>-->
+        <p id="license">
+          Copyright 2014 HotLong Software.<br>
+          <a href="/us/">English</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/cn/">中文</a><br>
+        </p>
+      </nav>
+      <a href="#wrap" class="top">Back To Top</a>
+    </div>
+  </footer>
+  <script>window.jQuery || document.write("<script src='/contents/js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
+  <script>
+    jQuery(document).ready(function() {
+      setTimeout(function() {
+        jQuery("#get-involved").addClass('visible');
+      },
+      1);
+    });
+  </script>
+  <script src="/contents/js/libs/jquery_bbq.js"></script>
+  <script src="/contents/js/libs/jquery_cookie.js"></script>
+  <script src="/contents/js/script.js"></script>
+  <script src="/contents/js/modals.js"></script>
+  <!--
+  <script src="/contents/js/calendar.js"></script>
+  <script src="/contents/js/tab_slider.js"></script>
+  -->
+  <script src="/contents/js/core_members.js"></script>
+  <script src="/contents/js/meetup_map.js"></script>
+
+  
+
+</body>
+</html>
+

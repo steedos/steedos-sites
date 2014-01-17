@@ -2,35 +2,37 @@
 <html lang="en" class="no-js">
 <head>
   <meta charset="utf-8" />
-  <title>SteedOS Chat - SteedOS</title>
+  <title>SteedOS Chat</title>
   <meta name="description" content="SteedOS Apps for Business is a cloud-based productivity suite that helps you and your team connect and get work done from anywhere on any device. " />
   <meta name="viewport" content="width=960" />
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/modal.css" />
+  <link rel="stylesheet" href="/contents/css/style.css" />
+  <link rel="stylesheet" href="/contents/css/modal.css" />
   <!--
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu|Allan:bold|Architects+Daughter" />
   -->
-  <script src="/js/libs/modernizr-1.7.min.js"></script>
+  <script src="/contents/js/libs/modernizr-1.7.min.js"></script>
 </head>
 <body id="chat" class="green">
+  <!--
   <script>
     var match = document.cookie.match(/scColor=([^;]+)/);
-    document.body.className = (match && match[1]) || 'blue';
+    document.body.className = (match && match[1]) || 'green';
   </script>
+  -->
   <div id="wrap">
-    <header role="banner">
+    <header role="banner" class="banner">
       <div class="container">
         <nav role="navigation">
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/workflow/">Workflow</a></li>
-            <li class='active'><a href="/chat/">Chat</a></li>
-            <li><a href="/developer/">Developer</a></li>
+            <li><a href="/us/">Home</a></li>
+            <li><a href="/us/steedos/">SteedOS</a></li>
+            <li><a href="/us/workflow/">Workflow</a></li>
+            <li><a href="/us/chat/">Chat</a></li>
             <li><a href="https://steedos.com/#register">Sign Up</a></li>
             <li><a href="https://steedos.com">Sign In</a></li>
           </ul>
         </nav>
-        <form action="" role="search" onSubmit="return submitQuery()">
+        <form action="" role="search" onSubmit="return submitQuery('us')">
           <input type="text" id="query-input" />
           <input type="reset" value="Clear" />
         </form>
@@ -50,11 +52,15 @@
       <nav>
   <ul>
     
-    <li><a href="features">Features</a></li>
+    <li><a href="/us/chat/">Features</a></li>
     
-    <li><a href="pricing">Pricing</a></li>
+    <li><a href="/us/chat/pricing/">Pricing</a></li>
     
-    <li><a href="downloads">Downloads</a></li>
+    <li><a href="/us/chat/compare/">Compare</a></li>
+    
+    <li><a href="/us/chat/api/">API</a></li>
+    
+    <li><a href="/us/chat/downloads/">Downloads</a></li>
     
   </ul>
 </nav>
@@ -63,12 +69,12 @@
       <div id="clip">
         <div id="left" class="clip-border"></div>
         <div id="right" class="clip-border"></div>
-        <div id="panel" style="display: none;">
+        <div id="panel">
         <section id="features" class="visible">
   <!--<h1>Business Group chat and IM</h1>
 -->
   <div id="slow">
-    <center><img class="video" src="/img/chat/chat.png" width="818" height="426"/></center>
+    <center><img class="video" src="/contents/img/chat/chat.png" width="818" height="426"/></center>
   </div>
 	<ul>
 		<li>
@@ -93,59 +99,6 @@
     </li>
 	</ul>
 </section>
-<section id="pricing">
-  <h1>Pricing</h1>
-  <ul>
-    <li>
-        <h2>Standard Version: Free</h2>
-        <ul>
-          <li>Persistent Rooms and 1-to-1 Chat </li>
-          <li>Desktop, Web and Mobile Client</li>
-          <li>Private, Safe, and Secure </li>
-          <li>Push Notifications</li>
-        </ul>
-    </li>
-
-    <li>
-        <h2>Professional Version: $1 per user / month</h2>
-        <ul>
-          <li>Complete Chat History </li>
-          <li>Drag-and-Drop File Sharing</li>
-          <li>Open API</li>
-        </ul>
-    </li>
-  </ul>
-</section>
-
-
-<section id="downloads">
-  <h1>Downloads</h1>
-  <ul>
-    <li>
-        <h2>SteedOS Desktop</h2>
-        <ul>
-          <li><a href="http://s3.steedos.com/public/steedos/apps/SteedOS_Desktop_1.4.msi">Download SteedOS Desktop For Windows</a></li>
-          <li><a href="http://s3.steedos.com/public/steedos/apps/SteedOS_Desktop_1.4.dmg">Download SteedOS Desktop For Mac</a></li>
-        </ul>
-    </li>
-    <!--
-    <li>
-        <h2>SteedOS Chat for iPhone & iPad</h2>
-        <ul>
-          <li><a href="https://itunes.apple.com/us/app/steedos-workflow/id686408407" target="_blank">Download from Apple App Store</a></li>
-        </ul>
-    </li>
-    -->
-    <br>
-    <li>
-        <h2>SteedOS Chat for Android</h2>
-        <ul>
-          <li><a href="https://play.google.com/store/apps/details?id=com.steedos.chat" target="_blank">Download Android App on Google Play</a></li>
-          <li><a href="http://s3.steedos.com/public/apps/android/SteedOS_Chat_1.0.3.apk">Download Android App on SteedOS</a></li>
-        </ul>
-    </li>
-  </ul>
-</section>
       </div>
       </div>
     </div>
@@ -157,29 +110,33 @@
       
     </div>
   </div>
-  <footer>
+  <footer class="footer">
     <div class="container">
       <nav class="col">
         <ul>
-          <li><a href="/workflow/">Workflow</a></li>
-          <li><a href="/chat/">Chat</a></li>
-          <li><a href="/developer/">Developer</a></li>
-          <li><a href="https://steedos.com/#register">Sign Up</a></li>
-          <li><a href="https://steedos.com">Sign In</a></li>
+            <li><a href="/us/">Home</a></li>
+            <li><a href="/us/steedos/">SteedOS</a></li>
+            <li><a href="/us/workflow/">Workflow</a></li>
+            <li><a href="/us/chat/">Chat</a></li>
+            <li><a href="/us/developer/">Developer</a></li>
+            <li><a href="http://blog.steedos.com">Blog</a></li>
+            <li><a href="https://steedos.com/#register">Sign Up</a></li>
+            <li><a href="https://steedos.com">Sign In</a></li>
         </ul>
       </nav>
       <nav class="col">
       </nav>
       <nav class="col">
-        <!--<a href="index.html"><img src="/img/logo_footer.png" alt="SteedOS" /></a>-->
+        <!--<a href="index.html"><img src="/contents/img/logo_footer.png" alt="SteedOS" /></a>-->
         <p id="license">
-          Copyright 2014 HotLong Software.
+          Copyright 2014 HotLong Software.<br>
+          <a href="/us/">English</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/cn/">中文</a><br>
         </p>
       </nav>
       <a href="#wrap" class="top">Back To Top</a>
     </div>
   </footer>
-  <script>window.jQuery || document.write("<script src='/js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
+  <script>window.jQuery || document.write("<script src='/contents/js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
   <script>
     jQuery(document).ready(function() {
       setTimeout(function() {
@@ -188,16 +145,16 @@
       1);
     });
   </script>
-  <script src="/js/libs/jquery_bbq.js"></script>
-  <script src="/js/libs/jquery_cookie.js"></script>
-  <script src="/js/script.js"></script>
-  <script src="/js/modals.js"></script>
+  <script src="/contents/js/libs/jquery_bbq.js"></script>
+  <script src="/contents/js/libs/jquery_cookie.js"></script>
+  <script src="/contents/js/script.js"></script>
+  <script src="/contents/js/modals.js"></script>
   <!--
-  <script src="/js/calendar.js"></script>
+  <script src="/contents/js/calendar.js"></script>
+  <script src="/contents/js/tab_slider.js"></script>
   -->
-  <script src="/js/core_members.js"></script>
-  <script src="/js/tab_slider.js"></script>
-  <script src="/js/meetup_map.js"></script>
+  <script src="/contents/js/core_members.js"></script>
+  <script src="/contents/js/meetup_map.js"></script>
 
   
 

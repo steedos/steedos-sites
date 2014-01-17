@@ -26,11 +26,11 @@ route '/assets/*' do
   item.identifier[7..-2]
 end
 
-compile '/css/*/' do
+compile '/contents/css/*/' do
   filter :sass, Compass.sass_engine_options
 end
 
-compile %r{^\/(js|img|favicon|installers)} do
+compile %r{^/contents\/(js|img|favicon|installers)} do
   # don’t filter or layout
 end
 
@@ -44,10 +44,12 @@ compile '/us/' do
   layout 'default'
 end
 
+
 compile '/cn/' do
   filter :erb
   layout 'default_cn'
 end
+
 
 compile '404' do
   filter :erb
@@ -62,6 +64,12 @@ compile '/us/*' do
   layout 'main'
 end
 
+
+compile '/cn/help/*' do
+  filter :erb
+  layout 'help'
+end
+
 compile '/cn/*' do
   filter :erb
   layout 'main_cn'
@@ -71,11 +79,11 @@ route "/404/" do
   "/404.html"
 end
 
-route '/css/*/' do
+route '/contents/css/*/' do
   item.identifier.chop + '.css'
 end
 
-route %r{^\/(js|img|favicon|installers)} do
+route %r{^/contents\/(js|img|favicon|installers)} do
   filename = item.attributes[:filename].sub(%r{content/}, '')
   "/#{filename}"
 end

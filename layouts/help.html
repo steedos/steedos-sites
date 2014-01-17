@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <title><%= @item[:title] %> - SteedOS</title>
+  <meta name="description" content="SteedOS Apps for Business is a cloud-based productivity suite that helps you and your team connect and get work done from anywhere on any device. " />
+  <meta name="viewport" content="width=960" />
+  <link rel="stylesheet" href="/contents/css/style.css" />
+  <link rel="stylesheet" href="/contents/css/modal.css" />
+  <!--
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu|Allan:bold|Architects+Daughter" />
+  -->
+  <script src="/contents/js/libs/modernizr-1.7.min.js"></script>
+</head>
+<body id="<%= @item[:id] %>" class="help green">
+  <!--
+  <script>
+    var match = document.cookie.match(/scColor=([^;]+)/);
+    document.body.className = (match && match[1]) || 'green';
+  </script>
+  -->
+  <div id="wrap">
+    <div id="main" role="main" class="container">
+        
+      <h1><%= @item[:h1] %>
+      <% if @item[:download] %>
+      <!--
+        <ul id="action">
+          <li><a href="https://steedos.com" class="button primary" target="_blank"><span class="download">Sign Up</span></a></li>
+        </ul>
+      -->
+      <% end %>
+      </h1>
+      <div id="tabs">
+        <%= render "subnav" %>
+        <div id="clip">
+          <div id="left" class="clip-border"></div>
+          <div id="right" class="clip-border"></div>
+          <div id="panel">
+          <%= yield %>
+        </div>
+        </div>
+      </div>
+      <div id="tabs-back"></div>
+
+    </div>
+    <div id="modals">
+      <%= content_for_modals %>
+    </div>
+  </div>
+  <script>window.jQuery || document.write("<script src='/contents/js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
+  <script>
+    jQuery(document).ready(function() {
+      setTimeout(function() {
+        jQuery("#get-involved").addClass('visible');
+      },
+      1);
+    });
+  </script>
+  <script src="/contents/js/libs/jquery_bbq.js"></script>
+  <script src="/contents/js/libs/jquery_cookie.js"></script>
+  <script src="/contents/js/script.js"></script>
+  <script src="/contents/js/modals.js"></script>
+  <!--
+  <script src="/contents/js/calendar.js"></script>
+  <script src="/contents/js/tab_slider.js"></script>
+  -->
+  <script src="/contents/js/core_members.js"></script>
+  <script src="/contents/js/meetup_map.js"></script>
+
+  <%= @item[:content_for_javascript] %>
+
+</body>
+</html>
