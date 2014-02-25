@@ -73,7 +73,7 @@ end
 
 compile '/cn/help/*' do
   filter :erb
-  layout 'help'
+  layout 'help_cn'
 end
 
 compile '/cn/*' do
