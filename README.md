@@ -6,11 +6,12 @@ Website for SteedOS Apps. use nanoc
 
 1. Install the dependencies (mainly nanoc) so you can preview the SproutCore website:
 
-        bundle install
+    sudo gem install bundle
+    sudo bundle install
 
 # Updating the Site
 
-You can preview the site by running `nanoc autocompile` and visiting
+You can preview the site by running `nanoc` and visiting
 [http://localhost:3000/](http://localhost:3000/) in your browser.
 
 The templates for the site are located in `layouts/`. Each content page is
@@ -56,7 +57,7 @@ Deploying your changes is a simple 2 step process:
 
 1. Compile the changes into the output directory:
 
-        nanoc compile
+        nanoc
 
 1. Commit and push your changes
 
