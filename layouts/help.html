@@ -2,9 +2,9 @@
 <html lang="en" class="no-js">
 <head>
   <meta charset="utf-8" />
-  <title><%= @item[:title] %> - SteedOS</title>
+  <title><%= @item[:title] %></title>
   <meta name="description" content="SteedOS Apps for Business is a cloud-based productivity suite that helps you and your team connect and get work done from anywhere on any device. " />
-  <meta name="viewport" content="width=960" />
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0">
   <link rel="stylesheet" href="/contents/css/style.css" />
   <link rel="stylesheet" href="/contents/css/modal.css" />
   <!--
@@ -26,7 +26,7 @@
       <% if @item[:download] %>
       <!--
         <ul id="action">
-          <li><a href="https://steedos.com" class="button primary" target="_blank"><span class="download">Sign Up</span></a></li>
+          <li><a href="/system/steedos/" class="button primary" target="_blank"><span class="download">Sign Up</span></a></li>
         </ul>
       -->
       <% end %>

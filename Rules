@@ -59,6 +59,12 @@ end
 compile 'redirect_to_install' do
 end
 
+
+compile '/us/help/*' do
+  filter :erb
+  layout 'help'
+end
+
 compile '/us/*' do
   filter :erb
   layout 'main'

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <title>表单公式的编写规则 - 审批王 - 帮助中心</title>
+  <meta name="description" content="SteedOS Apps for Business is a cloud-based productivity suite that helps you and your team connect and get work done from anywhere on any device. " />
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+  <link rel="stylesheet" href="/contents/css/style.css" />
+  <link rel="stylesheet" href="/contents/css/modal.css" />
+  <!--
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu|Allan:bold|Architects+Daughter" />
+  -->
+  <script src="/contents/js/libs/modernizr-1.7.min.js"></script>
+</head>
+<body id="help" class="help green">
+  <!--
+  <script>
+    var match = document.cookie.match(/scColor=([^;]+)/);
+    document.body.className = (match && match[1]) || 'green';
+  </script>
+  -->
+  <div id="wrap">
+    <div id="main" role="main" class="container">
+        
+      <h1>审批王
+      
+      <!--
+        <ul id="action">
+          <li><a href="/system/steedos/" class="button primary" target="_blank"><span class="download">Sign Up</span></a></li>
+        </ul>
+      -->
+      
+      </h1>
+      <div id="tabs">
+        <nav>
+  <ul>
+    
+    <li><a href="/cn/help/workflow/">帮助</a></li>
+    
+  </ul>
+</nav>
+
+
+        <div id="clip">
+          <div id="left" class="clip-border"></div>
+          <div id="right" class="clip-border"></div>
+          <div id="panel">
+          <section id="workflow">
+  
+<h1>表单公式的编写规则</h1>
+
+<p>审批王在设计表单时，支持为字段设置公式，使其可以在填写过程中自动计算。</p>
+
+<p>公式编写有以下规则：</p>
+<ul>
+<li>公式中不写等号；
+<li>公式中引用字段需使用字段名+{}，如：{单价}；
+<li>公式中可以使用的计算符号包括：+(加) -(减) *(乘) /(除)，如：{单价}*{数量}；
+<li>公式中嵌套公式时，用()，如：{单价}*({领用数量}-{库存数量})；
+<li>公式中使用的符号必须是半角符号；
+<li>目前只有数值型字段可以计算加减乘除；日期型字段、日期时间型字段都暂不支持公式计算。
+</ul>
+
+<p>下图是模板“出差费用报销”的设计过程。</p>
+
+<p>其中，实际报销金额={报销费用合计}-{暂支金额}+{退回金额}-{补领金额}</p>
+<img src="/contents/img/help/cn/workflow/formula0.png">
+
+<p>当表单中有子表时，往往用于记录明细信息，有时需要根据明细得出汇总值，此时可以在公式中使用以下函数：</p>
+
+<ul>
+<li>sum()：表示合计，如：sum({小计})；
+<li>average()：表示平均值，如：average({费用})；
+<li>count()：表示计数，如：count({物品})；
+<li>max()：表示最大值，如：max({费用})；
+<li>min()：表示最小值，如：min({费用})。
+</ul>
+
+<p>下图是模板“出差费用报销”的设计过程。其中，报销费用合计=sum({费用金额})</p>
+
+<img src="/contents/img/help/cn/workflow/forumla1.png">
+
+<p>除了对数值字段的统计之外，有时我们还希望表单上自动显示申请人的所在部门，或他/她的角色。</p>
+<p>此时需要添加一个文本型的字段，并在公式栏中输入以下函数：</p>
+
+<ul>
+<li>{applicant.organization.fullname}：自动获取申请人的所在部门；
+<li>{applicant.roles}：自动获取申请人的角色名；
+<li>{applicant.name}：自动获取申请人的姓名
+</ul>
+
+<p>表单中有一种特殊的字段类型：人员字段，用于填写时任意指定人员。和申请人类似，有时我们希望自动显示被指定人的所在部门，或他/她的角色。
+此时需要在文本字段的公式中输入以下函数：（假设字段名为“报销人”）</p>
+
+
+<ul>
+<li>{报销人.organization.fullname}：自动获取“报销人”的所在部门；
+<li>{报销人.roles}：自动获取“报销人”的角色名；
+<li>{报销人.name}：自动获取“报销人”的姓名；
+</ul>
+
+<p>以上就是审批王中支持的公式与函数规则，如果您还有其他的问题或者新的建议，欢迎致电：400-820-1612。</p>
+</section>
+        </div>
+        </div>
+      </div>
+      <div id="tabs-back"></div>
+
+    </div>
+    <div id="modals">
+      
+    </div>
+  </div>
+  <script>window.jQuery || document.write("<script src='/contents/js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
+  <script>
+    jQuery(document).ready(function() {
+      setTimeout(function() {
+        jQuery("#get-involved").addClass('visible');
+      },
+      1);
+    });
+  </script>
+  <script src="/contents/js/libs/jquery_bbq.js"></script>
+  <script src="/contents/js/libs/jquery_cookie.js"></script>
+  <script src="/contents/js/script.js"></script>
+  <script src="/contents/js/modals.js"></script>
+  <!--
+  <script src="/contents/js/calendar.js"></script>
+  <script src="/contents/js/tab_slider.js"></script>
+  -->
+  <script src="/contents/js/core_members.js"></script>
+  <script src="/contents/js/meetup_map.js"></script>
+
+  
+
+</body>
+</html>

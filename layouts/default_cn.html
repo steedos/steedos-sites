@@ -2,9 +2,9 @@
 <html lang="en" class="no-js">
 <head>
   <meta charset="utf-8" />
-  <title><%= @item[:title] %></title>
+  <title><%= @item[:title] %> - SteedOS.com 中国</title>
   <meta name="description" content="SteedOS Apps for Business is a cloud-based productivity suite that helps you and your team connect and get work done from anywhere on any device. " />
-  <meta name="viewport" content="width=960" />
+  <meta name="viewport" content="width=1024">
   <link rel="stylesheet" href="/contents/css/style.css" />
   <link rel="stylesheet" href="/contents/css/modal.css" />
   <!--
@@ -12,7 +12,7 @@
   -->
   <script src="/contents/js/libs/modernizr-1.7.min.js"></script>
 </head>
-<body id="<%= @item[:id] %>" class="green">
+<body id="<%= @item[:id] %>" class="green" style="min-width:480px;">
   <!--
   <script>
     var match = document.cookie.match(/scColor=([^;]+)/);
@@ -25,11 +25,11 @@
         <nav role="navigation">
           <ul>
             <%= nav "首页", "cn" %>
-            <%= nav "骏马云", "cn/steedos" %>
+            <%= nav "关于", "cn/steedos" %>
             <%= nav "审批王", "cn/workflow" %>
             <%= nav "享聊", "cn/chat" %>
-            <%= nav "注册试用", "signup", "https://www.steedos.com/#register" %>
-            <%= nav "客户登录", "signin", "https://www.steedos.com" %>
+            <%= nav "注册", "signup", "/system/steedos/#register" %>
+            <%= nav "登录", "signin", "/system/steedos/" %>
           </ul>
         </nav>
         <form action="" role="search" onSubmit="return submitQuery('cn')">
@@ -54,9 +54,8 @@
             <%= nav "审批王", "cn/workflow" %>
             <%= nav "享聊", "cn/chat" %>
             <%= nav "开发者", "cn/developer" %>
-            <%= nav "博客", "blog", "http://blog.steedos.cn" %>
-            <%= nav "注册试用", "signup", "https://www.steedos.com/#register" %>
-            <%= nav "客户登录", "signin", "https://www.steedos.com" %>
+            <%= nav "注册试用", "signup", "/system/steedos/#register" %>
+            <%= nav "客户登录", "signin", "/system/steedos/" %>
         </ul>
       </nav>
       <nav class="col">
@@ -64,8 +63,8 @@
       <nav class="col">
         <!--<a href="index.html"><img src="/contents/img/logo_footer.png" alt="SteedOS" /></a>-->
         <p id="license">
-          版权所有 2014 华炎软件.<br>
-          <a href="/us/">English</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/cn/">中文</a>
+          版权所有 2014 SteedOS.com 中国.<br>
+          <a href="https://steedos.com/us/">English</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.steedos.com/cn/">中文</a>
         </p>
       </nav>
       <a href="#wrap" class="top">Back To Top</a>
