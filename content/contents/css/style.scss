@@ -205,12 +205,12 @@ samp {
 
 pre {
   @include border-radius(4px);
-  @include box-shadow(rgba(255, 255, 255, 0.4) 0 1px 0, #000 0 1px 4px inset);
+  @include box-shadow(rgba(255, 255, 255, 0.4) 0 1px 0, #B1B1B1 0 1px 2px inset);
 
   padding: 12px;
-  color: #fff;
+  color: #016E1D;
   background: #000;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(241, 241, 241, 0.75);
   white-space: pre;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -762,9 +762,10 @@ h1 > #action:before {
   line-height: 24px;
 }
 
+/*
 #tabs p + pre {
   margin-top: -9px;
-}
+}*/
 
 #tabs .button-center {
 	width: 100%;
@@ -1241,6 +1242,7 @@ html.js.csstransforms3d #carousel .panel.animate {
 }
 
 html.js #carousel .panel.active {
+  left: 0;
   opacity: 1;
 }
 
