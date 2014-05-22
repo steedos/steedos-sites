@@ -9,11 +9,12 @@ Website for SteedOS Apps. use nanoc
     sudo gem install bundle
     sudo bundle install
 
-2. View Site:
+2. Compling the Site
+    nanoc 
+
+3. Start local web server:
     nanoc view
 
-3. Updating the Site
-    nanoc 
 
 You can preview the site by running `nanoc` and visiting
 [http://localhost:3000/](http://localhost:3000/) in your browser.
