@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <title><%= @item[:title] %> - SteedOS.com</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"  >
+  <meta content="initial-scale=1" name="viewport"/>
+            
+  <link href="/website/static/lib/fontawesome/css/font-awesome.css" rel="stylesheet"/>
+            
+  <link href="/website/static/src/css/bootswatch/slate.min.css" rel="stylesheet"/>
+  <link href="/website/static/src/css/bootswatch/slate.fix.css" rel="stylesheet"/>
+  <link href="/website/css/odoo/website.css" id="website_css" rel="stylesheet"/>
+
+
+  <script src="/website/js/odoo/es5-shim.min.js" type="text/javascript"></script>
+  <script src="/website/js/odoo/underscore.js" type="text/javascript"></script>
+  <script src="/website/js/odoo/underscore_string.js" type="text/javascript"></script>
+  <script src="/website/js/odoo/jquery.js" type="text/javascript"></script>
+  <script type="text/javascript">
+      // Bootstrap and jQuery UI conflicts
+      $.fn.bstooltip = $.fn.tooltip;
+      $.fn.bsbutton = $.fn.button;
+  </script>
+
+  <script src="/website/js/odoo/qweb2.js" type="text/javascript"></script>
+  <script src="/website/js/odoo/openerpframework.js" type="text/javascript"></script>
+
+  <script src="/website/js/odoo/website.js" type="text/javascript"></script>
+  
+  <script type="text/javascript" src="/website/js/odoo/website_snippets_animation.js"></script>
+  <script src="/website/js/odoo/bootstrap.js" type="text/javascript"></script>
+
+</head>
+<body>
+ 
+<div id="wrapwrap">
+  <header>
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+            <button data-toggle="collapse" type="button" class="navbar-toggle" data-target=".navbar-top-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/cn/" class="navbar-brand">骏马云</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-top-collapse">
+          <ul class="nav navbar-nav navbar-right" id="top_menu">                              
+                    
+            <%= nav "审批王", "cn/oworkflow" %>
+            <%= nav "享聊", "cn/chat" %>
+            <!--
+            <li class="divider"></li>
+            -->
+            <li>
+                <a href="/web/login">
+                    <b>客户登录</b>
+                </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <%= yield %>
+  <main>
+    <div id="wrap" class="oe_structure oe_empty">
+    </div>
+  </main>
+  <footer>
+    <div class="container hidden-print" id="footer_container">
+        <div class="row">
+            <div class="col-md-3" name="product">
+                <h4>产品与服务</h4>
+                <ul class="list-unstyled" name="products">
+                    <li><a href="/cn/workflow/">审批王</a></li>
+                    <li><a href="/cn/chat/">享聊</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3" name="info">
+                <h4 name="info_title">联系我们</h4>
+                <ul class="list-unstyled">
+                    <li><a href="/page/website.contactus">联系我们</a></li>
+                </ul>
+                <ul class="list-unstyled">
+                    <li><i class="fa fa-phone"></i> <span>400-820-1612</span></li>
+                    <li><i class="fa fa-envelope"></i>  <span>support@steedos.com</span></li>
+                </ul>
+                <h2>
+                    
+                </h2>
+            </div>
+            <div class="col-md-5 col-lg-offset-1" name="about_us">
+                <div>
+                    <h4>
+                        <span>关于我们</span>
+                        <small> - <a href="/cn/steedos/">什么是骏马云？</a></small>
+                    </h4>
+                    <p>                        
+                      骏马云是云端企业应用软件，它的设置、使用和管理都很简单，可让您更明智地工作并专注于核心业务。
+                    </p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+    <div class="container mt16 mb8">
+        <!--
+        <div class="pull-right">
+            免费的<a href="http://www.steedos.com/">云端企业管理软件</a>，尽在
+            <a href="http://www.steedos.com/" class="label label-danger">SteedOS.com</a>
+        </div>
+        -->
+
+        <div class="pull-left text-muted">
+            版权所有 © <span>华炎软件</span>
+        </div>
+    </div>
+  </footer>
+</div>
+
+
+</body>
+</html>

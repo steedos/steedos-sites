@@ -14,55 +14,9 @@ require "compass"
 
 Compass.add_project_configuration 'compass.rb'
 
-# compile '/installers/*' do
 
-# end
-
-compile '/assets/*' do
-end
-
-route '/assets/*' do
-  # /static/foo.html/ → /foo.html
-  item.identifier[7..-2]
-end
-
-compile '/contents/css/*/' do
+compile '/css/*' do
   filter :sass, Compass.sass_engine_options
-end
-
-compile %r{^/contents\/(js|img|favicon|installers)} do
-  # don’t filter or layout
-end
-
-compile '/' do
-  filter :erb
-  layout 'default'
-end
-
-compile '/us/' do
-  filter :erb
-  layout 'default'
-end
-
-
-compile '/cn/' do
-  filter :erb
-  layout 'default_cn'
-end
-
-
-compile '404' do
-  filter :erb
-  layout 'default'
-end
-
-compile 'redirect_to_install' do
-end
-
-
-compile '/us/help/*' do
-  filter :erb
-  layout 'help'
 end
 
 compile '/us/*' do
@@ -70,10 +24,9 @@ compile '/us/*' do
   layout 'main'
 end
 
-
-compile '/cn/help/*' do
+compile '/cn/oworkflow/*' do
   filter :erb
-  layout 'help_cn'
+  layout 'odoo_cn'
 end
 
 compile '/cn/*' do
@@ -81,22 +34,27 @@ compile '/cn/*' do
   layout 'main_cn'
 end
 
-route "/404/" do
-  "/404.html"
+compile '*' do
+  if item.binary?
+    # don’t filter binary items
+  else
+    filter :erb
+    layout 'odoo_cn'
+  end
 end
 
-route '/contents/css/*/' do
-  item.identifier.chop + '.css'
+route '/css/*' do
+  '/website' + item.identifier.chop + '.css' # so that the /assets/style/screen/ item is compiled to /assets/style/screen.css
 end
-
-route %r{^/contents\/(js|img|favicon|installers)} do
-  filename = item.attributes[:filename].sub(%r{content/}, '')
-  "/#{filename}"
-end
-
 
 route '*' do
-  item.identifier + 'index.html'
+  if item.binary?
+    # Write item with identifier /foo/ to /foo.ext
+    item.identifier.chop
+  else
+    # Write item with identifier /foo/ to /foo/index.html
+    item.identifier + 'index.html'
+  end
 end
 
 layout '*', :erb

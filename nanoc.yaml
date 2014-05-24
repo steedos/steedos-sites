@@ -40,9 +40,12 @@ data_sources:
     # same as the items root, but applies to layouts rather than items.
     layouts_root: /
 
+    config:
+        allow_periods_in_identifiers: true
+
   -
 
     type: static
-    items_root: /assets/
+    items_root: /website/
 
 
