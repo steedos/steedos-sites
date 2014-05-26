@@ -45,16 +45,23 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="/cn/help/" class="navbar-brand">帮助中心</a>
+            <a href="/cn/chat/" class="navbar-brand">享聊</a>
         </div>
         <div class="collapse navbar-collapse navbar-top-collapse">
           <ul class="nav navbar-nav navbar-right" id="top_menu">                              
                     
-            <%= nav "审批王", "cn/help/workflow" %>
-            <%= nav "享聊", "cn/help/chat" %>
+            <%= nav "功能", "cn/chat" %>
+            <%= nav "报价", "cn/chat/pricing" %>
+            <%= nav "下载", "cn/chat/downloads" %>
+            <%= nav "API", "cn/chat/api" %>
             <!--
             <li class="divider"></li>
             -->
+            <li>
+                <a href="/system/steedos/">
+                    <b>客户登录</b>
+                </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -66,16 +73,50 @@
     </div>
   </main>
   <footer>
-    <div class="container mt16 mb8">
-        <div class="pull-right">
-            客服热线：
-            <a href="#" class="label label-danger">400-820-1612</a>
+    <div class="container hidden-print" id="footer_container">
+        <div class="row">
+            <div class="col-md-3" name="product">
+                <h4>骏马云 Apps
+                  <small> - <a href="/cn/">关于骏马云</a></small>
+                </h4>
+                <ul class="list-unstyled" name="products">
+                    <li><a href="/cn/workflow">审批王</a></li>
+                    <li><a href="/cn/chat">享聊</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3" name="info">
+                <h4 name="info_title">联系我们</h4>
+                <ul class="list-unstyled">
+                    <li><a href="/cn/chat/contactus">联系方式</a></li>
+                </ul>
+                <ul class="list-unstyled">
+                    <li><i class="fa fa-phone"></i> <span>400-820-1612</span></li>
+                    <li><i class="fa fa-envelope"></i>  <span>support@steedos.com</span></li>
+                </ul>
+                <h2>
+                    
+                </h2>
+            </div>
+            <div class="col-md-5 col-lg-offset-1" name="about_us">
+                <div>
+                    <h4>
+                        <span>关于享聊</span>
+                        <small> - <a href="/cn/chat">享聊有什么功能？</a></small>
+                    </h4>
+                    <p>                        
+                      享聊是全新的企业级协同沟通系统，你可以向一个人单独发送信息，或同时向许多好友群发信息 ，而且可附带你喜欢的照片、视频或链接。每个人的回复，大家都会看到。人越多，收到的信息也越多，忘情地发吧！你使用的是 享聊，每条通过无线网络发送的信息都是免费的...
+                    </p>
+                </div>
+                <ul class="list-inline js_language_selector mt16"><li><a href="/us/chat/" >English</a></li><li><a href="/cn/chat/" >简体中文</a></li></ul>
+                
+            </div>
         </div>
+    </div>
+    <div class="container mt16 mb8">
 
         <div class="pull-left text-muted">
             版权所有 © <span>华炎软件</span>
         </div>
-        <br><br><br>
     </div>
   </footer>
 </div>

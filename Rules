@@ -19,19 +19,35 @@ compile '/css/*' do
   filter :sass, Compass.sass_engine_options
 end
 
-compile '/us/*' do
+compile '/us/help*' do
   filter :erb
-  layout 'main'
+  layout 'help_us'
 end
 
-compile '/cn/oworkflow/*' do
+compile '/us*' do
   filter :erb
-  layout 'odoo_cn'
+  layout 'steedos_us'
 end
 
-compile '/cn/*' do
+
+compile '/cn/workflow/*' do
   filter :erb
-  layout 'main_cn'
+  layout 'workflow_cn'
+end
+
+compile '/cn/help/*' do
+  filter :erb
+  layout 'help_cn'
+end
+
+compile '/cn/chat/*' do
+  filter :erb
+  layout 'chat_cn'
+end
+
+compile '/cn*' do
+  filter :erb
+  layout 'steedos_cn'
 end
 
 compile '*' do
@@ -39,7 +55,7 @@ compile '*' do
     # don’t filter binary items
   else
     filter :erb
-    layout 'odoo_cn'
+    layout 'steedos_cn'
   end
 end
 

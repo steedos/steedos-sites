@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 <head>
   <meta charset="utf-8" />
-  <title><%= @item[:title] %> - SteedOS.com</title>
+  <title><%= @item[:title] %></title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge"  >
   <meta content="initial-scale=1" name="viewport"/>
             
@@ -50,13 +50,13 @@
         <div class="collapse navbar-collapse navbar-top-collapse">
           <ul class="nav navbar-nav navbar-right" id="top_menu">                              
                     
-            <%= nav "审批王", "cn/oworkflow" %>
+            <%= nav "审批王", "cn/workflow" %>
             <%= nav "享聊", "cn/chat" %>
             <!--
             <li class="divider"></li>
             -->
             <li>
-                <a href="/web/login">
+                <a href="/system/steedos/">
                     <b>客户登录</b>
                 </a>
             </li>
@@ -65,25 +65,25 @@
       </div>
     </div>
   </header>
-  <%= yield %>
   <main>
     <div id="wrap" class="oe_structure oe_empty">
+  <%= yield %>
     </div>
   </main>
   <footer>
     <div class="container hidden-print" id="footer_container">
         <div class="row">
             <div class="col-md-3" name="product">
-                <h4>产品与服务</h4>
+                <h4>骏马云</h4>
                 <ul class="list-unstyled" name="products">
-                    <li><a href="/cn/workflow/">审批王</a></li>
-                    <li><a href="/cn/chat/">享聊</a></li>
+                    <li><a href="/cn/workflow">审批王</a></li>
+                    <li><a href="/cn/chat">享聊</a></li>
                 </ul>
             </div>
             <div class="col-md-3" name="info">
                 <h4 name="info_title">联系我们</h4>
                 <ul class="list-unstyled">
-                    <li><a href="/page/website.contactus">联系我们</a></li>
+                    <li><a href="/cn/workflow/contactus">联系方式</a></li>
                 </ul>
                 <ul class="list-unstyled">
                     <li><i class="fa fa-phone"></i> <span>400-820-1612</span></li>
@@ -96,14 +96,14 @@
             <div class="col-md-5 col-lg-offset-1" name="about_us">
                 <div>
                     <h4>
-                        <span>关于我们</span>
-                        <small> - <a href="/cn/steedos/">什么是骏马云？</a></small>
+                        <span>关于骏马云</span>
+                        <small> - <a href="/cn/">骏马云有什么功能？</a></small>
                     </h4>
                     <p>                        
-                      骏马云是云端企业应用软件，它的设置、使用和管理都很简单，可让您更明智地工作并专注于核心业务。
+                      骏马云是基于云的生产套件，可帮助您和您的团队随时随地使用任意设备沟通联系并完成工作。它的设置、使用和管理都很简单，可让您更明智地工作并专注于核心业务。
                     </p>
                 </div>
-                
+                <ul class="list-inline js_language_selector mt16"><li><a href="/us/" >English</a></li><li><a href="/cn/" >简体中文</a></li></ul>
                 
             </div>
         </div>

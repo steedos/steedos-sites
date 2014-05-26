@@ -45,37 +45,79 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="/cn/help/" class="navbar-brand">帮助中心</a>
+            <a href="/us/" class="navbar-brand">SteedOS</a>
         </div>
         <div class="collapse navbar-collapse navbar-top-collapse">
           <ul class="nav navbar-nav navbar-right" id="top_menu">                              
                     
-            <%= nav "审批王", "cn/help/workflow" %>
-            <%= nav "享聊", "cn/help/chat" %>
+            <%= nav "oWorkflow", "us/workflow" %>
+            <%= nav "oChat", "us/chat" %>
             <!--
             <li class="divider"></li>
             -->
+            <li>
+                <a href="/system/steedos/">
+                    <b>Sign In</b>
+                </a>
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </header>
-  <%= yield %>
   <main>
     <div id="wrap" class="oe_structure oe_empty">
+  <%= yield %>
     </div>
   </main>
   <footer>
-    <div class="container mt16 mb8">
-        <div class="pull-right">
-            客服热线：
-            <a href="#" class="label label-danger">400-820-1612</a>
+    <div class="container hidden-print" id="footer_container">
+        <div class="row">
+            <div class="col-md-3" name="product">
+                <h4>SteedOS</h4>
+                <ul class="list-unstyled" name="products">
+                    <li><a href="/us/workflow">oWorkflow</a></li>
+                    <li><a href="/us/chat">oChat</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3" name="info">
+                <h4 name="info_title">Contact Us</h4>
+                <ul class="list-unstyled">
+                    <li><a href="/us/steedos/contactus">Contact Us</a></li>
+                </ul>
+                <ul class="list-unstyled">
+                    <li><i class="fa fa-phone"></i> <span>(0086)400-820-1612</span></li>
+                    <li><i class="fa fa-envelope"></i>  <span>support@steedos.com</span></li>
+                </ul>
+                <h2>
+                    
+                </h2>
+            </div>
+            <div class="col-md-5 col-lg-offset-1" name="about_us">
+                <div>
+                    <h4>
+                        <span>About SteedOS</span>
+                        <small> - <a href="/us/">About SteedOS</a></small>
+                    </h4>
+                    <p> SteedOS Apps is a cloud-based productivity suite that helps you and your team connect and get work done from anywhere on any device. It's simple to setup, use and manage, allowing you to work smarter and focus on what really matters.
+                    </p>
+                </div>
+                <ul class="list-inline js_language_selector mt16"><li><a href="/us/" >English</a></li><li><a href="/cn/" >简体中文</a></li></ul>
+                
+            </div>
         </div>
+    </div>
+    <div class="container mt16 mb8">
+        <!--
+        <div class="pull-right">
+            免费的<a href="http://www.steedos.com/">云端企业管理软件</a>，尽在
+            <a href="http://www.steedos.com/" class="label label-danger">SteedOS.com</a>
+        </div>
+        -->
 
         <div class="pull-left text-muted">
-            版权所有 © <span>华炎软件</span>
+            Copyright © <span>HotLong Software</span>
         </div>
-        <br><br><br>
     </div>
   </footer>
 </div>

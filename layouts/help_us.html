@@ -45,35 +45,34 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="/cn/help/" class="navbar-brand">帮助中心</a>
+            <a href="/us/help/" class="navbar-brand">SteedOS Help</a>
         </div>
         <div class="collapse navbar-collapse navbar-top-collapse">
           <ul class="nav navbar-nav navbar-right" id="top_menu">                              
                     
-            <%= nav "审批王", "cn/help/workflow" %>
-            <%= nav "享聊", "cn/help/chat" %>
-            <!--
-            <li class="divider"></li>
-            -->
+            <%= nav "oWorkflow", "us/help/workflow" %>
+            <%= nav "oChat", "us/help/chat" %>
           </ul>
         </div>
       </div>
     </div>
   </header>
-  <%= yield %>
   <main>
     <div id="wrap" class="oe_structure oe_empty">
+  <%= yield %>
     </div>
   </main>
   <footer>
     <div class="container mt16 mb8">
+        <!--
         <div class="pull-right">
-            客服热线：
-            <a href="#" class="label label-danger">400-820-1612</a>
+            免费的<a href="http://www.steedos.com/">云端企业管理软件</a>，尽在
+            <a href="http://www.steedos.com/" class="label label-danger">SteedOS.com</a>
         </div>
+        -->
 
         <div class="pull-left text-muted">
-            版权所有 © <span>华炎软件</span>
+            Copyright © <span>HotLong Software</span>
         </div>
         <br><br><br>
     </div>
