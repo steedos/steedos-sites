@@ -15,7 +15,7 @@ id: cn/developer/workflow
   <div id="fast">
     <p>You have the choice of providing your access token either as the 'auth_token' query parameter or in the Authorization HTTP request header.</p>
     <p>For example, if your token were 'abc123', passing the token in as a query parameter in a request would look like:</p>
-    <pre><code>GET /uf/instance/{instance_id}?auth_token=abc123 HTTP/1.1
+    <pre><code>GET /uf/retrieve?auth_token=abc123&instance_id={instance_id} HTTP/1.1
     Host: uuflowws.steedos.com</pre></code>
 
     <p></p>
@@ -31,7 +31,7 @@ id: cn/developer/workflow
 
     <p></p>
     <p>If you wanted to not expose your access token in server logs, you could choose to use theAuthorization HTTP header:</p>
-    <pre><code>GET /uf/instance/{instance_id} HTTP/1.1
+    <pre><code>GET /uf/retrieve?instance_id={instance_id} HTTP/1.1
       Authorization: Jack abc123
       Host: uuflowws.steedos.com</pre></code>
   </div>
@@ -175,7 +175,7 @@ id: cn/developer/workflow
   <br>
   <h2>Query Instance</h2>
   <p>HTTP Request<p>
-  <pre><code>GET https://uuflowws.steedos.com/uf/instance/{instance_id}</code></pre>
+  <pre><code>GET https://uuflowws.steedos.com/uf/retrieve?instance_id={instance_id}</code></pre>
 
   <br>
   <p>HTTP Response Body</p>

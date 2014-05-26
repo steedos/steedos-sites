@@ -2,65 +2,6 @@
 title: 审批王 - API
 id: cn/workflow/api
 ---
-<!--     
-      <div style="height: 576px;" class="carousel slide mb0" id="myCarousel0">
-        <ol class="carousel-indicators hidden">
-          <li data-slide-to="0" class="active" data-target="#myCarousel0"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div style="background-image: url('/website/static/src/img/banner/color_splash.jpg')" class="item image_text active">
-            <div class="container">
-              <div class="carousel-caption content">
-                <div>
-                  <h2>审批王API接口</h2>
-                  <h3>与您的业务系统建立无缝连接</h3>
-                  <h4>
-                    <span style="color:#A9A9A9;">单点登录</span>
-                  </h4>
-                  <h4>
-                    <span style="color:#A9A9A9;">从业务系统中提交申请单</span>
-                  </h4>
-                  <h4>
-                    <span style="color:#A9A9A9;">查询申请单状态</span>
-                  </h4>
-                  <div>
-                    <span style="color:#A9A9A9;"></span>
-                  </div>
-                  <h4>
-                    <span style="color:#FFFFFF;"></span>
-                  </h4>
-                  <h4>
-                    <span style="color:#FFFFFF;"></span>
-                  </h4>
-                  <h4>
-                    <span style="color:#FFFFFF;">了解更多请致电：400-820-1612</span>
-                  </h4>
-                  <div>
-                    <font color="#a9a9a9"></font>
-                  </div>
-                  <div></div>
-                  <p></p>
-                  <p>
-                    <a href="/cn/workflow/contactus/" class="btn btn-success btn-large">联系我们</a>
-                  </p>
-                </div>
-              </div>
-              <img src="https://odoo.s3.amazonaws.com/3bb50b61-e243-11e3-a1cc-7cd1c3f1442d/1/e2/e2de5e053c22bd64fc75c1ad868631c9c7d691da.jpg" alt="Banner OpenERP Image" class="carousel-image hidden-xs"/>
-            </div>
-          </div>
-        </div>
-        <a data-slide="prev" href="#myCarousel" style="width: 10%" class="carousel-control left hidden">
-          <span class="glyphicon glyphicon-chevron-left">
-            <span class="hidden">.</span>
-          </span>
-        </a>
-        <a data-slide="next" href="#myCarousel" style="width: 10%" class="carousel-control right hidden">
-          <span class="glyphicon glyphicon-chevron-right">
-            <span class="hidden">.</span>
-          </span>
-        </a>
-      </div>
--->
 <section>
 <div class="container">
   <h1>SteedOS Workflow API</h1>
@@ -73,7 +14,7 @@ id: cn/workflow/api
   <div id="fast">
     <p>You have the choice of providing your access token either as the 'auth_token' query parameter or in the Authorization HTTP request header.</p>
     <p>For example, if your token were 'abc123', passing the token in as a query parameter in a request would look like:</p>
-    <pre><code>GET /uf/instance/{instance_id}?auth_token=abc123 HTTP/1.1
+    <pre><code>GET /uf/retrieve?auth_token=abc123&instance_id={instance_id} HTTP/1.1
     Host: uuflowws.steedos.com</pre></code>
 
     <p></p>
@@ -89,7 +30,7 @@ id: cn/workflow/api
 
     <p></p>
     <p>If you wanted to not expose your access token in server logs, you could choose to use theAuthorization HTTP header:</p>
-    <pre><code>GET /uf/instance/{instance_id} HTTP/1.1
+    <pre><code>GET /uf/retrieve?instance_id={instance_id} HTTP/1.1
       Authorization: Jack abc123
       Host: uuflowws.steedos.com</pre></code>
   </div>
@@ -227,13 +168,10 @@ id: cn/workflow/api
 
 
 
-
-
-
   <br>
   <h2>Query Instance</h2>
   <p>HTTP Request<p>
-  <pre><code>GET https://uuflowws.steedos.com/uf/instance/{instance_id}</code></pre>
+  <pre><code>GET https://uuflowws.steedos.com/uf/retrieve?instance_id={instance_id}</code></pre>
 
   <br>
   <p>HTTP Response Body</p>

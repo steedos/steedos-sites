@@ -3,10 +3,38 @@ title: Workflow API - SteedOS Developer
 id: cn/developer/workflow
 ---
 
-<section id="workflow" class="visible">
+<section>
 <div class="container">
   <h1>SteedOS Workflow API</h1>
 
+  <h2>API Authentication</h2>
+  <div id="slow">
+    <p>The SteedOS API uses OAuth 2 to allow you to authenticate as a user. Each API request must pass an access token to authenticate correctly. If the token is not provided or invalid you will receive a 401 response.</p>
+  </div>
+  <h2>Wire format</h2>
+  <div id="fast">
+    <p>You have the choice of providing your access token either as the 'auth_token' query parameter or in the Authorization HTTP request header.</p>
+    <p>For example, if your token were 'abc123', passing the token in as a query parameter in a request would look like:</p>
+    <pre><code>GET /uf/retrieve?auth_token=abc123&instance_id={instance_id} HTTP/1.1
+    Host: uuflowws.steedos.com</pre></code>
+
+    <p></p>
+    <p>Which would generate the response:</p>
+    <pre><code>HTTP/1.1 200 OK
+      Date: Wed, 11 Sep 2013 21:55:00 GMT
+      Content-Type: application/json
+      Transfer-Encoding: chunked
+      Connection: keep-alive
+      Access-Control-Allow-Origin: *</pre></code>
+    <p></p>
+    <pre><code>{...}</pre></code>
+
+    <p></p>
+    <p>If you wanted to not expose your access token in server logs, you could choose to use theAuthorization HTTP header:</p>
+    <pre><code>GET /uf/retrieve?instance_id={instance_id} HTTP/1.1
+      Authorization: Jack abc123
+      Host: uuflowws.steedos.com</pre></code>
+  </div>
   <h2>Resource representations</h2>
   <p>Instance Object</p>
   <pre><code>{
@@ -147,12 +175,10 @@ id: cn/developer/workflow
   <br>
   <h2>Query Instance</h2>
   <p>HTTP Request<p>
-  <pre><code>GET https://uuflowws.steedos.com/uf/instance/{instance_id}</code></pre>
+  <pre><code>GET https://uuflowws.steedos.com/uf/retrieve?instance_id={instance_id}</code></pre>
 
   <br>
   <p>HTTP Response Body</p>
   <pre><code>{Instance_object}</code></pre>
 </div>
 </section>
-
-
