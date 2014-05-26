@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <title><%= @item[:title] %></title>
+  <meta name="Description" content="审批王是全新的企业级在线审批系统，可以快速的将公司的各类审批业务转换为可严格执行的电子流程。常见的审批业务包括：出差申请、差旅报销、请假销假、物品采购、付款申请、固定资产报废、会议室预约、退库管理、客服投诉、工作报告等均可通过审批王处理。">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge"  >
   <meta content="initial-scale=1" name="viewport"/>
             
   <link href="/website/static/lib/fontawesome/css/font-awesome.css" rel="stylesheet"/>
-            
-  <link href="/website/static/src/css/bootswatch/slate.min.css" rel="stylesheet"/>
-  <link href="/website/static/src/css/bootswatch/slate.fix.css" rel="stylesheet"/>
+
+  <link href="/website/static/src/css/bootswatch/spacelab.min.css" rel="stylesheet"/>
+  <link href="/website/static/src/css/bootswatch/spacelab.fix.css" rel="stylesheet"/>
   <link href="/website/css/odoo/website.css" id="website_css" rel="stylesheet"/>
 
 
@@ -55,9 +56,7 @@
             <%= nav "下载", "cn/workflow/downloads" %>
             <%= nav "帮助", "cn/workflow/trainning" %>
             <%= nav "API", "cn/workflow/api" %>
-            <!--
             <li class="divider"></li>
-            -->
             <li>
                 <a href="/system/steedos/">
                     <b>客户登录</b>
