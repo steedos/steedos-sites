@@ -1,0 +1,31 @@
+<script>
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+
+    // 判断用户语言
+    userLanguage = navigator.language || navigator.browserLanguage || navigator.userLanguage
+
+    // 如果用户已登录
+    if (readCookie("X-STEEDOS-WEB-ID"))
+        document.location = "/system/steedos/" + window.location.search + window.location.hash
+
+    // 如果从App访问
+    else if (window.location.search)
+        document.location = "/system/steedos/" + window.location.search + window.location.hash
+
+    else if (!userLanguage)
+        document.location = "/cn/"
+    else if (userLanguage.indexOf("zh") >=0)
+        document.location = "/cn/"
+    else
+        document.location = "/us/"
+
+</script>
