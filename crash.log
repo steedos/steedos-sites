@@ -1,8 +1,8 @@
-Crashlog created at 2014-05-26 17:52:47 +0800
+Crashlog created at 2014-06-05 16:55:07 +0800
 
 ===== MESSAGE:
 
-SystemStackError: stack level too deep
+Errno::EADDRINUSE: Address already in use - bind(2)
 
 ===== COMPILATION STACK:
 
@@ -10,90 +10,80 @@ SystemStackError: stack level too deep
 
 ===== STACK TRACE:
 
-  ... 2 more lines omitted. See full crash log for details.
+  0. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/utils.rb:85:in `initialize'
+  1. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/utils.rb:85:in `new'
+  2. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/utils.rb:85:in `block in create_listeners'
+  3. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/utils.rb:82:in `each'
+  4. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/utils.rb:82:in `create_listeners'
+  5. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/server.rb:132:in `listen'
+  6. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/server.rb:113:in `initialize'
+  7. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:45:in `initialize'
+  8. /Library/Ruby/Gems/2.0.0/gems/rack-1.5.2/lib/rack/handler/webrick.rb:11:in `new'
+  9. /Library/Ruby/Gems/2.0.0/gems/rack-1.5.2/lib/rack/handler/webrick.rb:11:in `run'
+  10. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib/nanoc/cli/commands/view.rb:51:in `run'
+  11. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib/nanoc/cli/command_runner.rb:14:in `block in call'
+  12. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib/nanoc/cli/error_handler.rb:70:in `handle_while'
+  13. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
+  14. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib/nanoc/cli/command_runner.rb:13:in `call'
+  15. /Library/Ruby/Gems/2.0.0/gems/cri-2.3.0/lib/cri/command_dsl.rb:185:in `block in runner'
+  16. /Library/Ruby/Gems/2.0.0/gems/cri-2.3.0/lib/cri/command.rb:296:in `call'
+  17. /Library/Ruby/Gems/2.0.0/gems/cri-2.3.0/lib/cri/command.rb:296:in `run_this'
+  18. /Library/Ruby/Gems/2.0.0/gems/cri-2.3.0/lib/cri/command.rb:249:in `run'
+  19. /Library/Ruby/Gems/2.0.0/gems/cri-2.3.0/lib/cri/command.rb:262:in `run'
+  20. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib/nanoc/cli.rb:52:in `block in run'
+  21. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib/nanoc/cli/error_handler.rb:70:in `handle_while'
+  22. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
+  23. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib/nanoc/cli.rb:50:in `run'
+  24. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/bin/nanoc:19:in `<top (required)>'
+  25. /usr/bin/nanoc:23:in `load'
+  ... 28 more lines omitted. See full crash log for details.
 
 ===== VERSION INFORMATION:
 
 nanoc 3.6.3 © 2007-2013 Denis Defreyne.
-Running ruby 1.9.3 (2013-11-22) on x86_64-darwin13.0.0 with RubyGems 2.2.2.
+Running ruby 2.0.0 (2014-02-24) on universal.x86_64-darwin13 with RubyGems 2.0.14.
 
 ===== SYSTEM INFORMATION:
 
-Darwin localhost.steedos.com 13.2.0 Darwin Kernel Version 13.2.0: Thu Apr 17 23:03:13 PDT 2014; root:xnu-2422.100.13~1/RELEASE_X86_64 x86_64
+Darwin marchmac.local 13.2.0 Darwin Kernel Version 13.2.0: Thu Apr 17 23:03:13 PDT 2014; root:xnu-2422.100.13~1/RELEASE_X86_64 x86_64
 
 ===== INSTALLED GEMS:
 
   adsf 1.1.1
-  bundler 1.5.3
-  celluloid 0.15.2
+  bundler 1.6.2
   chunky_png 1.2.8
-  coderay 1.1.0
   colored 1.2
   compass 0.12.2
   cri 2.3.0
-  ffi 1.9.3
-  formatador 0.2.4
   fssm 0.2.10
-  guard 2.6.1
-  guard-nanoc 1.0.2
-  listen 2.7.5
-  lumberjack 1.0.5
-  method_source 0.8.2
   mime-types 1.23
   nanoc 3.6.3
-  pry 0.9.12.6
   rack 1.5.2
-  rb-fsevent 0.9.4
-  rb-inotify 0.9.4
   sass 3.2.9
-  slop 3.5.0
-  thor 0.19.1
-  timers 1.1.0
 
 ===== ENVIRONMENT:
 
-Apple_PubSub_Socket_Render => "/tmp/launch-JLgWHB/Render"
-BUNDLE_BIN_PATH => "/Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/bundler-1.5.3/bin/bundle"
-BUNDLE_GEMFILE => "/Users/luowei/Documents/workspace/github/steedos-sites/Gemfile"
-COLUMNS => "80"
-GEM_HOME => "/Users/luowei/.rvm/gems/ruby-1.9.3-p484"
-GEM_PATH => "/Users/luowei/.rvm/gems/ruby-1.9.3-p484:/Users/luowei/.rvm/gems/ruby-1.9.3-p484@global"
-GUARD_NOTIFIERS => "---\n- :name: :terminal_title\n  :options:\n    :silent: true\n"
-GUARD_NOTIFY => "true"
-HOME => "/Users/luowei"
-IRBRC => "/Users/luowei/.rvm/rubies/ruby-1.9.3-p484/.irbrc"
+BUNDLE_BIN_PATH => "/Library/Ruby/Gems/2.0.0/gems/bundler-1.6.2/bin/bundle"
+BUNDLE_GEMFILE => "/Users/marchtian/steedos-sites/Gemfile"
+GEM_HOME => "/Library/Ruby/Gems/2.0.0"
+GEM_PATH => "/Library/Ruby/Gems/2.0.0:/Users/marchtian/.gem/ruby/2.0.0:/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/gems/2.0.0"
+HOME => "/Users/marchtian"
 LANG => "zh_CN.UTF-8"
-LINES => "24"
-LOGNAME => "luowei"
-MY_RUBY_HOME => "/Users/luowei/.rvm/rubies/ruby-1.9.3-p484"
-NVM_DIR => "/Users/luowei/.nvm"
-OLDPWD => "/Users/luowei/Documents/workspace/github"
-PATH => "/Users/luowei/.rvm/gems/ruby-1.9.3-p484/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin/:/Library/PostgreSQL/9.3/bin/:/Users/luowei/Documents/projects/adt-bundle-mac/sdk/platform-tools:/Users/luowei/Documents/projects/adt-bundle-mac/sdk/tools:/Users/luowei/.rvm/gems/ruby-1.9.3-p484@global/bin:/Users/luowei/.rvm/rubies/ruby-1.9.3-p484/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/mysql/bin:.npm:/Users/luowei/.rvm/bin"
-PWD => "/Users/luowei/Documents/workspace/github/steedos-sites"
-RUBYLIB => "/Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/bundler-1.5.3/lib"
+LOGNAME => "root"
+MAIL => "/var/mail/root"
+PATH => "/Library/Ruby/Gems/2.0.0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+RUBYLIB => "/Library/Ruby/Gems/2.0.0/gems/bundler-1.6.2/lib"
 RUBYOPT => "-rbundler/setup"
-SECURITYSESSIONID => "186a4"
 SHELL => "/bin/bash"
-SHLVL => "1"
-SSH_AUTH_SOCK => "/tmp/launch-njdnhA/Listeners"
+SSH_AUTH_SOCK => "/tmp/launch-LJ1cCN/Listeners"
+SUDO_COMMAND => "/usr/bin/nanoc view"
+SUDO_GID => "20"
+SUDO_UID => "501"
+SUDO_USER => "marchtian"
 TERM => "xterm-256color"
-TERM_PROGRAM => "Apple_Terminal"
-TERM_PROGRAM_VERSION => "326"
-TERM_SESSION_ID => "00AC09D9-74F8-4E49-8FCC-C5307E1B013B"
-TMPDIR => "/var/folders/lq/18r8vjns4_5384tcscfq7d580000gn/T/"
-USER => "luowei"
-_ => "/Users/luowei/.rvm/gems/ruby-1.9.3-p484/bin/bundle"
-_ORIGINAL_GEM_PATH => "/Users/luowei/.rvm/gems/ruby-1.9.3-p484:/Users/luowei/.rvm/gems/ruby-1.9.3-p484@global"
+USER => "root"
+USERNAME => "root"
 __CF_USER_TEXT_ENCODING => "0x1F5:25:52"
-__CHECKFIX1436934 => "1"
-_system_arch => "x86_64"
-_system_name => "OSX"
-_system_type => "Darwin"
-_system_version => "10.9"
-rvm_bin_path => "/Users/luowei/.rvm/bin"
-rvm_path => "/Users/luowei/.rvm"
-rvm_prefix => "/Users/luowei"
-rvm_version => "1.25.15 (stable)"
 
 ===== GEMFILE.LOCK:
 
@@ -102,10 +92,7 @@ GEM
   specs:
     adsf (1.1.1)
       rack (>= 1.0.0)
-    celluloid (0.15.2)
-      timers (~> 1.1.0)
     chunky_png (1.2.8)
-    coderay (1.1.0)
     colored (1.2)
     compass (0.12.2)
       chunky_png (~> 1.2)
@@ -113,39 +100,12 @@ GEM
       sass (~> 3.1)
     cri (2.3.0)
       colored (>= 1.2)
-    ffi (1.9.3)
-    formatador (0.2.4)
     fssm (0.2.10)
-    guard (2.6.1)
-      formatador (>= 0.2.4)
-      listen (~> 2.7)
-      lumberjack (~> 1.0)
-      pry (>= 0.9.12)
-      thor (>= 0.18.1)
-    guard-nanoc (1.0.2)
-      guard (>= 1.8.0)
-      nanoc (>= 3.6.3)
-    listen (2.7.5)
-      celluloid (>= 0.15.2)
-      rb-fsevent (>= 0.9.3)
-      rb-inotify (>= 0.9)
-    lumberjack (1.0.5)
-    method_source (0.8.2)
     mime-types (1.23)
     nanoc (3.6.3)
       cri (~> 2.3)
-    pry (0.9.12.6)
-      coderay (~> 1.0)
-      method_source (~> 0.8)
-      slop (~> 3.4)
     rack (1.5.2)
-    rb-fsevent (0.9.4)
-    rb-inotify (0.9.4)
-      ffi (>= 0.5.0)
     sass (3.2.9)
-    slop (3.5.0)
-    thor (0.19.1)
-    timers (1.1.0)
 
 PLATFORMS
   ruby
@@ -154,45 +114,31 @@ DEPENDENCIES
   adsf
   compass
   fssm
-  guard-nanoc
   mime-types
   nanoc
 
 ===== LOAD PATHS:
 
-  0. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/mime-types-1.23/lib
-  1. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/guard-nanoc-1.0.2/lib
-  2. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/nanoc-3.6.3/lib
-  3. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/guard-2.6.1/lib
-  4. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/thor-0.19.1/lib
-  5. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/pry-0.9.12.6/lib
-  6. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/slop-3.5.0/lib
-  7. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/method_source-0.8.2/lib
-  8. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/lumberjack-1.0.5/lib
-  9. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/listen-2.7.5/lib
-  10. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/rb-inotify-0.9.4/lib
-  11. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/rb-fsevent-0.9.4/lib
-  12. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/formatador-0.2.4/lib
-  13. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/extensions/x86_64-darwin-13/1.9.1/ffi-1.9.3
-  14. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/ffi-1.9.3/lib
-  15. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/ffi-1.9.3/ext/ffi_c
-  16. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/cri-2.3.0/lib
-  17. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/compass-0.12.2/lib
-  18. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/sass-3.2.9/lib
-  19. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/fssm-0.2.10/lib
-  20. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/colored-1.2/lib
-  21. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/coderay-1.1.0/lib
-  22. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/chunky_png-1.2.8/lib
-  23. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/celluloid-0.15.2/lib
-  24. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/timers-1.1.0/lib
-  25. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/adsf-1.1.1/lib
-  26. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.5.2/lib
-  27. /Users/luowei/.rvm/gems/ruby-1.9.3-p484/gems/bundler-1.5.3/lib
-  28. /Users/luowei/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/site_ruby/1.9.1
-  29. /Users/luowei/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/site_ruby/1.9.1/x86_64-darwin13.0.0
-  30. /Users/luowei/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/site_ruby
-  31. /Users/luowei/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/vendor_ruby/1.9.1
-  32. /Users/luowei/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/vendor_ruby/1.9.1/x86_64-darwin13.0.0
-  33. /Users/luowei/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/vendor_ruby
-  34. /Users/luowei/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1
-  35. /Users/luowei/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/x86_64-darwin13.0.0
+  0. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib
+  1. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib
+  2. /Library/Ruby/Gems/2.0.0/gems/mime-types-1.23/lib
+  3. /Library/Ruby/Gems/2.0.0/gems/cri-2.3.0/lib
+  4. /Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/lib
+  5. /Library/Ruby/Gems/2.0.0/gems/sass-3.2.9/lib
+  6. /Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib
+  7. /Library/Ruby/Gems/2.0.0/gems/colored-1.2/lib
+  8. /Library/Ruby/Gems/2.0.0/gems/chunky_png-1.2.8/lib
+  9. /Library/Ruby/Gems/2.0.0/gems/adsf-1.1.1/lib
+  10. /Library/Ruby/Gems/2.0.0/gems/rack-1.5.2/lib
+  11. /Library/Ruby/Gems/2.0.0/gems/bundler-1.6.2/lib
+  12. /Library/Ruby/Site/2.0.0
+  13. /Library/Ruby/Site/2.0.0/x86_64-darwin13
+  14. /Library/Ruby/Site/2.0.0/universal-darwin13
+  15. /Library/Ruby/Site
+  16. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/vendor_ruby/2.0.0
+  17. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/vendor_ruby/2.0.0/x86_64-darwin13
+  18. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/vendor_ruby/2.0.0/universal-darwin13
+  19. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/vendor_ruby
+  20. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0
+  21. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/x86_64-darwin13
+  22. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/universal-darwin13
