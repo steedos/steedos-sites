@@ -45,6 +45,11 @@ compile '/cn/chat/*' do
   layout 'chat_cn'
 end
 
+compile '/cn/otask/*' do
+  filter :erb
+  layout 'otask_cn'
+end
+
 compile '/cn*' do
   filter :erb
   layout 'steedos_cn'

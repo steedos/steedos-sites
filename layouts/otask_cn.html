@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <title><%= @item[:title] %></title>
+  <meta name="Description" content="oTask是...。">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"  >
+  <meta content="initial-scale=1" name="viewport"/>
+            
+  <link href="/website/static/lib/fontawesome/css/font-awesome.css" rel="stylesheet"/>
+            
+  <link href="/website/static/src/css/bootswatch/spacelab.min.css" rel="stylesheet"/>
+  <link href="/website/static/src/css/bootswatch/spacelab.fix.css" rel="stylesheet"/>
+  <link href="/website/css/odoo/website.css" id="website_css" rel="stylesheet"/>
+  <link href="/website/css/steedos.css" id="steedos_css" rel="stylesheet"/>
+
+
+  <script src="/website/js/odoo/es5-shim.min.js" type="text/javascript"></script>
+  <script src="/website/js/odoo/underscore.js" type="text/javascript"></script>
+  <script src="/website/js/odoo/underscore_string.js" type="text/javascript"></script>
+  <script src="/website/js/odoo/jquery.js" type="text/javascript"></script>
+  <script type="text/javascript">
+      // Bootstrap and jQuery UI conflicts
+      $.fn.bstooltip = $.fn.tooltip;
+      $.fn.bsbutton = $.fn.button;
+  </script>
+
+  <script src="/website/js/odoo/qweb2.js" type="text/javascript"></script>
+  <script src="/website/js/odoo/openerpframework.js" type="text/javascript"></script>
+
+  <script src="/website/js/odoo/website.js" type="text/javascript"></script>
+  
+  <script type="text/javascript" src="/website/js/odoo/website_snippets_animation.js"></script>
+  <script src="/website/js/odoo/bootstrap.js" type="text/javascript"></script>
+
+  <script src="/website/js/steedos/signup.js" type="text/javascript"></script>
+
+</head>
+<body>
+ 
+<div id="wrapwrap">
+  <header>
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+            <button data-toggle="collapse" type="button" class="navbar-toggle" data-target=".navbar-top-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/cn/" class="navbar-brand">oTask</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-top-collapse">
+          <ul class="nav navbar-nav navbar-right" id="top_menu">                              
+                    
+            <!--
+            <%= nav "审批王", "cn/workflow" %>
+            <%= nav "享聊", "cn/chat" %>
+            -->
+            <li>
+                <a href="/system/steedos/#register" target="_steedos_signup">
+                    <b>注册试用</b>
+                </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="/system/steedos/">
+                    <b>客户登录</b>
+                </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div id="wrap" class="oe_structure oe_empty">
+  <%= yield %>
+    </div>
+  </main>
+  <footer>
+    <div class="container hidden-print" id="footer_container">
+        <div class="row">
+            <div class="col-md-3" name="product">
+                <h4>骏马云 Apps</h4>
+                <ul class="list-unstyled" name="products">
+                    <li><a href="/cn/workflow">审批王</a></li>
+                    <li><a href="/cn/chat">享聊</a></li>
+                    <li><a href="/cn/otask">oTask</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3" name="info">
+                <h4 name="info_title">联系我们</h4>
+                <ul class="list-unstyled">
+                    <li><a href="/cn/steedos/contactus">联系方式</a></li>
+                </ul>
+                <ul class="list-unstyled">
+                    <li><i class="fa fa-phone"></i> <span>400-820-1612</span></li>
+                    <li><i class="fa fa-envelope"></i>  <span>support@steedos.com</span></li>
+                </ul>
+                <h2>
+                    
+                </h2>
+            </div>
+            <div class="col-md-5 col-lg-offset-1" name="about_us">
+                <div>
+                    <h4>
+                        <span>关于oTask</span>
+                        <small> - <a href="/cn/">oTask有什么功能？</a></small>
+                    </h4>
+                    <p>                        
+                      oTask是全新的企业级任务管理系统，...。
+                    </p>
+                </div>
+                <ul class="list-inline js_language_selector mt16"><li><a href="/us/" >English</a></li><li><a href="/cn/" >简体中文</a></li></ul>
+                
+            </div>
+        </div>
+    </div>
+    <div class="container mt16 mb8">
+        <!--
+        <div class="pull-right">
+            免费的<a href="http://www.steedos.com/">云端企业管理软件</a>，尽在
+            <a href="http://www.steedos.com/" class="label label-danger">SteedOS.com</a>
+        </div>
+        -->
+
+        <div class="pull-left text-muted">
+            版权所有 © 华炎软件. 保留所有权利. 
+                <a href="/cn/legal/terms/" target="_steedos_terms">条款与约定</a> | 
+                <a href="/cn/legal/privacy/" target="_steedos_privacy">隐私保护</a>
+        </div>
+    </div>
+  </footer>
+</div>
+
+
+</body>
+</html>
