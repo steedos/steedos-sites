@@ -2,3 +2,4 @@ output/*
 tmp
 .DS_Store
 .sass-cache
+content/cn/otask/index.html
