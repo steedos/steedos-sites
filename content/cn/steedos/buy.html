@@ -1,8 +1,172 @@
 ---
 title: 购买应用
-id: cn/steedos/buy
+id: cn/steedos/buy 
 ---
+    <script type="text/javascript">
+      var user_id = '';
+      var steedos_id = '';
+      var space_name = '';
+      var user_count = '';
+      var space_user_count = '';
+      var module_name = '';
+      var listprice = '';
+      var space_id = '';
+      var module = '';
+      var buymonth = '';
+      var amount = '';
+      var from = '';
 
+      // var submitUrl = 'https://www.sandbox.paypal.com/cgi-bin/webscr';
+      // var business = 'hongyu@hotoa.com';
+      // var notify_url = 'https://setup-beta.steedos.com:443';
+      // var env = 'www.sandbox';
+      var submitUrl = 'https://www.paypal.com/cgi-bin/webscr';
+      var business = 'payments@hotlong.com';
+      var notify_url = 'https://setup.steedos.com:443';
+      var env = 'www';
+
+      function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+      }
+      
+      var start;
+      window.onload = function () {
+        if(document.all) {//简单判断是否是IE
+          start = setInterval('updatePage()', 1000);
+        } else {
+          //要执行的语句
+          setPageValues();
+        }
+      }
+
+      function updatePage() {
+        if (document.readyState == "complete") {
+          try{
+            setPageValues();
+            clearInterval(start);//执行成功，清除监听
+          }catch(err){return true;}
+        }
+      }
+
+      function setPageValues () {
+
+        buymonth = document.getElementById("buymonth").value;
+        if ( getQueryString("editable") == 'no'){
+          steedos_id = getQueryString("steedos_id");
+          space_id = getQueryString("space_id");
+          space_name = decodeURI(decodeURI(getQueryString("space_name")));
+          user_count = getQueryString("user_count");
+          space_user_count = user_count
+          module = getQueryString("module");
+          module_name = decodeURI(decodeURI(getQueryString("module_name")));
+          listprice = getQueryString("listprice");
+
+          submitUrl = getQueryString("submitUrl");
+          business = getQueryString("business");
+          notify_url = getQueryString("notify_url");
+          env = getQueryString("env");
+
+          document.getElementById("steedos_id").value = steedos_id;
+          document.getElementById("space_name").value = space_name;
+          document.getElementById("user_count").value = user_count;
+          document.getElementById("module_name").value = module_name;
+          document.getElementById("listprice").value = listprice;
+
+          // $('input').attr("readonly","readonly");
+          // $('input').removeAttr("readonly");
+          $("#steedos_id").attr("readonly", "readonly");
+          $("#space_name").attr("readonly", "readonly");
+          document.getElementById("buymonth").addEventListener("change",webChange,false);
+          document.getElementById("user_count").addEventListener("input",webChange,false);
+          caculate();
+        } else {
+          from = getQueryString("from");
+          if (from == "workflow"){
+            module_name = "审批王专业版";
+            listprice = "3";
+          } else if (from == "chat"){
+            module_name = "享聊专业版";
+            listprice = "1";
+          }
+          document.getElementById("space_name").addEventListener("input",space_name_change,false);
+          document.getElementById("steedos_id").addEventListener("input",steedos_id_change,false);
+          document.getElementById("user_count").addEventListener("input",webChange,false);
+          document.getElementById("buymonth").addEventListener("change",webChange,false);
+        }
+
+        document.getElementById("module_name").value = module_name;
+        document.getElementById("listprice").value = listprice;
+      }
+
+      function caculate () {
+        amount = user_count*listprice*buymonth;
+        document.getElementById("amount").innerText = amount
+      }
+
+      function webChange () {
+        user_count = document.getElementById("user_count").value;
+        buymonth = document.getElementById("buymonth").value;
+        caculate();
+      }
+
+      function steedos_id_change () {
+        steedos_id = document.getElementById("steedos_id").value;
+      }
+
+      function space_name_change () {
+        space_name = document.getElementById("space_name").value;
+      }
+
+      function toPay(){
+        // 校验 必填
+        if (listprice.trim()==""){
+          alert("单价不能为空");
+          return;
+        }
+        if (space_name.trim()==""){
+          alert("充值的工作区名称不能为空");
+          return;
+        }
+        if (user_count.trim()=="" || Number(user_count)<Number(space_user_count)){
+          alert("输入的用户数不能小于当前工作区用户数");
+          return;
+        }
+
+        var jquery = $('<div></div>'),formHtml = '',formFlag = null;
+        if (jquery) {
+            formHtml += '<form method="post" action="'+submitUrl+'" target="_blank" style="opacity: 1;"> ';
+            formHtml += '<input type="hidden" name="business" value="'+business+'">';
+            formHtml += '<input type="hidden" name="item_name" value="SteedOS">';
+            formHtml += '<input type="hidden" name="quantity" value="1">';
+            formHtml += '<input type="hidden" name="amount" value="'+amount+'">';
+            formHtml += '<input type="hidden" name="currency_code" value="USD">';
+            formHtml += '<input type="hidden" name="notify_url" value="'+notify_url+'/se/billing/pay?space_id='+space_id+'&amount='+amount+'&user_id='+user_id+'&steedos_id='+steedos_id+'&type=p&modules='+module+'&module_name='+encodeURI(module_name)+'&space_name='+encodeURI(space_name)+'&listprice='+listprice+'&user_count='+user_count+'&buymonth='+buymonth+'">';
+            formHtml += '<input type="hidden" name="env" value="'+env+'">';
+            formHtml += '<input type="hidden" name="cmd" value="_xclick">';
+            formHtml += '</form>';
+            jquery.html(formHtml);
+            jquery.appendTo("body");
+            formFlag = jquery.find("form");
+            formFlag.submit();
+            jquery.remove();
+        }
+      }
+
+      function IsNum(e) {
+          var k = window.event ? e.keyCode : e.which;
+          if (((k >= 48) && (k <= 57)) || k == 8 || k == 0) {
+          } else {
+              if (window.event) {
+                  window.event.returnValue = false;
+              }
+              else {
+                  e.preventDefault(); //for firefox 
+              }
+          }
+      } 
+    </script>
     <div data-oe-id="329" data-oe-field="arch" data-oe-model="ir.ui.view" class="oe_structure oe_empty" id="wrap" data-oe-xpath="/t[1]/t[1]/div[1]">
       <section class="mb16">
         <div class="container">
@@ -89,8 +253,11 @@ id: cn/steedos/buy
                     <div class="panel-heading">
                       <h3 class="panel-title">1. 我购买的应用</h3>
                     </div>
-                    <p class="panel-body">XXXX（显示通过参数传进来的module名称和单价）<br/><br/>
-$ 3.00/用户/月</p>
+                    <p class="panel-body"> 
+                      <input  id="module_name" type="text" readonly="readonly"/>
+                      <br/><br/>
+                      $<input  id="listprice" type="text" style="width:30px;text-align: right;" onkeypress="return IsNum(event)" readonly="readonly"/> .00/用户/月
+                    </p>
                   </div>
                   <h3>
                     <span class="s1">
@@ -121,28 +288,35 @@ $ 3.00/用户/月</p>
                     <div class="panel-heading">
                       <h3 class="panel-title">2. 我的基本信息</h3>
                     </div>
-                    <p class="panel-body">骏马登录邮箱：<u style="font-size: 17px; line-height: 24px;">YYYYYY</u><br/><span style="line-height: 1.428571429;">充值的工作区：</span><u style="line-height: 1.428571429;">YYYYYY</u><br/><span style="line-height: 1.428571429;">（显示通过参数传进来的工作区名称）</span><br/><span style="line-height: 1.428571429;">默认空，若没有参数，则显示为可填写的空格，必填</span></p>
+                    <p class="panel-body">骏马登录邮箱：<input id="steedos_id" type="text" /><br/><br/>充值的工作区：<input id="space_name" /><br/></p>
                   </div>
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h3 class="panel-title">3. 工作区中有多少用户？</h3>
                     </div>
-                    <p class="panel-body"><u></u><u></u><u> 10 </u> 人（通过参数传进来的用户数）<br/><span style="font-size: 17px; line-height: 24px;">若没有参数则显示为可填写的空格，必填</span></p>
+                    <p class="panel-body"><input id='user_count' type="text" style="width:60px;text-align: right;" onkeypress="return IsNum(event)"/> 人</p>
                   </div>
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h3 class="panel-title">4. 我要购买多长时间？</h3>
                     </div>
-                    <p class="panel-body"><u> 12  </u>个月(下拉控件选择，默认为12)<u></u></p>
+                    <p class="panel-body">
+                      <select id='buymonth'>
+                        <option>12</option>
+                        <option>24</option>
+                        <option>36</option>
+                        <option>48</option>
+                        <option>60</option>
+                      </select> 个月</p>
                   </div>
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h3 class="panel-title">5. 计算我的付款金额</h3>
                     </div>
-                    <p class="panel-body">US$ 123456.00（系统自动统计的结果）</p>
+                    <p class="panel-body">US$ <label id="amount" >0</label>.00</p>
                   </div>
                   <p style="text-align: center;">
-                    <a href="http://www.paypal.com" class="btn btn-success" target="_blank">我要付款</a>
+                    <a onclick="toPay()" class="btn btn-success" target="_blank">我要付款</a>
                   </p>
                   <p>
                     <span style="line-height: 1.428571429;"></span>

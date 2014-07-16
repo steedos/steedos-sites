@@ -2,7 +2,171 @@
 title: Purchase
 id: us/steedos/buy
 ---
+    <script type="text/javascript">
+      var user_id = '';
+      var steedos_id = '';
+      var space_name = '';
+      var user_count = '';
+      var space_user_count = '';
+      var module_name = '';
+      var listprice = '';
+      var space_id = '';
+      var module = '';
+      var buymonth = '';
+      var amount = '';
+      var from = '';
 
+      // var submitUrl = 'https://www.sandbox.paypal.com/cgi-bin/webscr';
+      // var business = 'hongyu@hotoa.com';
+      // var notify_url = 'https://setup-beta.steedos.com:443';
+      // var env = 'www.sandbox';
+      var submitUrl = 'https://www.paypal.com/cgi-bin/webscr';
+      var business = 'payments@hotlong.com';
+      var notify_url = 'https://setup.steedos.com:443';
+      var env = 'www';
+
+      function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+      }
+      
+      var start;
+      window.onload = function () {
+        if(document.all) {//简单判断是否是IE
+          start = setInterval('updatePage()', 1000);
+        } else {
+          //要执行的语句
+          setPageValues();
+        }
+      }
+
+      function updatePage() {
+        if (document.readyState == "complete") {
+          try{
+            setPageValues();
+            clearInterval(start);//执行成功，清除监听
+          }catch(err){return true;}
+        }
+      }
+
+      function setPageValues () {
+        buymonth = document.getElementById("buymonth").value;
+        if ( getQueryString("editable") == 'no'){
+          steedos_id = getQueryString("steedos_id");
+          space_id = getQueryString("space_id");
+          space_name = decodeURI(decodeURI(getQueryString("space_name")));
+          user_count = getQueryString("user_count");
+          space_user_count = user_count
+          module = getQueryString("module");
+          module_name = decodeURI(decodeURI(getQueryString("module_name")));
+          listprice = getQueryString("listprice");
+
+          submitUrl = getQueryString("submitUrl");
+          business = getQueryString("business");
+          notify_url = getQueryString("notify_url");
+          env = getQueryString("env");
+
+          document.getElementById("steedos_id").value = steedos_id;
+          document.getElementById("space_name").value = space_name;
+          document.getElementById("user_count").value = user_count;
+          document.getElementById("module_name").value = module_name;
+          document.getElementById("listprice").value = listprice;
+
+          // $('input').attr("readonly","readonly");
+          // $('input').removeAttr("readonly");
+          $("#steedos_id").attr("readonly", "readonly");
+          $("#space_name").attr("readonly", "readonly");
+
+          document.getElementById("buymonth").addEventListener("change",webChange,false);
+          document.getElementById("user_count").addEventListener("input",webChange,false);
+          caculate();
+        } else {
+          from = getQueryString("from");
+          if (from == "workflow"){
+            module_name = "workflow.professional";
+            listprice = "3";
+          } else if (from == "chat"){
+            module_name = "chat.professional";
+            listprice = "1";
+          }
+          document.getElementById("space_name").addEventListener("input",space_name_change,false);
+          document.getElementById("steedos_id").addEventListener("input",steedos_id_change,false);
+          document.getElementById("user_count").addEventListener("input",webChange,false);
+          document.getElementById("buymonth").addEventListener("change",webChange,false);
+        }
+
+        document.getElementById("module_name").value = module_name;
+        document.getElementById("listprice").value = listprice;
+      }
+
+      function caculate () {
+        amount = user_count*listprice*buymonth;
+        document.getElementById("amount").innerText = amount
+      }
+
+      function webChange () {
+        user_count = document.getElementById("user_count").value;
+        buymonth = document.getElementById("buymonth").value;
+        caculate();
+      }
+
+      function steedos_id_change () {
+        steedos_id = document.getElementById("steedos_id").value;
+      }
+
+      function space_name_change () {
+        space_name = document.getElementById("space_name").value;
+      }
+
+      function toPay(){
+        // 校验 必填
+        if (listprice.trim()==""){
+          alert("price is null");
+          return;
+        }
+        if (space_name.trim()==""){
+          alert("The name of space is null");
+          return;
+        }
+        if (user_count.trim()=="" || Number(user_count)<Number(space_user_count)){
+          alert("Your space has too many members to purchase to this user count.");
+          return;
+        }
+
+        var jquery = $('<div></div>'),formHtml = '',formFlag = null;
+        if (jquery) {
+            formHtml += '<form method="post" action="'+submitUrl+'" target="_blank" style="opacity: 1;"> ';
+            formHtml += '<input type="hidden" name="business" value="'+business+'">';
+            formHtml += '<input type="hidden" name="item_name" value="SteedOS">';
+            formHtml += '<input type="hidden" name="quantity" value="1">';
+            formHtml += '<input type="hidden" name="amount" value="'+amount+'">';
+            formHtml += '<input type="hidden" name="currency_code" value="USD">';
+            formHtml += '<input type="hidden" name="notify_url" value="'+notify_url+'/se/billing/pay?space_id='+space_id+'&amount='+amount+'&user_id='+user_id+'&steedos_id='+steedos_id+'&type=p&modules='+module+'&module_name='+encodeURI(module_name)+'&space_name='+encodeURI(space_name)+'&listprice='+listprice+'&user_count='+user_count+'&buymonth='+buymonth+'">';
+            formHtml += '<input type="hidden" name="env" value="'+env+'">';
+            formHtml += '<input type="hidden" name="cmd" value="_xclick">';
+            formHtml += '</form>';
+            jquery.html(formHtml);
+            jquery.appendTo("body");
+            formFlag = jquery.find("form");
+            formFlag.submit();
+            jquery.remove();
+        }
+      }
+
+      function IsNum(e) {
+          var k = window.event ? e.keyCode : e.which;
+          if (((k >= 48) && (k <= 57)) || k == 8 || k == 0) {
+          } else {
+              if (window.event) {
+                  window.event.returnValue = false;
+              }
+              else {
+                  e.preventDefault(); //for firefox 
+              }
+          }
+      } 
+    </script>
     <div data-oe-id="330" data-oe-field="arch" data-oe-model="ir.ui.view" class="oe_structure oe_empty" id="wrap" data-oe-xpath="/t[1]/t[1]/div[1]">
       <section class="mb16">
         <div class="container">
@@ -18,36 +182,45 @@ id: us/steedos/buy
                     <div class="panel-heading">
                       <h3 class="panel-title">1. Your App</h3>
                     </div>
-                    <div class="panel-body">XXXXX</div>
-                    <div class="panel-body">US$ 3.00/user/month</div>
+                    <p class="panel-body">
+                      <input  id="module_name" type="text" readonly="readonly"/>
+                      <br/><br/>
+                      $<input  id="listprice" type="text" style="width:30px;text-align: right;" onkeypress="return IsNum(event)" readonly="readonly"/> .00/user/month
+                    </p>
                   </div>
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h3 class="panel-title">2. Personal Basic Info</h3>
                     </div>
-                    <div class="panel-body">Steedos Login name：<br/>
-My Steedos space：</div>
+                    <p class="panel-body">Steedos Login name：<input id="steedos_id" type="text" /><br/><br/>My Steedos space：<input id="space_name" /><br/></p>
                   </div>
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h3 class="panel-title">3. How many users will you have?</h3>
                     </div>
-                    <div class="panel-body"> _____ users</div>
+                    <p class="panel-body"><input id='user_count' type="text" style="width:60px;text-align: right;" onkeypress="return IsNum(event)"/> users</p>
                   </div>
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h3 class="panel-title">4. How long will you subscribe?</h3>
                     </div>
-                    <div class="panel-body"> _____ months</div>
+                    <p class="panel-body">
+                      <select id='buymonth'>
+                        <option>12</option>
+                        <option>24</option>
+                        <option>36</option>
+                        <option>48</option>
+                        <option>60</option>
+                      </select> months</p>
                   </div>
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h3 class="panel-title">5. How much will you pay?</h3>
                     </div>
-                    <div class="panel-body"> US$ </div>
+                    <p class="panel-body">US$ <label id="amount" >0</label>.00</p>
                   </div>
                   <h3 style="text-align: center;" class="mt0 mb0">
-                    <a href="http://www.paypal.com" class="btn btn-success">Pay the bill</a>
+                    <a onclick="toPay()" class="btn btn-success" target="_blank">Pay the bill</a>
                   </h3>
                 </div>
               </div>
