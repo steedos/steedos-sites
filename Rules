@@ -40,6 +40,11 @@ compile '/cn/help/*' do
   layout 'help_cn'
 end
 
+compile '/cn/developer/*' do
+  filter :erb
+  layout 'developer_cn'
+end
+
 compile '/cn/chat/*' do
   filter :erb
   layout 'chat_cn'
