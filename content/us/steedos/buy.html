@@ -18,11 +18,11 @@ id: us/steedos/buy
 
       // var submitUrl = 'https://www.sandbox.paypal.com/cgi-bin/webscr';
       // var business = 'hongyu@hotoa.com';
-      // var notify_url = 'https://setup-beta.steedos.com:443';
+      // var notify_url = 'https://beta-adminws.steedos.com:443';
       // var env = 'www.sandbox';
       var submitUrl = 'https://www.paypal.com/cgi-bin/webscr';
       var business = 'payments@hotlong.com';
-      var notify_url = 'https://setup.steedos.com:443';
+      var notify_url = 'https://adminws.steedos.com:443';
       var env = 'www';
 
       function getQueryString(name) {
@@ -53,6 +53,7 @@ id: us/steedos/buy
       function setPageValues () {
         buymonth = document.getElementById("buymonth").value;
         if ( getQueryString("editable") == 'no'){
+          user_id = getQueryString("user_id");
           steedos_id = getQueryString("steedos_id");
           space_id = getQueryString("space_id");
           space_name = decodeURI(decodeURI(getQueryString("space_name")));
@@ -142,7 +143,7 @@ id: us/steedos/buy
             formHtml += '<input type="hidden" name="quantity" value="1">';
             formHtml += '<input type="hidden" name="amount" value="'+amount+'">';
             formHtml += '<input type="hidden" name="currency_code" value="USD">';
-            formHtml += '<input type="hidden" name="notify_url" value="'+notify_url+'/se/billing/pay?space_id='+space_id+'&amount='+amount+'&user_id='+user_id+'&steedos_id='+steedos_id+'&type=p&modules='+module+'&module_name='+encodeURI(module_name)+'&space_name='+encodeURI(space_name)+'&listprice='+listprice+'&user_count='+user_count+'&buymonth='+buymonth+'">';
+            formHtml += '<input type="hidden" name="notify_url" value="'+notify_url+'/se/billing/pay?space_id='+space_id+'&amount='+amount+'&user_id='+user_id+'&steedos_id='+steedos_id+'&type=p&modules='+module+'&module_name='+encodeURI(module_name)+'&space_name='+encodeURI(space_name)+'&listprice='+listprice+'&user_count='+user_count+'&buymonth='+buymonth+'&noauth=true'+'">';
             formHtml += '<input type="hidden" name="env" value="'+env+'">';
             formHtml += '<input type="hidden" name="cmd" value="_xclick">';
             formHtml += '</form>';
