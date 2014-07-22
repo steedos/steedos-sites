@@ -1,4 +1,4 @@
-Crashlog created at 2014-07-14 09:37:39 +0800
+Crashlog created at 2014-07-22 11:03:37 +0800
 
 ===== MESSAGE:
 
@@ -10,49 +10,47 @@ Errno::EADDRINUSE: Address already in use - bind(2)
 
 ===== STACK TRACE:
 
-  0. /Users/sunhaorin/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/utils.rb:85:in `initialize'
-  1. /Users/sunhaorin/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/utils.rb:85:in `new'
-  2. /Users/sunhaorin/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/utils.rb:85:in `block in create_listeners'
-  3. /Users/sunhaorin/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/utils.rb:82:in `each'
-  4. /Users/sunhaorin/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/utils.rb:82:in `create_listeners'
-  5. /Users/sunhaorin/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:82:in `listen'
-  6. /Users/sunhaorin/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:70:in `initialize'
-  7. /Users/sunhaorin/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:45:in `initialize'
-  8. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/rack-1.5.2/lib/rack/handler/webrick.rb:11:in `new'
-  9. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/rack-1.5.2/lib/rack/handler/webrick.rb:11:in `run'
-  10. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib/nanoc/cli/commands/view.rb:51:in `run'
-  11. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib/nanoc/cli/command_runner.rb:14:in `block in call'
-  12. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib/nanoc/cli/error_handler.rb:70:in `handle_while'
-  13. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
-  14. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib/nanoc/cli/command_runner.rb:13:in `call'
-  15. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/cri-2.3.0/lib/cri/command_dsl.rb:185:in `block in runner'
-  16. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/cri-2.3.0/lib/cri/command.rb:296:in `call'
-  17. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/cri-2.3.0/lib/cri/command.rb:296:in `run_this'
-  18. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/cri-2.3.0/lib/cri/command.rb:249:in `run'
-  19. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/cri-2.3.0/lib/cri/command.rb:262:in `run'
-  20. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib/nanoc/cli.rb:52:in `block in run'
-  21. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib/nanoc/cli/error_handler.rb:70:in `handle_while'
-  22. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
-  23. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib/nanoc/cli.rb:50:in `run'
-  24. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/bin/nanoc:19:in `<top (required)>'
-  25. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/bin/nanoc:19:in `load'
-  26. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/bin/nanoc:19:in `<main>'
-  27. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/bin/ruby_noexec_wrapper:14:in `eval'
-  ... 30 more lines omitted. See full crash log for details.
+  0. /Users/zhuangjianguo/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/utils.rb:85:in `initialize'
+  1. /Users/zhuangjianguo/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/utils.rb:85:in `new'
+  2. /Users/zhuangjianguo/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/utils.rb:85:in `block in create_listeners'
+  3. /Users/zhuangjianguo/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/utils.rb:82:in `each'
+  4. /Users/zhuangjianguo/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/utils.rb:82:in `create_listeners'
+  5. /Users/zhuangjianguo/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:132:in `listen'
+  6. /Users/zhuangjianguo/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:113:in `initialize'
+  7. /Users/zhuangjianguo/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:45:in `initialize'
+  8. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/rack-1.5.2/lib/rack/handler/webrick.rb:11:in `new'
+  9. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/rack-1.5.2/lib/rack/handler/webrick.rb:11:in `run'
+  10. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/nanoc-3.6.7/lib/nanoc/cli/commands/view.rb:55:in `run'
+  11. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/nanoc-3.6.7/lib/nanoc/cli/command_runner.rb:14:in `block in call'
+  12. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/nanoc-3.6.7/lib/nanoc/cli/error_handler.rb:70:in `handle_while'
+  13. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/nanoc-3.6.7/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
+  14. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/nanoc-3.6.7/lib/nanoc/cli/command_runner.rb:13:in `call'
+  15. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/cri-2.3.0/lib/cri/command_dsl.rb:185:in `block in runner'
+  16. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/cri-2.3.0/lib/cri/command.rb:296:in `call'
+  17. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/cri-2.3.0/lib/cri/command.rb:296:in `run_this'
+  18. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/cri-2.3.0/lib/cri/command.rb:249:in `run'
+  19. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/cri-2.3.0/lib/cri/command.rb:262:in `run'
+  20. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/nanoc-3.6.7/lib/nanoc/cli.rb:59:in `block in run'
+  21. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/nanoc-3.6.7/lib/nanoc/cli/error_handler.rb:70:in `handle_while'
+  22. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/nanoc-3.6.7/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
+  23. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/nanoc-3.6.7/lib/nanoc/cli.rb:57:in `run'
+  24. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/nanoc-3.6.7/bin/nanoc:19:in `<top (required)>'
+  25. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/bin/nanoc:23:in `load'
+  ... 28 more lines omitted. See full crash log for details.
 
 ===== VERSION INFORMATION:
 
-nanoc 3.6.3 © 2007-2013 Denis Defreyne.
-Running ruby 1.9.3 (2012-11-10) on x86_64-darwin12.2.0 with RubyGems 1.8.23.
+nanoc 3.6.7 © 2007-2013 Denis Defreyne.
+Running ruby 2.0.0 (2013-06-27) on x86_64-darwin12.5.0 with RubyGems 2.0.3.
 
 ===== SYSTEM INFORMATION:
 
-Darwin beta-uuflowws.steedos.com 13.0.0 Darwin Kernel Version 13.0.0: Thu Sep 19 22:22:27 PDT 2013; root:xnu-2422.1.72~6/RELEASE_X86_64 x86_64
+Darwin JackAir2013.local 13.3.0 Darwin Kernel Version 13.3.0: Tue Jun  3 21:27:35 PDT 2014; root:xnu-2422.110.17~1/RELEASE_X86_64 x86_64
 
 ===== INSTALLED GEMS:
 
   adsf 1.1.1
-  bundler 1.3.5
+  bundler 1.5.2
   celluloid 0.15.2
   chunky_png 1.2.8
   coderay 1.1.0
@@ -80,40 +78,44 @@ Darwin beta-uuflowws.steedos.com 13.0.0 Darwin Kernel Version 13.0.0: Thu Sep 19
 
 ===== ENVIRONMENT:
 
-Apple_PubSub_Socket_Render => "/tmp/launch-u5nQHi/Render"
-BUNDLE_BIN_PATH => "/Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/bundler-1.3.5/bin/bundle"
-BUNDLE_GEMFILE => "/Users/sunhaorin/Documents/github/steedos-sites/Gemfile"
-GEM_HOME => "/Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327"
-GEM_PATH => "/Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327:/Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327@global"
-HOME => "/Users/sunhaorin"
-IRBRC => "/Users/sunhaorin/.rvm/rubies/ruby-1.9.3-p327/.irbrc"
+Apple_PubSub_Socket_Render => "/tmp/launch-lr5X5X/Render"
+BUNDLE_BIN_PATH => "/Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/bundler-1.5.2/bin/bundle"
+BUNDLE_GEMFILE => "/Users/zhuangjianguo/Github/steedos-sites/Gemfile"
+GEM_HOME => "/Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247"
+GEM_PATH => "/Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247:/Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247@global"
+HOME => "/Users/zhuangjianguo"
+IRBRC => "/Users/zhuangjianguo/.rvm/rubies/ruby-2.0.0-p247/.irbrc"
 LANG => "zh_CN.UTF-8"
-LOGNAME => "sunhaorin"
-MY_RUBY_HOME => "/Users/sunhaorin/.rvm/rubies/ruby-1.9.3-p327"
-PATH => "/Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/bin:/Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327@global/bin:/Users/sunhaorin/.rvm/rubies/ruby-1.9.3-p327/bin:/Users/sunhaorin/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin"
-PWD => "/Users/sunhaorin/documents/github/steedos-sites"
-RUBYOPT => "-I/Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/bundler-1.3.5/lib -rbundler/setup"
-RUBY_VERSION => "ruby-1.9.3-p327"
-SECURITYSESSIONID => "186b5"
+LOGNAME => "zhuangjianguo"
+MY_RUBY_HOME => "/Users/zhuangjianguo/.rvm/rubies/ruby-2.0.0-p247"
+OLDPWD => "/Users/zhuangjianguo/github"
+PATH => "/Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/bin:/opt/local/bin:/opt/local/sbin:/Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/zhuangjianguo/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/zhuangjianguo/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+PWD => "/Users/zhuangjianguo/github/steedos-sites"
+RUBYLIB => "/Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/bundler-1.5.2/lib"
+RUBYOPT => "-rbundler/setup"
+RUBY_VERSION => "ruby-2.0.0-p247"
+SECURITYSESSIONID => "186a5"
 SHELL => "/bin/bash"
 SHLVL => "1"
-SSH_AUTH_SOCK => "/tmp/launch-aRQpuB/Listeners"
+SSH_AUTH_SOCK => "/tmp/launch-mEukxI/Listeners"
 TERM => "xterm-256color"
 TERM_PROGRAM => "Apple_Terminal"
 TERM_PROGRAM_VERSION => "326"
-TERM_SESSION_ID => "CA2223A1-F202-4D5B-9FF7-3AE42C688519"
-TMPDIR => "/var/folders/9m/tcxsl3b16y1d57f59k7___pw0000gn/T/"
-USER => "sunhaorin"
-_ => "/Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/bin/nanoc"
-_ORIGINAL_GEM_PATH => "/Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327:/Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327@global"
-__CF_USER_TEXT_ENCODING => "0x1F5:25:52"
+TERM_SESSION_ID => "AF44C995-4D21-495A-8FD2-6F877AADAAF7"
+TMPDIR => "/var/folders/0n/wmwwmx4s7pb7kvhpf_xk5yvc0000gp/T/"
+USER => "zhuangjianguo"
+_ => "/Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/bin/nanoc"
+_ORIGINAL_GEM_PATH => "/Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247:/Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247@global"
+__CF_USER_TEXT_ENCODING => "0x1F6:25:52"
 __CHECKFIX1436934 => "1"
-rvm_bin_path => "/Users/sunhaorin/.rvm/bin"
-rvm_env_string => "ruby-1.9.3-p327"
-rvm_path => "/Users/sunhaorin/.rvm"
-rvm_prefix => "/Users/sunhaorin"
-rvm_ruby_string => "ruby-1.9.3-p327"
-rvm_version => "1.21.4 (stable)"
+_system_arch => "x86_64"
+_system_name => "OSX"
+_system_type => "Darwin"
+_system_version => "10.9"
+rvm_bin_path => "/Users/zhuangjianguo/.rvm/bin"
+rvm_path => "/Users/zhuangjianguo/.rvm"
+rvm_prefix => "/Users/zhuangjianguo"
+rvm_version => "1.22.19 (stable)"
 
 ===== GEMFILE.LOCK:
 
@@ -180,39 +182,36 @@ DEPENDENCIES
 
 ===== LOAD PATHS:
 
-  0. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib
-  1. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/mime-types-1.23/lib
-  2. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/guard-nanoc-1.0.2/lib
-  3. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib
-  4. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib
-  5. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/thor-0.19.1/lib
-  6. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/pry-0.9.12.6/lib
-  7. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/slop-3.5.0/lib
-  8. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/method_source-0.8.2/lib
-  9. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/lumberjack-1.0.5/lib
-  10. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/listen-2.7.5/lib
-  11. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/rb-inotify-0.9.4/lib
-  12. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/rb-fsevent-0.9.4/lib
-  13. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/formatador-0.2.4/lib
-  14. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/ffi-1.9.3/lib
-  15. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/ffi-1.9.3/ext/ffi_c
-  16. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/cri-2.3.0/lib
-  17. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/lib
-  18. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/sass-3.2.9/lib
-  19. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/fssm-0.2.10/lib
-  20. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/colored-1.2/lib
-  21. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/coderay-1.1.0/lib
-  22. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/chunky_png-1.2.8/lib
-  23. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/celluloid-0.15.2/lib
-  24. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/timers-1.1.0/lib
-  25. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/adsf-1.1.1/lib
-  26. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/rack-1.5.2/lib
-  27. /Users/sunhaorin/.rvm/gems/ruby-1.9.3-p327/gems/bundler-1.3.5/lib
-  28. /Users/sunhaorin/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/site_ruby/1.9.1
-  29. /Users/sunhaorin/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/site_ruby/1.9.1/x86_64-darwin12.2.0
-  30. /Users/sunhaorin/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/site_ruby
-  31. /Users/sunhaorin/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/vendor_ruby/1.9.1
-  32. /Users/sunhaorin/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/vendor_ruby/1.9.1/x86_64-darwin12.2.0
-  33. /Users/sunhaorin/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/vendor_ruby
-  34. /Users/sunhaorin/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1
-  35. /Users/sunhaorin/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/x86_64-darwin12.2.0
+  0. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/nanoc-3.6.7/lib
+  1. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/guard-2.6.1/lib
+  2. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/thor-0.19.1/lib
+  3. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/pry-0.9.12.6/lib
+  4. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/slop-3.5.0/lib
+  5. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/method_source-0.8.2/lib
+  6. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/lumberjack-1.0.5/lib
+  7. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/listen-2.7.5/lib
+  8. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/rb-inotify-0.9.4/lib
+  9. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/rb-fsevent-0.9.4/lib
+  10. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/formatador-0.2.4/lib
+  11. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/ffi-1.9.3/lib
+  12. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/ffi-1.9.3/ext/ffi_c
+  13. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/cri-2.3.0/lib
+  14. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/compass-0.12.2/lib
+  15. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.9/lib
+  16. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/fssm-0.2.10/lib
+  17. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/colored-1.2/lib
+  18. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/coderay-1.1.0/lib
+  19. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/chunky_png-1.2.8/lib
+  20. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.15.2/lib
+  21. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/timers-1.1.0/lib
+  22. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/adsf-1.1.1/lib
+  23. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/rack-1.5.2/lib
+  24. /Users/zhuangjianguo/.rvm/gems/ruby-2.0.0-p247/gems/bundler-1.5.2/lib
+  25. /Users/zhuangjianguo/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/site_ruby/2.0.0
+  26. /Users/zhuangjianguo/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/site_ruby/2.0.0/x86_64-darwin12.5.0
+  27. /Users/zhuangjianguo/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/site_ruby
+  28. /Users/zhuangjianguo/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/vendor_ruby/2.0.0
+  29. /Users/zhuangjianguo/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/vendor_ruby/2.0.0/x86_64-darwin12.5.0
+  30. /Users/zhuangjianguo/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/vendor_ruby
+  31. /Users/zhuangjianguo/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0
+  32. /Users/zhuangjianguo/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/x86_64-darwin12.5.0
