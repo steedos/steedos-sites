@@ -56,15 +56,11 @@
         <div class="collapse navbar-collapse navbar-top-collapse">
           <ul class="nav navbar-nav navbar-right" id="top_menu">                              
                     
-            <!--
-            <%= nav "审批王", "cn/workflow" %>
-            <%= nav "享聊", "cn/chat" %>
-            -->
-            <li>
-                <a href="/system/steedos/#register" target="_steedos_signup">
-                    <b>注册试用</b>
-                </a>
-            </li>
+
+            <%= nav "功能", "cn/otask" %>
+            <%= nav "报价", "cn/otask/pricing" %>
+            <%= nav "下载", "cn/otask/downloads" %>
+            <%= nav "联系我们", "cn/otask/contactus" %>
             <li class="divider"></li>
             <li>
                 <a href="/system/steedos/">
@@ -95,8 +91,8 @@
             <div class="col-md-3" name="info">
                 <h4 name="info_title">联系我们</h4>
                 <ul class="list-unstyled">
-                    <li><a href="/cn/steedos/aboutus">关于我们</a></li>
-                    <li><a href="/cn/steedos/contactus">联系方式</a></li>
+                    <li><a href="/cn/otask/aboutus">关于我们</a></li>
+                    <li><a href="/cn/otask/contactus">联系方式</a></li>
                 </ul>
                 <ul class="list-unstyled">
                     <li><i class="fa fa-phone"></i> <span>400-820-1612</span></li>
