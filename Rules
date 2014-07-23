@@ -24,17 +24,15 @@ compile '/us/help*' do
   layout 'help_us'
 end
 
-compile '/us*' do
-  filter :erb
-  layout 'steedos_us'
-end
-
-
 compile '/cn/workflow/*' do
   filter :erb
   layout 'workflow_cn'
 end
 
+compile '/us/workflow/*' do
+  filter :erb
+  layout 'workflow_us'
+end
 compile '/cn/help/*' do
   filter :erb
   layout 'help_cn'
@@ -53,6 +51,16 @@ end
 compile '/cn/otask/*' do
   filter :erb
   layout 'otask_cn'
+end
+
+compile '/us/otask/*' do
+  filter :erb
+  layout 'otask_us'
+end
+
+compile '/us*' do
+  filter :erb
+  layout 'steedos_us'
 end
 
 compile '/cn*' do
