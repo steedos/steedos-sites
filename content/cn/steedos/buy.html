@@ -255,9 +255,9 @@ id: cn/steedos/buy
                       <h3 class="panel-title">1. 我购买的应用</h3>
                     </div>
                     <p class="panel-body"> 
-                      <input  id="module_name" type="text" readonly="readonly"/>
+                      应用名称：<input  id="module_name" type="text" readonly="readonly"/>
                       <br/><br/>
-                      $<input  id="listprice" type="text" style="width:30px;text-align: right;" onkeypress="return IsNum(event)" readonly="readonly"/> .00/用户/月
+                      单价(美元)： $<input  id="listprice" type="text" style="width:30px;text-align: right;" onkeypress="return IsNum(event)" readonly="readonly"/> .00/用户/月
                     </p>
                   </div>
                   <h3>
@@ -289,11 +289,11 @@ id: cn/steedos/buy
                     <div class="panel-heading">
                       <h3 class="panel-title">2. 我的基本信息</h3>
                     </div>
-                    <p class="panel-body">骏马登录邮箱：<input id="steedos_id" type="text" /><br/><br/>充值的工作区：<input id="space_name" /><br/></p>
+                    <p class="panel-body">骏马登录邮箱：<input id="steedos_id" type="text" /><br/><br/>工作区名称：<input id="space_name" /><br/></p>
                   </div>
                   <div class="panel panel-default">
                     <div class="panel-heading">
-                      <h3 class="panel-title">3. 工作区中有多少用户？</h3>
+                      <h3 class="panel-title">3. 我要购买多少用户？</h3>
                     </div>
                     <p class="panel-body"><input id='user_count' type="text" style="width:60px;text-align: right;" onkeypress="return IsNum(event)"/> 人</p>
                   </div>
@@ -343,7 +343,7 @@ id: cn/steedos/buy
                 </div>
               </div>
             </div>
-            <div class="col-md-5 col-md-offset-2 mt16 mb16">
+            <div class="col-md-6 col-md-offset-1 mt16 mb16">
               <div class="row">
                 <div class="col-md-12">
                   <h3>
@@ -854,7 +854,6 @@ id: cn/steedos/buy
                   <p style="text-align: center;">
                     <a href="/cn/steedos/contactus/" class="btn btn-primary">联系客服</a>
                   </p>
-                  <p style="text-align: center;">点击链接跳转到contactus的页面</p>
                 </div>
               </div>
             </div>
