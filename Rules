@@ -33,9 +33,15 @@ compile '/us/workflow/*' do
   filter :erb
   layout 'workflow_us'
 end
+
 compile '/cn/help/*' do
   filter :erb
   layout 'help_cn'
+end
+
+compile '/cn/helpoem/*' do
+  filter :erb
+  layout 'helpoem_cn'
 end
 
 compile '/cn/developer/*' do
