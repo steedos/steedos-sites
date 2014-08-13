@@ -5,8 +5,6 @@ id: cn/otask/training
 
 <section>
   <div class="container">
-<t t-name="website.otask_help_cn">
-  <t t-call="website.layout">
     <div id="wrap" class="oe_structure oe_empty">
       <section>
         <div class="container">
@@ -21,19 +19,63 @@ id: cn/otask/training
             <div class="panel-heading">
               <h3 class="panel-title">可以对任务定义哪些信息？</h3>
             </div>
-            <div class="panel-body">必要信息：任务标题、时间箱；<br/>选填信息：所属项目、任务负责人、提醒日期、备注、附件、以及发送信息给相关人员；<br/>新建一个任务时，所属项目默认为空，此时只有我自己能看到该任务。可以更改项目，则同一项目组中的成员都可以看到该任务；<br/>任务负责人默认是我自己，可以修改为其他人，或设定为无。</div>
+            <div class="panel-body">必要信息：任务标题、时间箱；<br/>
+            选填信息：所属项目、任务负责人、提醒日期、备注、附件、以及发送信息给相关人员；<br/>新建一个任务时，所属项目默认为空，此时只有我自己能看到该任务。可以更改项目，则同一项目组中的成员都可以看到该任务；<br/>任务负责人默认是我自己，可以修改为其他人，或设定为无。</div>
           </div>
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">怎样查看我的任务？</h3>
             </div>
-            <div class="panel-body">在oTask中，按照任务的紧急程度和状态的不同，我的任务被分为四个时间箱：今日待办、下一步、以后再说、已完成；<br/><br/><span style="font-size: 14px; line-height: 1.428571429;">1.&nbsp“今日待办”，列出的是今天待处理的任务；点击左下方的加号，可以添加新的“今日待办”任务；<br/>&nbsp&nbsp&nbsp&nbsp&nbsp只有“今日待办”的右侧，会显示数字，提醒我当天待处理的任务个数。</span><br/><span style="font-size: 14px; line-height: 1.428571429;">2.&nbsp“下一步”，列出的是近期需要完成的任务；点击左下方的加号，可以添加新的“下一步”任务；</span><br/><span style="font-size: 14px; line-height: 1.428571429;">&nbsp&nbsp&nbsp&nbsp&nbsp若对“下一步”任务有时间要求，请设置提醒日期。<br/>&nbsp&nbsp&nbsp&nbsp&nbsp当提醒日期到了时，</span><span style="font-size: 14px; line-height: 1.428571429;">该任务会自动列入“今日待办”，以提醒负责人重点关注此任务的进度。<br/>3.&nbsp“以后再说”，列出的是暂停处理，仅记录作为备忘的任务；点击左下方的加号，可以添加新的“以后再说”任务；</span><span style="font-size: 14px; line-height: 1.428571429;"><br/>4.&nbsp“已完成”，列出的是所有已完成和已取消的任务。<br/>&nbsp&nbsp&nbsp&nbsp&nbsp即使已完成的任务，也可以通过修改时间箱，让它重新回到等待处理的“今日待办”、“下一步”或“以后再说”中。</span><br/><br/>在添加新的任务时，可以根据自己对任务紧急程度的理解，将任务放置在任意的时间箱中；<br/>已有的任务，也可以根据紧急程度或状态的变化，修改它所属的时间箱。</div>
+            <div class="panel-body">在oTask中，按照任务的紧急程度和状态的不同，我的任务被分为四个时间箱：今日待办、下一步、以后再说、已完成；<br/>
+            <br/>
+            <ol>
+              <li>
+                 <span>“今日待办”，列出的是今天待处理的任务；点击左下方的加号，可以添加新的“今日待办”任务；</span><br/>
+                 <span>只有“今日待办”的右侧，会显示数字，提醒我当天待处理的任务个数。</span>
+              </li>
+              <li>
+                 <span>“下一步”，列出的是近期需要完成的任务；点击左下方的加号，可以添加新的“下一步”任务；</span><br/>
+                 <span>若对“下一步”任务有时间要求，请设置提醒日期。</span><br/>
+                 <span>当提醒日期到了时，该任务会自动列入“今日待办”，以提醒负责人重点关注此任务的进度。</span>
+              </li>
+              <li>
+                 <span>“以后再说”，列出的是暂停处理，仅记录作为备忘的任务；点击左下方的加号，可以添加新的“以后再说”任务；</span>
+              </li>
+              <li>
+                 <span>“已完成”，列出的是所有已完成和已取消的任务。</span><br/>
+                 <span>即使已完成的任务，也可以通过修改时间箱，让它重新回到等待处理的“今日待办”、“下一步”或“以后再说”中。</span>
+              </li>
+            </ol>
+            在添加新的任务时，可以根据自己对任务紧急程度的理解，将任务放置在任意的时间箱中；<br/>
+            已有的任务，也可以根据紧急程度或状态的变化，修改它所属的时间箱。</div>
           </div>
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">怎样查看团队任务？</h3>
             </div>
-            <div class="panel-body">在oTask中，可以从四个角度查看团队任务：消息、项目、人员、时间箱；<br/><br/><span style="font-size: 14px; line-height: 1.428571429;">1.&nbsp“消息”，列出的是与我相关的，且曾发送消息给我的任务；<br/>&nbsp&nbsp&nbsp&nbsp&nbsp消息包括任务内容修改、状态变化以及修改负责人等操作，也包括相关人员对我说的话。<br/>&nbsp&nbsp&nbsp&nbsp&nbsp若任务中有我未读的消息，则在任务标题下会显示蓝色图标。<br/>&nbsp&nbsp&nbsp&nbsp&nbsp只有“消息”的右侧，会显示数字，提醒我有几条未读消息。</span><br/><span style="font-size: 14px; line-height: 1.428571429;">2.&nbsp“项目”，列出的是项目列表；<br/>&nbsp&nbsp&nbsp&nbsp&nbsp在项目中可以增加多个相关任务，也可以添加相关人员；</span><br/><span style="font-size: 14px; line-height: 1.428571429;">&nbsp&nbsp&nbsp&nbsp&nbsp每个项目成员都可以在项目中看到所有相关的任务。<br/>3.&nbsp“人员”，列出的是工作区中的所有人；<br/>&nbsp&nbsp&nbsp&nbsp&nbsp点击某个人名，可以看到由他(她)负责的所有任务；</span><span style="font-size: 14px; line-height: 1.428571429;"><br/>4.&nbsp“时间箱”，列出的是今日待办、下一步、以后再说、已完成和已取消；<br/>&nbsp&nbsp&nbsp&nbsp&nbsp点击某个时间箱，可以看到处于该状态下的所有任务。</span></div>
+            <div class="panel-body">在oTask中，可以从四个角度查看团队任务：消息、项目、人员、时间箱；<br/>
+            <br/>
+            <ol>
+              <li>
+                 <span>“消息”，列出的是与我相关的，且曾发送消息给我的任务；</span><br/>
+                 <span>消息包括任务内容修改、状态变化以及修改负责人等操作，也包括相关人员对我说的话。</span><br/>
+                 <span>若任务中有我未读的消息，则在任务标题下会显示蓝色图标。</span><br/>
+                 <span>只有“消息”的右侧，会显示数字，提醒我有几条未读消息。</span>
+              </li>
+              <li>
+                 <span>“项目”，列出的是项目列表；</span><br/>
+                 <span>在项目中可以增加多个相关任务，也可以添加相关人员；</span><br/>
+                 <span>每个项目成员都可以在项目中看到所有相关的任务。</span>
+              </li>
+              <li>
+                 <span>“人员”，列出的是工作区中的所有人；</span><br/>
+                 <span>点击某个人名，可以看到由他(她)负责的所有任务；</span>
+              </li>
+              <li>
+                 <span>“时间箱”，列出的是今日待办、下一步、以后再说、已完成和已取消；</span><br/>
+                 <span>点击某个时间箱，可以看到处于该状态下的所有任务。</span>
+              </li>
+            </ol></div>
           </div>
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -45,7 +87,10 @@ id: cn/otask/training
             <div class="panel-heading">
               <h3 class="panel-title">怎样把任务标记为已完成？</h3>
             </div>
-            <div class="panel-body">【iPhone、iPad &amp; 安卓手机】<br/>任务标题的左侧有一个小框，点击这个小框打勾，即表示任务已完成；<br/>或点击任务的时间箱，选择“已完成”。<br/>所有已完成的任务，都能在“时间箱”→“已完成”中找到。</div>
+            <div class="panel-body">【iPhone、iPad &amp; 安卓手机】<br/>
+            任务标题的左侧有一个小框，点击这个小框打勾，即表示任务已完成；<br/>
+            或点击任务的时间箱，选择“已完成”。<br/>
+            所有已完成的任务，都能在“时间箱”→“已完成”中找到。</div>
           </div>
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -57,7 +102,10 @@ id: cn/otask/training
             <div class="panel-heading">
               <h3 class="panel-title">项目的共享范围有几个层级？</h3>
             </div>
-            <div class="panel-body">共享范围有两个层级：公开、仅项目成员<br/>若设置为公开，则在同一个工作区的所有成员，都能看到这个项目以及项目下的任务；<br/>若设置为仅项目成员，则只有被指定的成员才能看到这个项目和项目下的任务；<br/>若新建任务时不指定任何项目，则该任务只有我自己才能看得到。</div>
+            <div class="panel-body">共享范围有两个层级：公开、仅项目成员<br/>
+            若设置为公开，则在同一个工作区的所有成员，都能看到这个项目以及项目下的任务；<br/>
+            若设置为仅项目成员，则只有被指定的成员才能看到这个项目和项目下的任务；<br/>
+            若新建任务时不指定任何项目，则该任务只有我自己才能看得到。</div>
           </div>
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -75,14 +123,13 @@ id: cn/otask/training
             <div class="panel-heading">
               <h3 class="panel-title">系统向我发送了哪些消息？</h3>
             </div>
-            <div class="panel-body">一旦有人修改了和我相关的任务，系统就会自动对该任务记录一条消息；<br/>若有人给我安排了一个新的任务，系统也会自动发送消息给我；<br/>此外，若有人在和我相关的任务中留言，系统也会自动发送消息给我；<br/><br/>和邮件一样，上述所有消息都会自动进入“消息”，且在右侧显示数字，表示我有几条未读消息。</div>
+            <div class="panel-body">一旦有人修改了和我相关的任务，系统就会自动对该任务记录一条消息；<br/>
+            若有人给我安排了一个新的任务，系统也会自动发送消息给我；<br/>
+            此外，若有人在和我相关的任务中留言，系统也会自动发送消息给我；<br/>
+            <br/>
+            和邮件一样，上述所有消息都会自动进入“消息”，且在右侧显示数字，表示我有几条未读消息。</div>
           </div>
-          <h3/>
         </div>
       </section>
     </div>
-  </t>
-</t>
-
-  
 </section>
