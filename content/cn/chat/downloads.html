@@ -18,15 +18,35 @@ id: cn/chat/downloads
         <div class="container">
           <div class="row">
             <div class="col-md-4">
-              <img src="/website/img/qrcode/iOS_chat_cn.png" class="img img-responsive img-rounded"/>
+              <div id="ios_download" class="qr_code"></div>
+              <script>
+                var qrcode = new QRCode("ios_download", {
+                    text: "http://itunes.apple.com/cn/app/steedos-chat/id789595916?l=zh&ls=1&mt=8",
+                    width: 200,
+                    height: 200,
+                    colorDark : "#000000",
+                    colorLight : "#ffffff",
+                    correctLevel : QRCode.CorrectLevel.M
+                });
+              </script>
               <h4 class="mt16">iPhone & iPad 客户端</h4>
               <p>扫描二维码或点击以下链接，从苹果AppStore下载享聊 iPhone & iPad 客户端。</p>
               <p style="text-align: center;">
-                <a style="line-height: 20px; -webkit-user-select: auto; cursor: text !important;" href="http://itunes.apple.com/cn/app/steedos-workflow/id686408407" class="btn btn-success" target="_blank">下载</a>
+                <a style="line-height: 20px; -webkit-user-select: auto; cursor: text !important;" href="http://itunes.apple.com/cn/app/steedos-chat/id789595916?l=zh&ls=1&mt=8" class="btn btn-success" target="_blank">下载</a>
               </p>
             </div>
             <div class="col-md-4">
-              <img src="/website/img/qrcode/Android_chat_FromGooglePlay.png" class="img img-responsive img-rounded"/>
+              <div id="googleplay_download" class="qr_code"></div>
+              <script>
+                var qrcode = new QRCode("googleplay_download", {
+                    text: "https://play.google.com/store/apps/details?id=com.steedos.chat",
+                    width: 200,
+                    height: 200,
+                    colorDark : "#000000",
+                    colorLight : "#ffffff",
+                    correctLevel : QRCode.CorrectLevel.M
+                });
+              </script>
               <h4 class="mt16">Android 客户端 （Google Play）</h4>
               <p>扫描二维码或点击这里，从Google Play下载审批王 Android 客户端。</p>
               <p style="text-align: center;">
@@ -34,11 +54,21 @@ id: cn/chat/downloads
               </p>
             </div>
             <div class="col-md-4">
-              <img src="/website/img/qrcode/Android_chat_FromSteedos_cn.png" class="img img-responsive img-rounded"/>
+              <div id="android_download" class="qr_code"></div>
+              <script>
+                var qrcode = new QRCode("android_download", {
+                    text: "http://s3-ap-southeast-1.amazonaws.com/s3.steedos.com/public/apps/android/SteedOS_Chat.apk",
+                    width: 200,
+                    height: 200,
+                    colorDark : "#000000",
+                    colorLight : "#ffffff",
+                    correctLevel : QRCode.CorrectLevel.M
+                });
+              </script>
               <h4 class="mt16">Android 客户端 （官网下载）</h4>
               <p>扫描二维码或点击这里，从骏马云官网下载审批王 Android 客户端。</p>
               <p style="text-align: center;">
-                <a style="line-height: 20px; -webkit-user-select: auto; cursor: text !important;" href="/statics/apps/android/SteedOS_Chat.apk" class="btn btn-success" target="_blank">下载</a>
+                <a style="line-height: 20px; -webkit-user-select: auto; cursor: text !important;" href="http://s3-ap-southeast-1.amazonaws.com/s3.steedos.com/public/apps/android/SteedOS_Chat.apk" class="btn btn-success" target="_blank">下载</a>
               </p>
             </div>
           </div>
