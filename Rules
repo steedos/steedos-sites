@@ -69,6 +69,11 @@ compile '/us/otask/*' do
   layout 'otask_us'
 end
 
+compile '/cn/omail/*' do
+  filter :erb
+  layout 'omail_cn'
+end
+
 compile '/us*' do
   filter :erb
   layout 'steedos_us'
