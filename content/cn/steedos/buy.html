@@ -10,6 +10,7 @@ id: cn/steedos/buy
       var space_user_count = '';
       var module_name = '';
       var listprice = '';
+      var listprice_rmb = '';
       var space_id = '';
       var module = '';
       var buymonth = '';
@@ -75,6 +76,12 @@ id: cn/steedos/buy
           document.getElementById("module_name").value = module_name;
           document.getElementById("listprice").value = listprice;
 
+          if (listprice == '3'){
+            document.getElementById("listprice_rmb").value = '20';
+          } else if (listprice == '1') {
+            document.getElementById("listprice_rmb").value = '10';
+          }
+
           // $('input').attr("readonly","readonly");
           // $('input').removeAttr("readonly");
           $("#steedos_id").attr("readonly", "readonly");
@@ -87,9 +94,11 @@ id: cn/steedos/buy
           if (from == "workflow"){
             module_name = "审批王专业版";
             listprice = "3";
+            listprice_rmb = '20';
           } else if (from == "chat"){
             module_name = "享聊专业版";
             listprice = "1";
+            listprice_rmb = '10';
           }
           document.getElementById("space_name").addEventListener("input",space_name_change,false);
           document.getElementById("steedos_id").addEventListener("input",steedos_id_change,false);
@@ -99,11 +108,16 @@ id: cn/steedos/buy
 
         document.getElementById("module_name").value = module_name;
         document.getElementById("listprice").value = listprice;
+        document.getElementById("listprice_rmb").value = listprice_rmb;
+
       }
 
       function caculate () {
         amount = user_count*listprice*buymonth;
-        document.getElementById("amount").innerText = amount
+        document.getElementById("amount").innerText = amount;
+        amount_rmb = user_count*listprice_rmb*buymonth;
+        document.getElementById("amount_rmb").innerText = amount_rmb;
+
       }
 
       function webChange () {
@@ -122,7 +136,7 @@ id: cn/steedos/buy
 
       function toPay(){
         // 校验 必填
-        if (listprice.trim()==""){
+        if (listprice.trim()=="" || listprice_rmb.trim()==""){
           alert("单价不能为空");
           return;
         }
@@ -217,7 +231,7 @@ id: cn/steedos/buy
                     </span>
                   </h3>
                   <h2 style="text-align: center;">
-                    <b>购买应用</b>
+                    <b>在线购买应用</b>
                   </h2>
                   <div>
                     <b></b>
@@ -258,6 +272,8 @@ id: cn/steedos/buy
                       应用名称：<input  id="module_name" type="text" readonly="readonly"/>
                       <br/><br/>
                       单价(美元)： $<input  id="listprice" type="text" style="width:30px;text-align: right;" onkeypress="return IsNum(event)" readonly="readonly"/> .00/用户/月
+                      <br/><br/>
+                      单价(人民币)： ￥<input  id="listprice_rmb" type="text" style="width:30px;text-align: right;" onkeypress="return IsNum(event)" readonly="readonly"/> .00/用户/月
                     </p>
                   </div>
                   <h3>
@@ -314,7 +330,8 @@ id: cn/steedos/buy
                     <div class="panel-heading">
                       <h3 class="panel-title">5. 计算我的付款金额</h3>
                     </div>
-                    <p class="panel-body">US$ <label id="amount" >0</label>.00</p>
+                    <p style="padding-left:15px;padding-top:15px;">US$ <label id="amount" >0</label>.00</p>
+                    <p style="padding-left:15px;padding-top:0px;">RMB￥ <label id="amount_rmb" >0</label>.00</p>
                   </div>
                   <p style="text-align: center;">
                     <a onclick="toPay()" class="btn btn-success" target="_blank">我要付款</a>
@@ -464,16 +481,35 @@ id: cn/steedos/buy
                       <b></b>
                     </span>
                   </h3>
-                  <h3><span class="s1"><b>可以只为工作区内的部分人员购买专业版吗</b></span>?</h3>
+                  <h3>
+                    <span style="line-height: 1.1;" class="s1">
+                      <b><b>如何线下付款</b> </b>
+                    </span>
+                    <span style="line-height: 1.1;">?</span>
+                  </h3>
                   <p>
-                    <span class="s1">不能，因为工作区内的应用一旦升级到专业版，这个工作区中的所有人员都享有同样的功能。</span>
-                  </p>
-                  <p class="p1">
                     <span class="s1"></span>
                   </p>
-                  <p class="p1">
-                    <span class="s1"></span>
+                  <p>
+                    <span style="line-height: 1.428571429;">若您不便进行在线支付，请按以下步骤操作，完成线下付款，一样可以立即开通您所需的专业版功能。</span>
                   </p>
+                  <ol>
+                    <li class="p1">
+                      <span class="s1">请按照左侧自动计算的人民币报价，汇款至：招商银行上海分行徐家汇支行，账号：212885212310001，公司名称：上海华炎软件科技有限公司；</span>
+                    </li>
+                    <li class="p1">
+                      <span class="s1">请联系我公司的客服QQ：1471093381，告知：您所在的工作区、您登录骏马云的账号、您要购买的应用名称，以及您的汇款金额。客服人员确认无误后，将在一个工作日内，向您的工作区账户进行人工充值；</span>
+                    </li>
+                    <li class="p1">
+                      <span class="s1">您以电汇方式付款，我方确认到账后一个工作日内，向您的工作区账户进行充值；</span>
+                    </li>
+                    <li class="p1">
+                      <span class="s1">充值成功，您会收到邮件提醒，并在“设置/应用”中看到充值后的余额与充值记录<span class="s1">。</span></span>
+                    </li>
+                    <li class="p1">
+                      <span class="s1">若您需要与我公司签署合同，请向客服QQ提出，我方将提供标准合同模板，经双方认可无误后，盖章并传真，互留备份；</span>
+                    </li>
+                  </ol>
                   <p>
                     <span class="s1"></span>
                   </p>
@@ -519,18 +555,6 @@ id: cn/steedos/buy
                   <h3>
                     <span style="line-height: 1.1;" class="s1">
                       <b></b>
-                    </span>
-                  </h3>
-                  <h3>
-                    <span class="s1">
-                      <b></b>
-                    </span>
-                  </h3>
-                  <h3>
-                    <span style="line-height: 1.1;" class="s1">
-                      <b>
-                        <b></b>
-                      </b>
                     </span>
                   </h3>
                   <h3><span class="s1"><b>工作区中人员会增加或减少，怎样估算用户数呢</b></span>?</h3>
@@ -598,83 +622,7 @@ id: cn/steedos/buy
                       <b></b>
                     </span>
                   </h3>
-                  <h3>
-                    <span style="line-height: 1.1;" class="s1">
-                      <b><b>没有Paypal账号，怎么付款</b> </b>
-                    </span>
-                    <span style="line-height: 1.1;">?</span>
-                  </h3>
-                  <p>
-                    <span class="s1"></span>
-                  </p>
-                  <p>
-                    <span style="line-height: 1.428571429;">您可以申请Paypal账号后付款，Paypal是国际知名的支付公司，其安全性可以充分信任。</span>
-                  </p>
-                  <p class="p1">
-                    <span class="s1">您也可以联系我公司的客服QQ：1471093381，或发送邮件到：support@steedos.com，由客服为您进行人工充值。<br/>
-若您选择人工充值，将按以下步骤进行：</span>
-                  </p>
-                  <ol>
-                    <li class="p1">
-                      <span class="s1">请告知：您所在的工作区、工作区的使用人数与时间、您要购买的应用名称，由客服人员按照人民币的报价计算出您的付款金额总价；</span>
-                    </li>
-                    <li class="p1">
-                      <span class="s1">我公司和您签署合同，若双方认可无误，将合同盖章后传真给对方；</span>
-                    </li>
-                    <li class="p1">
-                      <span class="s1">您以电汇方式付款，我方确认到账后一个工作日内，向您的工作区账户进行人工充值；</span>
-                    </li>
-                    <li class="p1">
-                      <span class="s1">充值成功，您会收到邮件提醒，并在“设置/应用”中看到充值后的余额与充值记录<span class="s1">。</span></span>
-                    </li>
-                  </ol>
-                  <p>
-                    <span class="s1"></span>
-                  </p>
-                  <p>
-                    <span style="line-height: 1.428571429;"></span>
-                  </p>
-                  <p>
-                    <span style="line-height: 1.428571429;"></span>
-                  </p>
-                  <div>
-                    <p>
-                      <span style="line-height: 1.428571429;"></span>
-                    </p>
-                  </div>
-                  <p>
-                    <span class="s1"></span>
-                  </p>
-                  <p>
-                    <span class="s1"></span>
-                  </p>
-                </div>
-                <div class="col-md-12">
-                  <h3>
-                    <span class="s1">
-                      <b></b>
-                    </span>
-                  </h3>
-                  <h3>
-                    <span class="s1">
-                      <b></b>
-                    </span>
-                  </h3>
-                  <h3>
-                    <span class="s1">
-                      <b></b>
-                    </span>
-                  </h3>
-                  <h3>
-                    <span style="line-height: 1.1;" class="s1">
-                      <b></b>
-                    </span>
-                  </h3>
-                  <h3>
-                    <span style="line-height: 1.1;" class="s1">
-                      <b></b>
-                    </span>
-                  </h3>
+                  
                   <h3><span class="s1"><b>怎样查看充值记录</b></span>?</h3>
                   <p>
                     <span class="s1">在“设置/账务”中点击您当前的账户余额，可以看到您每一次充值的记录与每个月的扣费情况。</span>
@@ -836,14 +784,17 @@ id: cn/steedos/buy
                   <p>
                     <span class="s1"><span class="s1">因此请您不定期地注意您账户中的余额，适当充值续费，以保证整个工作区的正常运转</span>。</span>
                   </p>
-                  <p>
-                    <span class="s1"></span>
-                  </p>
                 </div>
-                <div class="col-md-12 mb48">
+                <div class="col-md-12">
                   <h3><span class="s1"><b>已经购买了专业版应用，如何续费</b></span>?</h3>
                   <p>
                     <span class="s1"><span class="s1"><span class="s1">付款过程和您第一次购买应用一样</span></span>。</span>
+                  </p>
+                </div>
+                <div class="col-md-12 mb48">
+                  <h3><span class="s1"><b>可以只为工作区内的部分人员购买专业版吗</b></span>?</h3>
+                  <p>
+                    <span class="s1"><span class="s1"><span class="s1">不能，因为工作区内的应用一旦升级到专业版，这个工作区中的所有人员都享有同样的功能。</span></span>。</span>
                   </p>
                 </div>
                 <div class="col-md-12 mb8">
