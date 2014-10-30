@@ -71,8 +71,8 @@ id: us/steedos/buy
           document.getElementById("steedos_id").value = steedos_id;
           document.getElementById("space_name").value = space_name;
           document.getElementById("user_count").value = user_count;
-          document.getElementById("module_name").value = module_name;
-          document.getElementById("listprice").value = listprice;
+          document.getElementById("module_name").innerText = module_name;
+          document.getElementById("listprice").innerText = listprice;
 
           // $('input').attr("readonly","readonly");
           // $('input').removeAttr("readonly");
@@ -97,8 +97,8 @@ id: us/steedos/buy
           document.getElementById("buymonth").addEventListener("change",webChange,false);
         }
 
-        document.getElementById("module_name").value = module_name;
-        document.getElementById("listprice").value = listprice;
+        document.getElementById("module_name").innerText = module_name;
+        document.getElementById("listprice").innerText = listprice;
       }
 
       function caculate () {
@@ -184,9 +184,9 @@ id: us/steedos/buy
                       <h3 class="panel-title">1. Your App</h3>
                     </div>
                     <p class="panel-body">
-                      App Name: <input  id="module_name" type="text" readonly="readonly"/>
+                      App Name: <label id="module_name"></label>
                       <br/><br/>
-                      Price: $<input  id="listprice" type="text" style="width:30px;text-align: right;" onkeypress="return IsNum(event)" readonly="readonly"/> .00/user/month
+                      Price: $<label  id="listprice" ></label> .00/user/month
                     </p>
                   </div>
                   <div class="panel panel-default">
