@@ -73,13 +73,13 @@ id: cn/steedos/buy
           document.getElementById("steedos_id").value = steedos_id;
           document.getElementById("space_name").value = space_name;
           document.getElementById("user_count").value = user_count;
-          document.getElementById("module_name").value = module_name;
-          document.getElementById("listprice").value = listprice;
+          document.getElementById("module_name").innerText = module_name;
+          document.getElementById("listprice").innerText = listprice;
 
           if (listprice == '3'){
-            document.getElementById("listprice_rmb").value = '20';
+            document.getElementById("listprice_rmb").innerText = '20';
           } else if (listprice == '1') {
-            document.getElementById("listprice_rmb").value = '10';
+            document.getElementById("listprice_rmb").innerText = '10';
           }
 
           // $('input').attr("readonly","readonly");
@@ -106,9 +106,9 @@ id: cn/steedos/buy
           document.getElementById("buymonth").addEventListener("change",webChange,false);
         }
 
-        document.getElementById("module_name").value = module_name;
-        document.getElementById("listprice").value = listprice;
-        document.getElementById("listprice_rmb").value = listprice_rmb;
+        document.getElementById("module_name").innerText = module_name;
+        document.getElementById("listprice").innerText = listprice;
+        document.getElementById("listprice_rmb").innerText = listprice_rmb;
 
       }
 
@@ -269,11 +269,11 @@ id: cn/steedos/buy
                       <h3 class="panel-title">1. 我购买的应用</h3>
                     </div>
                     <p class="panel-body"> 
-                      应用名称：<input  id="module_name" type="text" readonly="readonly"/>
+                      应用名称：<label  id="module_name"></label>
                       <br/><br/>
-                      单价(美元)： $<input  id="listprice" type="text" style="width:30px;text-align: right;" onkeypress="return IsNum(event)" readonly="readonly"/> .00/用户/月
+                      单价(美元)： $<label  id="listprice" ></label> .00/用户/月
                       <br/><br/>
-                      单价(人民币)： ￥<input  id="listprice_rmb" type="text" style="width:30px;text-align: right;" onkeypress="return IsNum(event)" readonly="readonly"/> .00/用户/月
+                      单价(人民币)： ￥<label  id="listprice_rmb" ></label> .00/用户/月
                     </p>
                   </div>
                   <h3>
