@@ -74,6 +74,11 @@ compile '/cn/omail/*' do
   layout 'omail_cn'
 end
 
+compile '/cn/drive/*' do
+  filter :erb
+  layout 'drive_cn'
+end
+
 compile '/us*' do
   filter :erb
   layout 'steedos_us'

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <title><%= @item[:title] %></title>
-  <link rel="shortcut icon" href="/website/img/steedos/AppIcon76x76.png" />
-  <meta name="Description" content="骏马云是基于云的生产套件，可帮助您和您的团队随时随地使用任意设备沟通联系并完成工作。它的设置、使用和管理都很简单，可让您更明智地工作并专注于核心业务。">
+  <link rel="shortcut icon" href="/website/img/drive/AppIcon76x76.png" />
+  <meta name="Description" content="华炎云盘，全新企业文档云存储解决方案，支持iOS、Android等多种智能手机、平板电脑，企业文档集中存储，全面共享，安全管理。">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge"  >
   <meta content="initial-scale=1" name="viewport"/>
             
@@ -50,25 +50,26 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="/cn/" class="navbar-brand">骏马云</a>
+            <a href="/cn/drive" class="navbar-brand">
+            <img src="/website/img/drive/AppIcon76x76.png" width="30" height="30" class="logo"><span style="padding-top: 3px;">&nbsp;&nbsp;华炎云盘</span></a>
         </div>
         <div class="collapse navbar-collapse navbar-top-collapse">
           <ul class="nav navbar-nav navbar-right" id="top_menu">                              
                     
-            <!--
-            <%= nav "审批王", "cn/workflow" %>
-            <%= nav "享聊", "cn/chat" %>
-            -->
-            <li>
-                <a href="/system/steedos/#register" target="_steedos_signup">
-                    <b>注册试用</b>
-                </a>
-            </li>
+
+            <%= nav "功能", "cn/drive" %>
+            <%= nav "报价", "cn/drive/pricing" %>
+            <%= nav "下载", "cn/drive/downloads" %>
+            <%= nav "关于", "cn/drive/aboutus" %>
+
+            <!-- 
+            <%= nav "教程", "cn/otask/training" %>
+             -->
             <li class="divider"></li>
             <li>
-                <a href="/system/steedos/">
+                <a href="/system/steedos/?app=drive">
                     <b>客户登录</b>
-                </a>
+                </a> 
             </li>
           </ul>
         </div>
@@ -84,7 +85,8 @@
     <div class="container hidden-print" id="footer_container">
         <div class="row">
             <div class="col-md-3" name="product">
-                <h4>骏马云 Apps</h4>
+                <h4>骏马云 Apps
+                  <small> - <a href="/cn/">关于骏马云</a></small></h4>
                 <ul class="list-unstyled" name="products">
                     <li><a href="/cn/drive">华炎云盘</a></li>
                     <li><a href="/cn/omail">华邮</a></li>
@@ -96,8 +98,8 @@
             <div class="col-md-3" name="info">
                 <h4 name="info_title">联系我们</h4>
                 <ul class="list-unstyled">
-                    <li><a href="/cn/steedos/aboutus">关于我们</a></li>
-                    <li><a href="/cn/steedos/contactus">联系方式</a></li>
+                    <li><a href="/cn/drive/aboutus">关于我们</a></li>
+                    <li><a href="/cn/drive/contactus">联系方式</a></li>
                 </ul>
                 <ul class="list-unstyled">
                     <li><i class="fa fa-phone"></i> <span>400-820-1612</span></li>
@@ -110,14 +112,19 @@
             <div class="col-md-5 col-lg-offset-1" name="about_us">
                 <div>
                     <h4>
-                        <span>关于骏马云</span>
-                        <small> - <a href="/cn/">骏马云有什么功能？</a></small>
+                        <span>关于华炎云盘</span>
+                        <small><!--  - 
+                          <a href="/cn/omail">功能</a>
+                          <a href="/cn/otask/pricing">报价</a>
+                          <a href="/cn/otask/downloads">下载</a>
+                          <a href="/cn/otask/training">教程</a> -->
+                        </small>
                     </h4>
                     <p>                        
-                      骏马云是基于云的生产套件，可帮助您和您的团队随时随地使用任意设备沟通联系并完成工作。它的设置、使用和管理都很简单，可让您更明智地工作并专注于核心业务。
+                      华炎云盘，全新企业文档云存储解决方案，支持iOS、Android等多种智能手机、平板电脑，企业文档集中存储，全面共享，安全管理。
                     </p>
                 </div>
-                <ul class="list-inline js_language_selector mt16"><li><a href="/us/" >English</a></li><li><a href="/cn/" >简体中文</a></li></ul>
+                <!-- <ul class="list-inline js_language_selector mt16"><li><a href="/us/otask" >English</a></li><li><a href="/cn/otask" >简体中文</a></li></ul> -->
                 
             </div>
         </div>
