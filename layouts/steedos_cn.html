@@ -39,42 +39,31 @@
 </head>
 <body>
  
-<div id="wrapwrap">
-  <header>
-    <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-            <button data-toggle="collapse" type="button" class="navbar-toggle" data-target=".navbar-top-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="/cn/" class="navbar-brand">骏马云</a>
-        </div>
-        <div class="collapse navbar-collapse navbar-top-collapse">
-          <ul class="nav navbar-nav navbar-right" id="top_menu">                              
-                    
-            <!--
-            <%= nav "审批王", "cn/workflow" %>
-            <%= nav "享聊", "cn/chat" %>
-            -->
-            <li>
-                <a href="/system/steedos/#register" target="_steedos_signup">
-                    <b>注册试用</b>
-                </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-                <a href="/system/steedos/">
-                    <b>客户登录</b>
-                </a>
-            </li>
-          </ul>
-        </div>
+ <link href="/website/ac/globalheader/globalheader.css" rel="stylesheet"/>
+ <nav id="globalheader" class="globalheader" role="navigation" aria-label="Global Navigation" data-hires="false" data-analytics-region="global nav" lang="zh-CN">
+  <div id="gh-content" class="gh-content">
+    <ul class="gh-menu">
+      <li id="gh-menu-icon-toggle" class="gh-menu-icon gh-menu-icon-toggle enhance"><div id="gh-svg-icons" class="gh-svg-wrapper"><svg x="0px" y="0px" width="100%" viewBox="0 0 96 96" class="gh-svg gh-svg-top" enable-background="new 0 0 96 96"><rect width="32" height="4" x="32" y="46" class="gh-svg-rect gh-svg-rect-top"></rect></svg><svg x="0px" y="0px" width="100%" viewBox="0 0 96 96" class="gh-svg gh-svg-bottom" enable-background="new 0 0 96 96"><rect width="32" height="4" x="32" y="46" class="gh-svg-rect gh-svg-rect-bottom"></rect></svg></div><span class="gh-text-replace">Menu</span></li>
+      <li id="gh-menu-icon-home" class="gh-menu-icon gh-menu-icon-home"><a href="/cn/" onclick="s_objectID=&quot;http://www.apple.com/cn/_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="gh-text-replace">Apple</span></a></li>
+    </ul><!--/gh-menu-->
+    <div class="gh-nav">
+      <div class="gh-nav-view">
+        <ul class="gh-nav-list">
+          <li class="gh-tab gh-tab-steedos"><a class="gh-tab-link" href="/cn/"><span class="gh-tab-inner"><span class="gh-text-replace">骏马云</span></span></a></li>
+          <li class="gh-tab gh-tab-workflow"><a class="gh-tab-link" href="/cn/workflow/"><span class="gh-tab-inner"><span class="gh-text-replace">审批王</span></span></a></li>
+          <li class="gh-tab gh-tab-drive"><a class="gh-tab-link" href="/cn/drive/"><span class="gh-tab-inner"><span class="gh-text-replace">云盘</span></span></a></li>
+          <li class="gh-tab gh-tab-mail"><a class="gh-tab-link" href="/cn/omail/"><span class="gh-tab-inner"><span class="gh-text-replace">华邮</span></span></a></li>
+          <li class="gh-tab gh-tab-chat"><a class="gh-tab-link" href="/cn/chat/"><span class="gh-tab-inner"><span class="gh-text-replace">享聊</span></span></a></li>
+          <li class="gh-tab gh-tab-task"><a class="gh-tab-link" href="/cn/otask/"><span class="gh-tab-inner"><span class="gh-text-replace">任我行</span></span></a></li>
+          <li class="gh-tab gh-tab-support"><a class="gh-tab-link" href="http://support.steedos.com/" target="_blank"><span class="gh-tab-inner"><span class="gh-text-replace">技术支持</span></span></a></li>
+          <li class="gh-tab gh-tab-singup"><a class="gh-tab-link" href="/system/steedos/"><span class="gh-tab-inner"><span class="gh-text-replace">注册/登录</span></span></a></li>
+
+        </ul>
       </div>
-    </div>
-  </header>
+    </div><!--/gh-nav-->
+  </div>
+</nav>
+<div id="wrapwrap">
   <main>
     <div id="wrap" class="oe_structure oe_empty">
   <%= yield %>
