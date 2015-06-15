@@ -40,21 +40,20 @@
  <link href="/website/ac/globalheader/globalheader.css" rel="stylesheet"/>
  <nav id="globalheader" class="globalheader" role="navigation" aria-label="Global Navigation" data-hires="false" data-analytics-region="global nav" lang="zh-CN">
   <div id="gh-content" class="gh-content">
-    <ul class="gh-menu">
-      <li id="gh-menu-icon-toggle" class="gh-menu-icon gh-menu-icon-toggle enhance"><div id="gh-svg-icons" class="gh-svg-wrapper"><svg x="0px" y="0px" width="100%" viewBox="0 0 96 96" class="gh-svg gh-svg-top" enable-background="new 0 0 96 96"><rect width="32" height="4" x="32" y="46" class="gh-svg-rect gh-svg-rect-top"></rect></svg><svg x="0px" y="0px" width="100%" viewBox="0 0 96 96" class="gh-svg gh-svg-bottom" enable-background="new 0 0 96 96"><rect width="32" height="4" x="32" y="46" class="gh-svg-rect gh-svg-rect-bottom"></rect></svg></div><span class="gh-text-replace">Menu</span></li>
-      <li id="gh-menu-icon-home" class="gh-menu-icon gh-menu-icon-home"><a href="/cn/" onclick="s_objectID=&quot;http://www.apple.com/cn/_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="gh-text-replace">Apple</span></a></li>
-    </ul><!--/gh-menu-->
     <div class="gh-nav">
       <div class="gh-nav-view">
         <ul class="gh-nav-list">
-          <li class="gh-tab gh-tab-steedos"><a class="gh-tab-link" href="/cn/"><span class="gh-tab-inner"><span class="gh-text-replace">骏马云</span></span></a></li>
-          <li class="gh-tab gh-tab-workflow"><a class="gh-tab-link" href="/cn/workflow/"><span class="gh-tab-inner"><span class="gh-text-replace">审批王</span></span></a></li>
+          <li class="gh-tab gh-tab-steedos"><a class="gh-tab-link" href="/cn/"><span class="gh-tab-inner"><span class="gh-text-replace">华炎云</span></span></a></li>
+          <li class="gh-tab gh-selected-tab gh-tab-workflow"><a class="gh-tab-link" href="/cn/workflow/"><span class="gh-tab-inner"><span class="gh-text-replace">审批王</span></span></a></li>
           <li class="gh-tab gh-tab-drive"><a class="gh-tab-link" href="/cn/drive/"><span class="gh-tab-inner"><span class="gh-text-replace">企业网盘</span></span></a></li>
           <li class="gh-tab gh-tab-mail"><a class="gh-tab-link" href="/cn/omail/"><span class="gh-tab-inner"><span class="gh-text-replace">企业邮箱</span></span></a></li>
-          <li class="gh-tab gh-tab-chat"><a class="gh-tab-link" href="/cn/chat/"><span class="gh-tab-inner"><span class="gh-text-replace">享聊</span></span></a></li>
-          <li class="gh-tab gh-tab-task"><a class="gh-tab-link" href="/cn/otask/"><span class="gh-tab-inner"><span class="gh-text-replace">任我行</span></span></a></li>
+          <li class="gh-tab gh-tab-chat"><a class="gh-tab-link" href="/cn/chat/"><span class="gh-tab-inner"><span class="gh-text-replace">即时通讯</span></span></a></li>
+          <li class="gh-tab gh-tab-task"><a class="gh-tab-link" href="/cn/otask/"><span class="gh-tab-inner"><span class="gh-text-replace">任务管理</span></span></a></li>
+          <!--
           <li class="gh-tab gh-tab-support"><a class="gh-tab-link" href="http://support.steedos.com/" target="_blank"><span class="gh-tab-inner"><span class="gh-text-replace">技术支持</span></span></a></li>
-          <li class="gh-tab gh-tab-singup"><a class="gh-tab-link" href="/system/steedos/"><span class="gh-tab-inner"><span class="gh-text-replace">注册/登录</span></span></a></li>
+          -->
+          <li class="gh-tab gh-tab-singup"><a class="gh-tab-link" href="/system/steedos/?app=workflow#register" target="blank"><span class="gh-tab-inner"><span class="gh-text-replace">注册账户</span></span></a></li>
+          <li class="gh-tab gh-tab-singup"><a class="gh-tab-link" href="/system/steedos/"><span class="gh-tab-inner"><span class="gh-text-replace">客户登录</span></span></a></li>
 
         </ul>
       </div>
@@ -84,13 +83,9 @@
             <%= nav "教程", "cn/workflow/training" %>
             <%= nav "API", "cn/workflow/api" %>
             <%= nav "案例", "cn/workflow/casestudy" %>
+            <!--
             <%= nav "关于", "cn/workflow/aboutus" %>
-            <li class="divider"></li>
-            <li>
-                <a href="/system/steedos/?app=workflow">
-                    <b>客户登录</b>
-                </a>
-            </li>
+            -->
           </ul>
         </div>
       </div>
@@ -105,14 +100,15 @@
     <div class="container hidden-print" id="footer_container">
         <div class="row">
             <div class="col-md-3" name="product">
-                <h4>骏马云 Apps
-                  <small> - <a href="/cn/">关于骏马云</a></small></h4>
+                <h4>审批王</h4>
                 <ul class="list-unstyled" name="products">
-                    <li><a href="/cn/drive">企业网盘</a></li>
-                    <li><a href="/cn/omail">企业邮箱</a></li>
-                    <li><a href="/cn/workflow">审批王</a></li>
-                    <li><a href="/cn/chat">享聊</a></li>
-                    <li><a href="/cn/otask">任我行</a></li>
+                      <li><a href="/cn/workflow">功能</a>
+                      <li><a href="/cn/workflow/downloads">下载</a>
+                      <li><a href="/cn/workflow/training">教程</a>
+                      <li><a href="/cn/workflow/casestudy">案例</a>
+                      <li>&nbsp;
+                      <li><a href="/cn/workflow/pricing">版本与报价</a>
+                      <li><a href="/system/steedos/?app=workflow#register" target="blank">注册账户</a>
                 </ul>
             </div>
             <div class="col-md-3" name="info">
@@ -133,13 +129,6 @@
                 <div>
                     <h4>
                         <span>关于审批王</span>
-                        <small> - 
-                          <a href="/cn/workflow">功能</a>
-                          <a href="/cn/workflow/pricing">报价</a>
-                          <a href="/cn/workflow/downloads">下载</a>
-                          <a href="/cn/workflow/training">教程</a>
-                          <a href="/cn/workflow/casestudy">案例</a>
-                        </small>
                     </h4>
                     <p>                        
                       审批王是全新的企业级在线审批系统，可以快速的将公司的各类审批业务转换为可严格执行的电子流程。常见的审批业务包括：出差申请、差旅报销、请假销假、物品采购、付款申请、固定资产报废、会议室预约、退库管理、客服投诉、工作报告等均可通过审批王处理。

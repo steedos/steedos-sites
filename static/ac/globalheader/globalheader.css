@@ -66,6 +66,7 @@ body {
         height: 2.66667em;
         background: rgba(0,0,0,0.6);
         text-align: left;
+        display: none;
     }
 }
 
@@ -148,10 +149,14 @@ body {
 #globalheader .gh-nav-list {
     position: relative;
     z-index: 1;
+    /*
     width: 1000px;
-    height: 2.55556em;
     margin-left: -10px;
     margin-right: -10px;
+    */
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 2.55556em;
     cursor: default;
     text-align: justify;
     -ms-text-justify: distribute-all-lines;
@@ -251,7 +256,7 @@ body {
     }
 }
 
-#globalheader.gh-selected-tab-store .gh-tab-store .gh-tab-link,#globalheader.gh-selected-tab-mac .gh-tab-mac .gh-tab-link,#globalheader.gh-selected-tab-iphone .gh-tab-iphone .gh-tab-link,#globalheader.gh-selected-tab-watch .gh-tab-watch .gh-tab-link,#globalheader.gh-selected-tab-ipad .gh-tab-ipad .gh-tab-link,#globalheader.gh-selected-tab-ipod .gh-tab-ipod .gh-tab-link,#globalheader.gh-selected-tab-itunes .gh-tab-itunes .gh-tab-link,#globalheader.gh-selected-tab-support .gh-tab-support .gh-tab-link {
+#globalheader .gh-selected-tab .gh-tab-link{
     opacity: 0.5;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
     filter: alpha(opacity=50);

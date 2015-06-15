@@ -2,9 +2,9 @@
 <html lang="en" class="no-js">
 <head>
   <meta charset="utf-8" />
-  <title><%= @item[:title] %></title>
+  <title>企业网盘 - <%= @item[:title] %></title>
   <link rel="shortcut icon" href="/website/img/drive/AppIcon76x76.png" />
-  <meta name="Description" content="华炎云盘，一款深受公司员工喜爱和IT 管理员信赖的安全文件共享与存储解决方案。安全地共享、同步和协作。">
+  <meta name="Description" content="华炎云盘是一款深受公司员工喜爱的文件备份、共享与协作解决方案。提供桌面同步客户端，可以将您的本地文件夹实时自动备份到云端，并自动为您保存文件历史版本。您可以与他人共享，还可以随时使用手机访问文件。">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge"  >
   <meta content="initial-scale=1" name="viewport"/>
             
@@ -49,14 +49,17 @@
     <div class="gh-nav">
       <div class="gh-nav-view">
         <ul class="gh-nav-list">
-          <li class="gh-tab gh-tab-steedos"><a class="gh-tab-link" href="/cn/"><span class="gh-tab-inner"><span class="gh-text-replace">骏马云</span></span></a></li>
+          <li class="gh-tab gh-tab-steedos"><a class="gh-tab-link" href="/cn/"><span class="gh-tab-inner"><span class="gh-text-replace">华炎云</span></span></a></li>
           <li class="gh-tab gh-tab-workflow"><a class="gh-tab-link" href="/cn/workflow/"><span class="gh-tab-inner"><span class="gh-text-replace">审批王</span></span></a></li>
-          <li class="gh-tab gh-tab-drive"><a class="gh-tab-link" href="/cn/drive/"><span class="gh-tab-inner"><span class="gh-text-replace">企业网盘</span></span></a></li>
+          <li class="gh-tab gh-selected-tab gh-tab-drive"><a class="gh-tab-link" href="/cn/drive/"><span class="gh-tab-inner"><span class="gh-text-replace">企业网盘</span></span></a></li>
           <li class="gh-tab gh-tab-mail"><a class="gh-tab-link" href="/cn/omail/"><span class="gh-tab-inner"><span class="gh-text-replace">企业邮箱</span></span></a></li>
-          <li class="gh-tab gh-tab-chat"><a class="gh-tab-link" href="/cn/chat/"><span class="gh-tab-inner"><span class="gh-text-replace">享聊</span></span></a></li>
-          <li class="gh-tab gh-tab-task"><a class="gh-tab-link" href="/cn/otask/"><span class="gh-tab-inner"><span class="gh-text-replace">任我行</span></span></a></li>
+          <li class="gh-tab gh-tab-chat"><a class="gh-tab-link" href="/cn/chat/"><span class="gh-tab-inner"><span class="gh-text-replace">即时通讯</span></span></a></li>
+          <li class="gh-tab gh-tab-task"><a class="gh-tab-link" href="/cn/otask/"><span class="gh-tab-inner"><span class="gh-text-replace">任务管理</span></span></a></li>
+          <!-- 
           <li class="gh-tab gh-tab-support"><a class="gh-tab-link" href="http://support.steedos.com/" target="_blank"><span class="gh-tab-inner"><span class="gh-text-replace">技术支持</span></span></a></li>
-          <li class="gh-tab gh-tab-singup"><a class="gh-tab-link" href="/system/steedos/"><span class="gh-tab-inner"><span class="gh-text-replace">注册/登录</span></span></a></li>
+          -->
+          <li class="gh-tab gh-tab-singup"><a class="gh-tab-link" href="/system/steedos/?app=drive#register"><span class="gh-tab-inner"><span class="gh-text-replace">注册账户</span></span></a></li>
+          <li class="gh-tab gh-tab-singup"><a class="gh-tab-link" href="/system/steedos/"><span class="gh-tab-inner"><span class="gh-text-replace">客户登录</span></span></a></li>
 
         </ul>
       </div>
@@ -82,21 +85,15 @@
           <ul class="nav navbar-nav navbar-right" id="top_menu">                              
                     
 
-            <%= nav "简介", "cn/drive" %>
-            <%= nav "功能", "cn/drive/features" %>
+            <%= nav "共享", "cn/drive/features/sharing" %>
+            <%= nav "协作", "cn/drive/features/collaboration" %>
+            <%= nav "移动", "cn/drive/features/mobile" %>
+            <%= nav "同步", "cn/drive/features/backup" %>
+            <%= nav "控制", "cn/drive/features/security" %>
+
             <%= nav "报价", "cn/drive/pricing" %>
             <%= nav "下载", "cn/drive/downloads" %>
-            <%= nav "关于", "cn/drive/aboutus" %>
 
-            <!-- 
-            <%= nav "教程", "cn/otask/training" %>
-             -->
-            <li class="divider"></li>
-            <li>
-                <a href="/system/steedos/?app=drive">
-                    <b>客户登录</b>
-                </a> 
-            </li>
           </ul>
         </div>
       </div>
@@ -105,20 +102,109 @@
   <main>
     <div id="wrap" class="oe_structure oe_empty">
   <%= yield %>
+
+
+
+
+      <section style="color: rgb(200, 200, 200);" class="jumbotron mb0">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 text-muted">
+              <p class="mb0">
+                <strong>好东西，有时恰恰是免费的</strong>
+              </p>
+              <p class="mb0">现在注册，即可获赠1G免费空间，赶快行动吧！</p>
+            </div>
+            <div class="col-md-3">
+              <a style="-webkit-user-select: auto; cursor: text !important;" href="/system/steedos/?app=drive#register" target="_blank" class="btn btn-lg pull-right mt8 btn-success"><span class="fa fa-arrow-right"></span>免费开通账户</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="mt0 mb0">
+        <div class="container">
+          <div class="row mt16 mb16">
+            <div class="col-md text-center">
+              <h3 class="mt8 mb0">让您的团队保持同步</h3>
+              <div class="row mt16 mb16">
+
+                <div class="col-md-4 text-center mb16">
+                  <img src="/website/img/drive/sharing.png" width="200"/>
+                  <h3 class="mt8 mb0">共享</h3>
+                  <h5 class="text-muted">
+                    <span style="line-height: 1.428571429;">轻松与内部和外部协作者共享文件,并在共享过程的每个步骤中保护内容安全。
+                  </h5>
+                  <a href="/cn/drive/features/sharing/" class="btn btn-primary">了解更多</a>
+                </div>
+                <div class="col-md-4 text-center">
+                  <img src="/website/img/drive/collaboration.png" width="200"/>
+                  <h3 class="mt8 mb0">协作</h3>
+                  <h5 class="text-muted">
+                    <span style="line-height: 1.428571429;">在一个地方集中存储所有工作资料,让团队保持同步,减少在访问文件上浪费时间。
+                    </span>
+                  </h5>
+                  <a href="/cn/drive/features/collaboration/" class="btn btn-primary">了解更多</a>
+                </div>
+                <div class="col-md-4 text-center mb16">
+                  <img src="/website/img/drive/mobile.png" width="200"/>
+                  <h3 class="mt8 mb0">移动</h3>
+                  <h5 class="text-muted">
+                    <span style="line-height: 1.428571429;">借助华炎云盘的手机客户端，您的团队可以全天候不间断地访问文件，无缝、安全地进行合作。
+                    </span>
+                  </h5>
+                  <a href="/cn/drive/features/mobile/" class="btn btn-primary">了解更多</a>
+                </div>
+            </div>
+            </div>
+            <div class="row mt16 mb16">
+                <div class="col-md-4 text-center mb16">
+                  <img src="/website/img/drive/backup.png" width="200"/>
+                  <h3 class="mt8 mb0">同步</h3>
+                  <h5 class="text-muted">
+                    <span style="line-height: 1.428571429;">华炎云盘提供桌面同步客户端，为您自动备份重要文档，并保留历史版本。</span>
+                  </h5>
+                  <a href="/cn/drive/features/backup/" class="btn btn-primary">了解更多</a>
+                </div>
+                <div class="col-md-4 text-center mb16">
+                  <img src="/website/img/drive/security.png" width="200"/>
+                  <h3 class="mt8 mb0">控制</h3>
+                  <h5 class="text-muted">
+                    <span style="line-height: 1.428571429;">借助简单但强大的系统管理和监视工具,您能以前所未有的轻松方式深入查看并控制公司信息。
+                  </h5>
+                  <a href="/cn/drive/features/security/" class="btn btn-primary">了解更多</a>
+                </div>
+                <div class="col-md-4 text-center mb16">
+                  <img src="/website/img/drive/backup.png" width="200"/>
+                  <h3 class="mt8 mb0">备份</h3>
+                  <h5 class="text-muted">
+                    <span style="line-height: 1.428571429;">可靠的备份功能与业务发展保持同速，让您安心没烦恼。您的IT部门也将对您感激不尽。
+                  </h5>
+                  <a href="/cn/drive/features/backup/" class="btn btn-primary">了解更多</a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
     </div>
   </main>
   <footer>
     <div class="container hidden-print" id="footer_container">
         <div class="row">
             <div class="col-md-3" name="product">
-                <h4>骏马云 Apps
-                  <small> - <a href="/cn/">关于骏马云</a></small></h4>
+                <h4>华炎云盘</h4>
                 <ul class="list-unstyled" name="products">
-                    <li><a href="/cn/drive">企业网盘</a></li>
-                    <li><a href="/cn/omail">企业邮箱</a></li>
-                    <li><a href="/cn/workflow">审批王</a></li>
-                    <li><a href="/cn/chat">享聊</a></li>
-                    <li><a href="/cn/otask">任我行</a></li>
+                    <li><a href="/cn/drive/features/sharing/">共享</a></li>
+                    <li><a href="/cn/drive/features/collaboration/">协作</a></li>
+                    <li><a href="/cn/drive/features/mobile/">移动</a></li>
+                    <li><a href="/cn/drive/features/backup/">同步</a></li>
+                    <li><a href="/cn/drive/features/security/">控制</a></li>
+                    <li>&nbsp;</li>
+                    <li><a href="/cn/drive/downloads/">下载客户端</a></li>
+                    <li><a href="/cn/drive/pricing/">版本与报价</a></li>
                 </ul>
             </div>
             <div class="col-md-3" name="info">
@@ -147,11 +233,10 @@
                         </small>
                     </h4>
                     <p>                        
-                      华炎云盘，一款深受公司员工喜爱和IT管理员信赖的安全文件共享与存储解决方案。安全地共享、同步和协作。
+                      华炎云盘是一款深受公司员工喜爱的文件备份、共享与协作解决方案。提供桌面同步客户端，可以将您的本地文件夹实时自动备份到云端，并自动为您保存文件历史版本。您可以与他人共享，还可以随时使用手机访问文件。
                     </p>
                 </div>
                 <!-- <ul class="list-inline js_language_selector mt16"><li><a href="/us/otask" >English</a></li><li><a href="/cn/otask" >简体中文</a></li></ul> -->
-                <ul class="list-inline js_language_selector mt16"><li><a href="/cn/drive/index/mobile/">移动</a></li><li><a href="/cn/drive/index/security/">控制</a></li><li><a href="/cn/drive/index/collaboration/">协作</a></li><li><a href="/cn/drive/index/sharing/">共享</a></li><li><a href="/cn/drive/index/backup/">备份</a></li></ul>
                 
             </div>
         </div>
@@ -163,6 +248,7 @@
             <a href="http://www.steedos.com/" class="label label-danger">SteedOS.com</a>
         </div>
         -->
+        
 
         <div class="pull-left text-muted">
             版权所有 © 华炎软件. 保留所有权利. 

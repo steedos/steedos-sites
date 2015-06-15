@@ -49,14 +49,18 @@
     <div class="gh-nav">
       <div class="gh-nav-view">
         <ul class="gh-nav-list">
-          <li class="gh-tab gh-tab-steedos"><a class="gh-tab-link" href="/cn/"><span class="gh-tab-inner"><span class="gh-text-replace">骏马云</span></span></a></li>
+         
+          <li class="gh-tab gh-tab-steedos"><a class="gh-tab-link" href="/cn/"><span class="gh-tab-inner"><span class="gh-text-replace">华炎云</span></span></a></li>
           <li class="gh-tab gh-tab-workflow"><a class="gh-tab-link" href="/cn/workflow/"><span class="gh-tab-inner"><span class="gh-text-replace">审批王</span></span></a></li>
           <li class="gh-tab gh-tab-drive"><a class="gh-tab-link" href="/cn/drive/"><span class="gh-tab-inner"><span class="gh-text-replace">企业网盘</span></span></a></li>
           <li class="gh-tab gh-tab-mail"><a class="gh-tab-link" href="/cn/omail/"><span class="gh-tab-inner"><span class="gh-text-replace">企业邮箱</span></span></a></li>
-          <li class="gh-tab gh-tab-chat"><a class="gh-tab-link" href="/cn/chat/"><span class="gh-tab-inner"><span class="gh-text-replace">享聊</span></span></a></li>
-          <li class="gh-tab gh-tab-task"><a class="gh-tab-link" href="/cn/otask/"><span class="gh-tab-inner"><span class="gh-text-replace">任我行</span></span></a></li>
+          <li class="gh-tab gh-tab-chat"><a class="gh-tab-link" href="/cn/chat/"><span class="gh-tab-inner"><span class="gh-text-replace">即时通讯</span></span></a></li>
+          <li class="gh-tab gh-selected-tab gh-tab-task"><a class="gh-tab-link" href="/cn/otask/"><span class="gh-tab-inner"><span class="gh-text-replace">任务管理</span></span></a></li>
+          <!--
           <li class="gh-tab gh-tab-support"><a class="gh-tab-link" href="http://support.steedos.com/" target="_blank"><span class="gh-tab-inner"><span class="gh-text-replace">技术支持</span></span></a></li>
-          <li class="gh-tab gh-tab-singup"><a class="gh-tab-link" href="/system/steedos/"><span class="gh-tab-inner"><span class="gh-text-replace">注册/登录</span></span></a></li>
+          -->
+          <li class="gh-tab gh-tab-singup"><a class="gh-tab-link" href="/system/steedos/?app=otask#register" target="blank"><span class="gh-tab-inner"><span class="gh-text-replace">注册账户</span></span></a></li>
+          <li class="gh-tab gh-tab-singup"><a class="gh-tab-link" href="/system/steedos/"><span class="gh-tab-inner"><span class="gh-text-replace">客户登录</span></span></a></li>
 
         </ul>
       </div>
@@ -87,12 +91,6 @@
             <%= nav "教程", "cn/otask/training" %>
             <%= nav "关于", "cn/otask/aboutus" %>
             
-            <li class="divider"></li>
-            <li>
-                <a href="http://otask.steedos.com">
-                    <b>客户登录</b>
-                </a>
-            </li>
           </ul>
         </div>
       </div>
@@ -107,14 +105,12 @@
     <div class="container hidden-print" id="footer_container">
         <div class="row">
             <div class="col-md-3" name="product">
-                <h4>骏马云 Apps
-                  <small> - <a href="/cn/">关于骏马云</a></small></h4>
+                <h4>任我行</h4>
                 <ul class="list-unstyled" name="products">
-                    <li><a href="/cn/drive">企业网盘</a></li>
-                    <li><a href="/cn/omail">企业邮箱</a></li>
-                    <li><a href="/cn/workflow">审批王</a></li>
-                    <li><a href="/cn/chat">享聊</a></li>
-                    <li><a href="/cn/otask">任我行</a></li>
+                    <li><a href="/cn/otask">功能</a>
+                    <li><a href="/cn/otask/pricing">报价</a>
+                    <li><a href="/cn/otask/downloads">下载</a>
+                    <li><a href="/cn/otask/training">教程</a>
                 </ul>
             </div>
             <div class="col-md-3" name="info">
@@ -135,12 +131,6 @@
                 <div>
                     <h4>
                         <span>任我行</span>
-                        <small> - 
-                          <a href="/cn/otask">功能</a>
-                          <a href="/cn/otask/pricing">报价</a>
-                          <a href="/cn/otask/downloads">下载</a>
-                          <a href="/cn/otask/training">教程</a>
-                        </small>
                     </h4>
                     <p>                        
                       “任我行”是全新的团队任务管理软件，您可以快速的将任务分解成一张张的工作清单，并通过手机等设备和任务负责人实时沟通任务，让您的团队更有效率地完成工作。

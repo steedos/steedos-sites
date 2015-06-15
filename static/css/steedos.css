@@ -1,3 +1,10 @@
 footer {
     background-color: #eee;
 }
+
+@media only screen and (max-device-width: 767px) {
+	.navbar-nav>li>a {
+		padding-top: 8px !important;
+		padding-bottom: 8px !important;
+	}
+}
