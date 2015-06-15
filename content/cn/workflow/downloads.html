@@ -14,10 +14,46 @@ id: cn/workflow/downloads
           </div>
         </div>
       </section>
+
+      <section class="mb16">
+        <div class="container">
+          <div class="row mt16 mb16">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-4">
+              <span class="fa fa-apple fa-5x"></span>
+              <h3 class="mt8 mb0">Mac 客户端</h3>
+              <div class="text-muted">点击按钮，下载审批王 Mac 客户端</div>
+              <div class="text-muted">
+                <a href="https://drive.steedos.com/public.php?service=files&t=375543c7abd27330857c477feda9fb49&path=%2Fsteedos%2Fmac&files=SteedOS_Desktop.dmg&download" class="btn btn-success">下载</a>
+              </div>
+            </div>
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-4">
+              <span class="fa fa-windows fa-5x"></span>
+              <h3 class="mt8 mb0">Window 客户端</h3>
+              <div class="text-muted">点击按钮，下载审批王 Windows 客户端</div>
+              <div class="text-muted"></div>
+              <div class="text-muted">
+                <a href="https://drive.steedos.com/public.php?service=files&t=375543c7abd27330857c477feda9fb49&path=%2Fsteedos%2Fwindows&files=SteedOS_Desktop.msi&download" class="btn btn-success" target="_blank">下载</a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
       <section class="mt16 mb16">
         <div class="container">
           <div class="row">
+
+            <div class="col-md-2">
+            </div>
             <div class="col-md-4">
+              <span class="fa fa-apple fa-5x"></span>
+              <h3 class="mt8 mb0">iPhone & iPad 客户端</h3>
+              <p>扫描二维码或点击按钮，从苹果AppStore下载审批王 iPhone & iPad 客户端。</p>
               <div id="ios_download" class="qr_code"></div>
               <script>
                 var qrcode = new QRCode("ios_download", {
@@ -29,32 +65,18 @@ id: cn/workflow/downloads
                     correctLevel : QRCode.CorrectLevel.M
                 });
               </script>
-              <h4 class="mt16">iPhone & iPad 客户端</h4>
-              <p>扫描二维码或点击按钮，从苹果AppStore下载审批王 iPhone & iPad 客户端。</p>
-              <p style="text-align: center;">
+              <br>
+              <p>
                 <a href="http://itunes.apple.com/cn/app/steedos-workflow/id686408407" class="btn btn-success" target="_blank">下载</a>
               </p>
             </div>
-            <div class="col-md-4">
-              <div id="googleplay_download" class="qr_code"></div>
-              <script>
-                var qrcode = new QRCode("googleplay_download", {
-                    text: "https://play.google.com/store/apps/details?id=com.steedos.workflow",
-                    width: 200,
-                    height: 200,
-                    colorDark : "#000000",
-                    colorLight : "#ffffff",
-                    correctLevel : QRCode.CorrectLevel.M
-                });
-              </script>
-              <h4 class="mt16">Android 客户端 （Google Play）</h4>
-              <p>扫描二维码或点击按钮，从Google Play下载审批王 Android 客户端。</p>
-              <p>由于国内网络环境的影响，可能无法打开链接。若您不能翻墙，请扫描右侧的二维码，从官网下载客户端。</p>
-              <p style="text-align: center;">
-                <a href="https://play.google.com/store/apps/details?id=com.steedos.workflow" class="btn btn-success" target="_blank">下载</a>
-              </p>
+            
+            <div class="col-md-2">
             </div>
             <div class="col-md-4">
+              <span class="fa fa-android fa-5x"></span>
+              <h3 class="mt8 mb0">Android 客户端 </h3>
+              <p>扫描二维码或点击按钮，从华炎云官网下载审批王 Android 客户端。</p>
               <div id="android_download" class="qr_code"></div>
               <script>
                 var qrcode = new QRCode("android_download", {
@@ -66,15 +88,14 @@ id: cn/workflow/downloads
                     correctLevel : QRCode.CorrectLevel.M
                 });
               </script>
-              <h4 class="mt16">Android 客户端 （官网下载）</h4>
-              <p>扫描二维码或点击按钮，从骏马云官网下载审批王 Android 客户端。</p>
               <p>请注意：使用微信扫码无法打开链接，因此请改用<strong><span style="color:#0000CD;">微博</span></strong>或其他扫码工具。</p>
-              <p style="text-align: center;">
+              <p>
                 <a href="https://drive.steedos.com/public.php?service=files&t=375543c7abd27330857c477feda9fb49&path=%2Fworkflow%2Fandroid&files=SteedOS_Workflow.apk&download" class="btn btn-success" target="_blank">下载</a>
               </p>
             </div>
           </div>
         </div>
+<<<<<<< HEAD
       </section>
       <section class="mb16">
         <div class="container">
@@ -107,4 +128,6 @@ id: cn/workflow/downloads
             </div>
           </div>
         </div>
+=======
+>>>>>>> origin/master
       </section>
