@@ -7,99 +7,139 @@ id: us/chat/api
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-center mt16 mb32">
-              <h2>oChat API</h2>
+              <h2>SteedOS Chat API</h2>
             </div>
             <div>
 
-  <h2>API Authentication</h2>
   <div id="slow">
-    <p>The SteedOS API uses OAuth 2 to allow you to authenticate as a user. Each API request must pass an access token to authenticate correctly. If the token is not provided or invalid you will receive a 401 response.</p>
+    <p>The SteedOS Chat REST API allow you control and extend SteedOS Chat.</p>
+    <p>Our RESTful APIs should be easy to extend, and the current implementation is specifically coded to illustrate techniques required to overcome common problems.</p>
+    <p>For security reasons, if you are deploying in production, make sure you have:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;a) configured and only call REST APIs over HTTPS</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;b) implement a timed authorization token expiry strategy</p>
   </div>
-  <h2>Wire format</h2>
+  <h2>Obtaining the running SteedOS Chat version via REST API</h2>
   <div id="fast">
-    <p>You have the choice of providing your access token either as the 'auth_token' query parameter or in the Authorization HTTP request header.</p>
-    <p>For example, if your token were 'abc123', passing the token in as a query parameter in a request would look like:</p>
-    <pre><code>GET /chat/messages?auth_token=abc123 HTTP/1.1
-    Host: chatws.steedos.com</pre></code>
+    <p>This is the only API you can call without logging in. It is useful to ensure that you have activated REST API properly.</p>
+    
+    <pre><code>curl http://localhost:3000/api/version
 
-    <p></p>
-    <p>Which would generate the response:</p>
-    <pre><code>HTTP/1.1 200 OK
-      Date: Wed, 11 Sep 2013 21:55:00 GMT
-      Content-Type: application/json
-      Transfer-Encoding: chunked
-      Connection: keep-alive
-      Access-Control-Allow-Origin: *</pre></code>
-    <p></p>
-    <pre><code>{...}</pre></code>
-
-    <p></p>
-    <p>If you wanted to not expose your access token in server logs, you could choose to use theAuthorization HTTP header:</p>
-    <pre><code>GET /chat/messages HTTP/1.1
-      Authorization: Jack abc123
-      Host: chatws.steedos.com</pre></code>
- 
-
-  <h2>Resource representations</h2>
-  <p>Room Object</p>
-  <pre><code>{
-    id: {string},
-    space: {string},
-    followers: [
-      { 
-        id: {string},
-        name: {string},
-        followed_at: {time},
-        last_read: {time}
-      }
-    ],
-    last_message: {time},
-    created: {time},
-    created_by {string},
-    modified: {time}
-  }</code></pre>
-  <br>
-  <p>Message Object</p>
-  <pre><code>{
-    id: {string},
-    room: {string},
-    body: {string},
-    attachment: {
-      filename: {string},
-      contentType: {string},
-      length: {number},
-      _rev: {string}
-    },
-    created: {time},
-    created_by {string},
-    created_by_name: {string}
-  }</code></pre>
+{
+   "status": "success",
+   "versions": {
+      "api": "0.1",
+      "steedoschat": "0.5"
+   }
+}
+</pre></code>
 
   <br>
-  <h2>Create Room</h2>
-  <p>HTTP Request<p>
-  <pre><code>POST https://chatws.steedos.com/chat/room/</code></pre>
+  <h2>Logon with REST API</h2>
+  <p>requires authentication: no<p>
+  <p>http method: post<p>
+  <p>expected payload:<p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;user: the username to use authentication as<p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;password: the password for that user<p>
+  <p>Notes:<p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;<b>You will need to provide the authToken and userId for any of the authenticated methods.</b><p>
+  <pre><code>curl http://localhost:3000/api/login 
+    -d "password=MySECRET&user=sing"
+
+{
+  "status": "success",
+  "data": {
+      "authToken": "9HqLlyZOugoStsXCUfD_0YdwnNnunAJF8V47U3QHXSq",
+      "userId": "aobEdbYhXfu5hkeqG"
+   }
+}
+</code></pre>
 
   <br>
-  <p>HTTP Request Body<p>
-  <pre><code>{room_object}</code></pre>
+  <h2>Logoff with REST API</h2>
+  <pre><code>curl -H "X-Auth-Token: 9HqLlyZOugoStsXCUfD_0YdwnNnunAJF8V47U3QHXSq" 
+  -H "X-User-Id: aobEdbYhXfu5hkeqG" 
+  http://localhost:3000/api/logout
+
+{
+   "status": "success",
+   "data": {
+     "message": "You've been logged out!"
+   }
+}</code></pre>
 
   <br>
-  <p>HTTP Response Body</p>
-  <pre><code>{changeset}</code></pre>
+  <h2>Get list of public rooms via REST API</h2>
+  <pre>curl -H "X-Auth-Token: 9HqLlyZOugoStsXCUfD_0YdwnNnunAJFV47U3QHXSq" 
+  -H "X-User-Id: aobEdbYhXfu5hkeqG" 
+  http://localhost:3000/api/publicRooms
+
+{
+  "status": "success",
+  "rooms": [
+    {
+      "_id": "GENERAL",
+      "usernames": [
+        "admin",
+        "sing"
+      ],
+     "ts": "2015-07-24T14:35:23.542Z",
+     "t": "c",
+      "other fields": "other fields ...."<code></code></pre>
 
   <br>
-  <h2>Send Message</h2>
-  <p>HTTP Request<p>
-  <pre><code>POST https://chatws.steedos.com/chat/message/{room_id}</code></pre>
+  <h2>Join a room via REST API</h2>
+  <pre><code>curl -H "X-Auth-Token: S5u0ZNNbc5W6Qqug90JdWRT2sxEWgz9m5mu2dWOQ5v" 
+  -H "X-User-Id: aobEdbYhXfu5hkeqG" 
+  http://localhost:3000/api/rooms/x4pRahjs5oYcTYu7i/join 
+  -d "{}"
+
+{
+   "status": "success"
+}</code></pre>
 
   <br>
-  <p>HTTP Request Body<p>
-  <pre><code>{message_object}</code></pre>
+  <h2>Leave a room via REST API</h2>
+  <pre><code>curl -H "X-Auth-Token: S5u0ZNNbc5W6Qqug90JdWRT2sxEWgz9m5mu2dWOQ5v" 
+  -H "X-User-Id: aobEdbYhXfu5hkeqG" 
+  http://localhost:3000/api/rooms/x4pRahjs5oYcTYu7i/leave 
+  -d "{}"
+
+ {
+   "status": "success"
+ }</code></pre>
 
   <br>
-  <p>HTTP Response Body</p>
-  <pre><code>{changeset}</code></pre>
+  <h2>Get all unread messages in a room via REST API</h2>
+  <pre><code>curl -H "X-Auth-Token: S5u0ZNNbc5W6Qqug5mu2dWOQ5v" 
+      -H "X-User-Id: aobEdbYhXfu5hkeqG"
+   http://localhost:3000/api/rooms/x4pRahjs5oYcTYu7i/messages     
+
+ {
+    "status": "success",
+    "messages": [
+      {
+        "_id": "apr5LTtj6ACYEFAJi",
+        "rid": "x4pRahjs5oYcTYu7i",
+        "msg": "We don't play games with your data.",
+        "ts": "2015-07-27T15:25:43.549Z",
+         "u": {
+           "_id": "GaRouhq7BFWz2tSJd",
+           "other fields": "other fields ...." </code></pre>
+
+  <br>
+  <h2>Sending a message via REST API</h2>
+  <pre><code>curl -H "X-Auth-Token: S5u0ZNNbc5W6Qqug90JdWRT2sxEWgz9mR5mu2dWOQ5v" 
+     -H "Content-Type: application/json" 
+     -X POST 
+     -H "X-User-Id: aobEdbYhXfu5hkeqG" 
+        http://localhost:3000/api/rooms/x4pRahjs5oYcTYu7i/send 
+     -d "{ \"msg\" : \"OK\" }"
+
+{
+  "status": "success"
+}</code></pre>
+
+  
             </div>
           </div>
         </div>
