@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: https://ruby.taobao.org/
   specs:
     adsf (1.1.1)
       rack (>= 1.0.0)
@@ -58,3 +58,6 @@ DEPENDENCIES
   guard-nanoc
   mime-types
   nanoc
+
+BUNDLED WITH
+   1.10.6
