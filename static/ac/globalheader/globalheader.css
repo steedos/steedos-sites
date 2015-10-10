@@ -55,7 +55,7 @@ body {
     height: 2.55556em;
     /* margin: 0 auto 1em; */
     background: #444;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.8);
     font-size: 18px;
 }
 
@@ -257,9 +257,9 @@ body {
 }
 
 #globalheader .gh-selected-tab .gh-tab-link{
-    opacity: 0.5;
+    opacity: 0.65;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-    filter: alpha(opacity=50);
+    filter: alpha(opacity=65);
 }
 
 #globalheader .gh-tab-link {
