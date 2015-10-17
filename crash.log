@@ -1,8 +1,8 @@
-Crashlog created at 2015-10-09 09:39:13 +0800
+Crashlog created at 2015-10-17 19:16:55 +0800
 
 ===== MESSAGE:
 
-Errno::EADDRINUSE: Address already in use - bind(2)
+Nanoc::Errors::DuplicateIdentifier: There are multiple items with the /cn/help/workflow/ identifier.
 
 ===== COMPILATION STACK:
 
@@ -10,213 +10,186 @@ Errno::EADDRINUSE: Address already in use - bind(2)
 
 ===== STACK TRACE:
 
-  0. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/utils.rb:85:in `initialize'
-  1. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/utils.rb:85:in `new'
-  2. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/utils.rb:85:in `block in create_listeners'
-  3. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/utils.rb:82:in `each'
-  4. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/utils.rb:82:in `create_listeners'
-  5. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/server.rb:132:in `listen'
-  6. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/server.rb:113:in `initialize'
-  7. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:45:in `initialize'
-  8. /Library/Ruby/Gems/2.0.0/gems/rack-1.5.2/lib/rack/handler/webrick.rb:11:in `new'
-  9. /Library/Ruby/Gems/2.0.0/gems/rack-1.5.2/lib/rack/handler/webrick.rb:11:in `run'
-  10. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib/nanoc/cli/commands/view.rb:51:in `run'
-  11. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib/nanoc/cli/command_runner.rb:14:in `block in call'
-  12. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib/nanoc/cli/error_handler.rb:70:in `handle_while'
-  13. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
-  14. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib/nanoc/cli/command_runner.rb:13:in `call'
-  15. /Library/Ruby/Gems/2.0.0/gems/cri-2.3.0/lib/cri/command_dsl.rb:185:in `block in runner'
-  16. /Library/Ruby/Gems/2.0.0/gems/cri-2.3.0/lib/cri/command.rb:296:in `call'
-  17. /Library/Ruby/Gems/2.0.0/gems/cri-2.3.0/lib/cri/command.rb:296:in `run_this'
-  18. /Library/Ruby/Gems/2.0.0/gems/cri-2.3.0/lib/cri/command.rb:249:in `run'
-  19. /Library/Ruby/Gems/2.0.0/gems/cri-2.3.0/lib/cri/command.rb:262:in `run'
-  20. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib/nanoc/cli.rb:52:in `block in run'
-  21. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib/nanoc/cli/error_handler.rb:70:in `handle_while'
-  22. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
-  23. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib/nanoc/cli.rb:50:in `run'
-  24. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/bin/nanoc:19:in `<top (required)>'
-  25. /usr/bin/nanoc:23:in `load'
-  ... 28 more lines omitted. See full crash log for details.
+  0. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/base/source_data/site.rb:393:in `block in ensure_identifier_uniqueness'
+  1. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/base/source_data/site.rb:391:in `ensure_identifier_uniqueness'
+  2. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/base/source_data/site.rb:249:in `load'
+  3. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/base/source_data/site.rb:127:in `layouts'
+  4. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/base/compilation/compiler.rb:186:in `dependency_tracker'
+  5. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/base/memoization.rb:54:in `block in memoize'
+  6. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/base/compilation/compiler.rb:458:in `stores'
+  7. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/base/compilation/compiler.rb:145:in `unload'
+  8. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/base/source_data/site.rb:278:in `unload'
+  9. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/base/source_data/site.rb:258:in `rescue in load'
+  10. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/base/source_data/site.rb:262:in `load'
+  11. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/base/compilation/compiler.rb:116:in `load'
+  12. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/base/compilation/compiler.rb:80:in `run'
+  13. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/base/source_data/site.rb:58:in `compile'
+  14. /Library/Ruby/Gems/2.0.0/gems/guard-nanoc-1.0.3/lib/guard/nanoc.rb:65:in `block in recompile'
+  15. /Library/Ruby/Gems/2.0.0/gems/guard-nanoc-1.0.3/lib/guard/nanoc.rb:63:in `chdir'
+  16. /Library/Ruby/Gems/2.0.0/gems/guard-nanoc-1.0.3/lib/guard/nanoc.rb:63:in `recompile'
+  17. /Library/Ruby/Gems/2.0.0/gems/guard-nanoc-1.0.3/lib/guard/nanoc.rb:28:in `run_on_changes'
+  18. /Library/Ruby/Gems/2.0.0/gems/guard-2.13.0/lib/guard/runner.rb:82:in `block in _supervise'
+  19. /Library/Ruby/Gems/2.0.0/gems/guard-2.13.0/lib/guard/runner.rb:79:in `catch'
+  20. /Library/Ruby/Gems/2.0.0/gems/guard-2.13.0/lib/guard/runner.rb:79:in `_supervise'
+  21. /Library/Ruby/Gems/2.0.0/gems/guard-2.13.0/lib/guard/runner.rb:61:in `block (3 levels) in run_on_changes'
+  22. /Library/Ruby/Gems/2.0.0/gems/guard-2.13.0/lib/guard/runner.rb:56:in `each'
+  23. /Library/Ruby/Gems/2.0.0/gems/guard-2.13.0/lib/guard/runner.rb:56:in `block (2 levels) in run_on_changes'
+  24. /Library/Ruby/Gems/2.0.0/gems/guard-2.13.0/lib/guard/runner.rb:119:in `block (2 levels) in _run_group_plugins'
+  25. /Library/Ruby/Gems/2.0.0/gems/guard-2.13.0/lib/guard/runner.rb:117:in `each'
+  26. /Library/Ruby/Gems/2.0.0/gems/guard-2.13.0/lib/guard/runner.rb:117:in `block in _run_group_plugins'
+  27. /Library/Ruby/Gems/2.0.0/gems/guard-2.13.0/lib/guard/runner.rb:116:in `catch'
+  28. /Library/Ruby/Gems/2.0.0/gems/guard-2.13.0/lib/guard/runner.rb:116:in `_run_group_plugins'
+  29. /Library/Ruby/Gems/2.0.0/gems/guard-2.13.0/lib/guard/runner.rb:54:in `block in run_on_changes'
+  30. /Library/Ruby/Gems/2.0.0/gems/guard-2.13.0/lib/guard/runner.rb:53:in `each'
+  31. /Library/Ruby/Gems/2.0.0/gems/guard-2.13.0/lib/guard/runner.rb:53:in `run_on_changes'
+  32. /Library/Ruby/Gems/2.0.0/gems/guard-2.13.0/lib/guard/internals/queue.rb:23:in `process'
+  33. /Library/Ruby/Gems/2.0.0/gems/guard-2.13.0/lib/guard/commander.rb:43:in `start'
+  34. /Library/Ruby/Gems/2.0.0/gems/guard-2.13.0/lib/guard/cli/environments/valid.rb:16:in `start_guard'
+  35. /Library/Ruby/Gems/2.0.0/gems/guard-2.13.0/lib/guard/cli.rb:122:in `start'
+  36. /Library/Ruby/Gems/2.0.0/gems/thor-0.19.1/lib/thor/command.rb:27:in `run'
+  37. /Library/Ruby/Gems/2.0.0/gems/thor-0.19.1/lib/thor/invocation.rb:126:in `invoke_command'
+  38. /Library/Ruby/Gems/2.0.0/gems/thor-0.19.1/lib/thor.rb:359:in `dispatch'
+  39. /Library/Ruby/Gems/2.0.0/gems/thor-0.19.1/lib/thor/base.rb:440:in `start'
+  40. /Library/Ruby/Gems/2.0.0/gems/guard-2.13.0/lib/guard/aruba_adapter.rb:32:in `execute'
+  41. /Library/Ruby/Gems/2.0.0/gems/guard-2.13.0/lib/guard/aruba_adapter.rb:19:in `execute!'
 
 ===== VERSION INFORMATION:
 
-nanoc 3.6.3 © 2007-2013 Denis Defreyne.
-Running ruby 2.0.0 (2014-02-24) on universal.x86_64-darwin13 with RubyGems 2.0.14.
+nanoc 3.8.0 © 2007-2015 Denis Defreyne.
+Running ruby 2.0.0 (2015-04-13) on universal.x86_64-darwin15 with RubyGems 2.0.14.
 
 ===== SYSTEM INFORMATION:
 
-Darwin localhost.steedos.com 13.3.0 Darwin Kernel Version 13.3.0: Tue Jun  3 21:27:35 PDT 2014; root:xnu-2422.110.17~1/RELEASE_X86_64 x86_64
+Darwin hotoadeMacBook-Pro.local 15.0.0 Darwin Kernel Version 15.0.0: Wed Aug 26 16:57:32 PDT 2015; root:xnu-3247.1.106~1/RELEASE_X86_64 x86_64
 
 ===== INSTALLED GEMS:
 
+  CFPropertyList 2.2.8
+  addressable 2.3.5, 2.3.8
   adsf 1.1.1
-  bundler 1.10.6
-  celluloid 0.15.2
-  chunky_png 1.2.8
+  bigdecimal 1.2.0
+  bundle 0.0.1
+  bundler 1.10.2, 1.10.6
+  celluloid 0.15.2, 0.16.0
+  chunky_png 1.2.8, 1.2.9, 1.3.4
   coderay 1.1.0
   colored 1.2
-  compass 0.12.2
+  compass 0.12.2, 1.0.3
+  compass-core 1.0.3
+  compass-import-once 1.0.5
+  cookiejar 0.3.0, 0.3.2
   cri 2.3.0
-  ffi 1.9.3
-  formatador 0.2.4
+  daemons 1.1.9, 1.2.2
+  em-http-request 1.1.1, 1.1.2
+  em-socksify 0.3.0
+  erubis 2.7.0
+  eventmachine 1.0.3, 1.0.7
+  extlib 0.9.16
+  ffi 1.9.8
+  formatador 0.2.5
   fssm 0.2.10
-  guard 2.6.1
-  guard-nanoc 1.0.2
-  listen 2.7.5
-  lumberjack 1.0.5
+  guard 2.13.0
+  guard-nanoc 1.0.3
+  haml 3.1.8, 4.0.6
+  hitimes 1.2.2
+  http_parser.rb 0.6.0
+  io-console 0.4.2
+  json 1.7.7
+  json_pure 1.8.1, 1.8.2
+  libxml-ruby 2.6.0
+  listen 2.10.0
+  lumberjack 1.0.9
   method_source 0.8.2
-  mime-types 1.23
-  nanoc 3.6.3
-  pry 0.9.12.6
-  rack 1.5.2
-  rb-fsevent 0.9.4
-  rb-inotify 0.9.4
-  sass 3.2.9
-  slop 3.5.0
-  thor 0.19.1
-  timers 1.1.0
+  minitest 4.3.2
+  multi_json 1.11.0
+  nanoc 3.8.0
+  nenv 0.2.0
+  nokogiri 1.5.6
+  notiffany 0.0.8
+  pry 0.10.3
+  psych 2.0.0
+  rack 1.5.2, 1.6.1
+  rake 0.9.6
+  rb-fsevent 0.9.5
+  rb-inotify 0.9.5
+  rdoc 4.0.0
+  sass 3.2.9, 3.2.13, 3.4.14
+  shellany 0.0.1
+  slop 3.6.0
+  sproutcore 1.11.0
+  sqlite3 1.3.7
+  test-unit 2.0.0.0
+  thin 1.6.1, 1.6.3
+  thor 0.18.1, 0.19.1
+  tilt 2.0.1
+  timers 1.1.0, 4.0.1
 
 ===== ENVIRONMENT:
 
-Apple_PubSub_Socket_Render => "/tmp/launch-18TVQO/Render"
-BUNDLE_BIN_PATH => "/Library/Ruby/Gems/2.0.0/gems/bundler-1.10.6/bin/bundle"
-BUNDLE_GEMFILE => "/Users/chenzhipei/steedos-sites/Gemfile"
-GEM_HOME => "/Library/Ruby/Gems/2.0.0"
-GEM_PATH => "/Library/Ruby/Gems/2.0.0:/Users/chenzhipei/.gem/ruby/2.0.0:/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/gems/2.0.0"
-HOME => "/Users/chenzhipei"
+Apple_PubSub_Socket_Render => "/private/tmp/com.apple.launchd.vPqbO0IvSZ/Render"
+DISPLAY => "/private/tmp/com.apple.launchd.0DGgaGajVU/org.macosforge.xquartz:0"
+GUARD_NOTIFIERS => "---\n- :name: :terminal_title\n  :options: {}\n"
+GUARD_NOTIFY_ACTIVE => "true"
+GUARD_NOTIFY_PID => "7272"
+HOME => "/Users/zhuangjianguo"
 LANG => "zh_CN.UTF-8"
-LOGNAME => "chenzhipei"
-PATH => "/Library/Ruby/Gems/2.0.0/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/mysql/bin:.npm:/usr/local/rvm/bin"
-PWD => "/Users/chenzhipei/steedos-sites"
-RUBYLIB => "/Library/Ruby/Gems/2.0.0/gems/bundler-1.10.6/lib"
-RUBYOPT => "-rbundler/setup"
+LOGNAME => "zhuangjianguo"
+OLDPWD => "/Users/zhuangjianguo/github"
+PATH => "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+PWD => "/Users/zhuangjianguo/github/steedos-sites"
+SECURITYSESSIONID => "186a8"
 SHELL => "/bin/bash"
 SHLVL => "1"
-SSH_AUTH_SOCK => "/tmp/launch-JwAqHi/Listeners"
+SSH_AUTH_SOCK => "/private/tmp/com.apple.launchd.4BboDvh05c/Listeners"
 TERM => "xterm-256color"
 TERM_PROGRAM => "Apple_Terminal"
-TERM_PROGRAM_VERSION => "326"
-TERM_SESSION_ID => "0411BAF6-2DD9-43F7-87BA-83DFFC486827"
-TMPDIR => "/var/folders/cr/g_w5kq854v5clxwd60nw96380000gr/T/"
-USER => "chenzhipei"
-_ => "/usr/bin/nanoc"
-__CF_USER_TEXT_ENCODING => "0x1F8:25:52"
-__CHECKFIX1436934 => "1"
-_system_arch => "x86_64"
-_system_name => "OSX"
-_system_type => "Darwin"
-_system_version => "10.9"
-rvm_bin_path => "/usr/local/rvm/bin"
-rvm_delete_flag => "0"
-rvm_path => "/usr/local/rvm"
-rvm_prefix => "/usr/local"
-rvm_ruby_string => "system"
-rvm_version => "1.25.15 (stable)"
-
-===== GEMFILE.LOCK:
-
-GEM
-  remote: https://ruby.taobao.org/
-  specs:
-    adsf (1.1.1)
-      rack (>= 1.0.0)
-    celluloid (0.15.2)
-      timers (~> 1.1.0)
-    chunky_png (1.2.8)
-    coderay (1.1.0)
-    colored (1.2)
-    compass (0.12.2)
-      chunky_png (~> 1.2)
-      fssm (>= 0.2.7)
-      sass (~> 3.1)
-    cri (2.3.0)
-      colored (>= 1.2)
-    ffi (1.9.3)
-    formatador (0.2.4)
-    fssm (0.2.10)
-    guard (2.6.1)
-      formatador (>= 0.2.4)
-      listen (~> 2.7)
-      lumberjack (~> 1.0)
-      pry (>= 0.9.12)
-      thor (>= 0.18.1)
-    guard-nanoc (1.0.2)
-      guard (>= 1.8.0)
-      nanoc (>= 3.6.3)
-    listen (2.7.5)
-      celluloid (>= 0.15.2)
-      rb-fsevent (>= 0.9.3)
-      rb-inotify (>= 0.9)
-    lumberjack (1.0.5)
-    method_source (0.8.2)
-    mime-types (1.23)
-    nanoc (3.6.3)
-      cri (~> 2.3)
-    pry (0.9.12.6)
-      coderay (~> 1.0)
-      method_source (~> 0.8)
-      slop (~> 3.4)
-    rack (1.5.2)
-    rb-fsevent (0.9.4)
-    rb-inotify (0.9.4)
-      ffi (>= 0.5.0)
-    sass (3.2.9)
-    slop (3.5.0)
-    thor (0.19.1)
-    timers (1.1.0)
-
-PLATFORMS
-  ruby
-
-DEPENDENCIES
-  adsf
-  compass
-  fssm
-  guard-nanoc
-  mime-types
-  nanoc
-
-BUNDLED WITH
-   1.10.6
+TERM_PROGRAM_VERSION => "361"
+TERM_SESSION_ID => "B83B4C1C-F713-438A-9853-0BBA87CE113B"
+TMPDIR => "/var/folders/65/723zcthj34sfxkw74lgwx4h80000gq/T/"
+USER => "zhuangjianguo"
+XPC_FLAGS => "0x0"
+XPC_SERVICE_NAME => "0"
+_ => "/usr/local/bin/guard"
+__CF_USER_TEXT_ENCODING => "0x1F7:0x19:0x34"
 
 ===== LOAD PATHS:
 
-  0. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib
-  1. /Library/Ruby/Gems/2.0.0/gems/mime-types-1.23/lib
-  2. /Library/Ruby/Gems/2.0.0/gems/guard-nanoc-1.0.2/lib
-  3. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.6.3/lib
-  4. /Library/Ruby/Gems/2.0.0/gems/guard-2.6.1/lib
-  5. /Library/Ruby/Gems/2.0.0/gems/thor-0.19.1/lib
-  6. /Library/Ruby/Gems/2.0.0/gems/pry-0.9.12.6/lib
-  7. /Library/Ruby/Gems/2.0.0/gems/slop-3.5.0/lib
-  8. /Library/Ruby/Gems/2.0.0/gems/method_source-0.8.2/lib
-  9. /Library/Ruby/Gems/2.0.0/gems/lumberjack-1.0.5/lib
-  10. /Library/Ruby/Gems/2.0.0/gems/listen-2.7.5/lib
-  11. /Library/Ruby/Gems/2.0.0/gems/rb-inotify-0.9.4/lib
-  12. /Library/Ruby/Gems/2.0.0/gems/rb-fsevent-0.9.4/lib
-  13. /Library/Ruby/Gems/2.0.0/gems/formatador-0.2.4/lib
-  14. /Library/Ruby/Gems/2.0.0/gems/ffi-1.9.3/lib
-  15. /Library/Ruby/Gems/2.0.0/gems/ffi-1.9.3/ext/ffi_c
-  16. /Library/Ruby/Gems/2.0.0/gems/cri-2.3.0/lib
-  17. /Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/lib
-  18. /Library/Ruby/Gems/2.0.0/gems/sass-3.2.9/lib
-  19. /Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib
-  20. /Library/Ruby/Gems/2.0.0/gems/colored-1.2/lib
-  21. /Library/Ruby/Gems/2.0.0/gems/coderay-1.1.0/lib
-  22. /Library/Ruby/Gems/2.0.0/gems/chunky_png-1.2.8/lib
-  23. /Library/Ruby/Gems/2.0.0/gems/celluloid-0.15.2/lib
-  24. /Library/Ruby/Gems/2.0.0/gems/timers-1.1.0/lib
-  25. /Library/Ruby/Gems/2.0.0/gems/adsf-1.1.1/lib
-  26. /Library/Ruby/Gems/2.0.0/gems/rack-1.5.2/lib
-  27. /Library/Ruby/Gems/2.0.0/gems/bundler-1.10.6/lib
+  0. /Library/Ruby/Gems/2.0.0/gems/hitimes-1.2.2/lib
+  1. /Library/Ruby/Gems/2.0.0/gems/timers-4.0.1/lib
+  2. /Library/Ruby/Gems/2.0.0/gems/celluloid-0.16.0/lib
+  3. /Library/Ruby/Gems/2.0.0/gems/rb-fsevent-0.9.5/lib
+  4. /Library/Ruby/Gems/2.0.0/gems/ffi-1.9.8/lib
+  5. /Library/Ruby/Gems/2.0.0/gems/rb-inotify-0.9.5/lib
+  6. /Library/Ruby/Gems/2.0.0/gems/listen-2.10.0/lib
+  7. /Library/Ruby/Gems/2.0.0/gems/coderay-1.1.0/lib
+  8. /Library/Ruby/Gems/2.0.0/gems/slop-3.6.0/lib
+  9. /Library/Ruby/Gems/2.0.0/gems/method_source-0.8.2/lib
+  10. /Library/Ruby/Gems/2.0.0/gems/pry-0.10.3/lib
+  11. /Library/Ruby/Gems/2.0.0/gems/lumberjack-1.0.9/lib
+  12. /Library/Ruby/Gems/2.0.0/gems/formatador-0.2.5/lib
+  13. /Library/Ruby/Gems/2.0.0/gems/nenv-0.2.0/lib
+  14. /Library/Ruby/Gems/2.0.0/gems/shellany-0.0.1/lib
+  15. /Library/Ruby/Gems/2.0.0/gems/notiffany-0.0.8/lib
+  16. /Library/Ruby/Gems/2.0.0/gems/guard-2.13.0/lib
+  17. /Library/Ruby/Gems/2.0.0/gems/thor-0.19.1/lib
+  18. /Library/Ruby/Gems/2.0.0/gems/colored-1.2/lib
+  19. /Library/Ruby/Gems/2.0.0/gems/cri-2.3.0/lib
+  20. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib
+  21. /Library/Ruby/Gems/2.0.0/gems/guard-nanoc-1.0.3/lib
+  22. /Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib
+  23. /Library/Ruby/Gems/2.0.0/gems/multi_json-1.11.0/lib
+  24. /Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/lib
+  25. /Library/Ruby/Gems/2.0.0/gems/compass-import-once-1.0.5/lib
+  26. /Library/Ruby/Gems/2.0.0/gems/compass-1.0.3/lib
+  27. /Library/Ruby/Gems/2.0.0/gems/chunky_png-1.3.4/lib
   28. /Library/Ruby/Site/2.0.0
-  29. /Library/Ruby/Site/2.0.0/x86_64-darwin13
-  30. /Library/Ruby/Site/2.0.0/universal-darwin13
+  29. /Library/Ruby/Site/2.0.0/x86_64-darwin15
+  30. /Library/Ruby/Site/2.0.0/universal-darwin15
   31. /Library/Ruby/Site
   32. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/vendor_ruby/2.0.0
-  33. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/vendor_ruby/2.0.0/x86_64-darwin13
-  34. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/vendor_ruby/2.0.0/universal-darwin13
+  33. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/vendor_ruby/2.0.0/x86_64-darwin15
+  34. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/vendor_ruby/2.0.0/universal-darwin15
   35. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/vendor_ruby
   36. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0
-  37. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/x86_64-darwin13
-  38. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/universal-darwin13
+  37. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/x86_64-darwin15
+  38. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/universal-darwin15

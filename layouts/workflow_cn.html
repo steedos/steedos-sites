@@ -1,98 +1,95 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html>
 <head>
   <meta charset="utf-8" />
-  <title><%= @item[:title] %></title>
+  <title>审批王 - <%= @item[:title] %></title>
   <link rel="shortcut icon" href="/website/img/workflow/AppIcon76x76.png" />
   <meta name="Description" content="审批王是全新的企业级在线审批系统，可以快速的将公司的各类审批业务转换为可严格执行的电子流程。常见的审批业务包括：出差申请、差旅报销、请假销假、物品采购、付款申请、固定资产报废、会议室预约、退库管理、客服投诉、工作报告等均可通过审批王处理。">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge"  >
-  <meta content="initial-scale=1" name="viewport"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
             
   <link href="/website/static/lib/fontawesome/css/font-awesome.css" rel="stylesheet"/>
 
-  <link href="/website/static/src/css/bootswatch/spacelab.min.css" rel="stylesheet"/>
-  <link href="/website/static/src/css/bootswatch/spacelab.fix.css" rel="stylesheet"/>
-  <link href="/website/css/odoo/website.css" id="website_css" rel="stylesheet"/>
-  <link href="/website/css/steedos.css" id="steedos_css" rel="stylesheet"/>
+  <script src="/website/libs/jquery.min.js" type="text/javascript"></script>
+            
+  <link href="/website/libs/semantic.css" rel="stylesheet"/>
+  <script src="/website/libs/semantic.js" type="text/javascript"></script>
 
+  <link href="/website/libs/spacelab.min.css" rel="stylesheet"/>
+  <link href="/website/libs/spacelab.fix.css" rel="stylesheet"/>
 
-  <script src="/website/js/odoo/es5-shim.min.js" type="text/javascript"></script>
-  <script src="/website/js/odoo/underscore.js" type="text/javascript"></script>
-  <script src="/website/js/odoo/underscore_string.js" type="text/javascript"></script>
-  <script src="/website/js/odoo/jquery.js" type="text/javascript"></script>
-  <script type="text/javascript">
-      // Bootstrap and jQuery UI conflicts
-      $.fn.bstooltip = $.fn.tooltip;
-      $.fn.bsbutton = $.fn.button;
+  <style type="text/css">
+    html, body {
+      background-color: #f2f2f2;
+    }
+    .top.secondary.menu {
+      margin-top: 3em;
+    }
+    image {
+      max-width: 100%;
+    }
+  </style>
+
+  <script>
+  $(document)
+    .ready(function() {
+      $('.ui.menu .ui.dropdown').dropdown({
+        on: 'hover'
+      });
+      $('.ui.menu a.item')
+        .on('click', function() {
+          $(this)
+            .addClass('active')
+            .siblings()
+            .removeClass('active')
+          ;
+        })
+      ;
+    })
+  ;
   </script>
-
-  <script src="/website/js/odoo/qweb2.js" type="text/javascript"></script>
-  <script src="/website/js/odoo/openerpframework.js" type="text/javascript"></script>
-
-  <script src="/website/js/odoo/website.js" type="text/javascript"></script>
-  
-  <script type="text/javascript" src="/website/js/odoo/website_snippets_animation.js"></script>
-  <script src="/website/js/odoo/bootstrap.js" type="text/javascript"></script>
-
 </head>
 <body>
  
- <link href="/website/ac/globalheader/globalheader.css" rel="stylesheet"/>
- <nav id="globalheader" class="globalheader" role="navigation" aria-label="Global Navigation" data-hires="false" data-analytics-region="global nav" lang="zh-CN">
-  <div id="gh-content" class="gh-content">
-    <div class="gh-nav">
-      <div class="gh-nav-view">
-        <ul class="gh-nav-list">
-          <li class="gh-tab gh-tab-steedos"><a class="gh-tab-link" href="/cn/"><span class="gh-tab-inner"><span class="gh-text-replace">华炎云</span></span></a></li>
-          <li class="gh-tab gh-selected-tab gh-tab-workflow"><a class="gh-tab-link" href="/cn/workflow/"><span class="gh-tab-inner"><span class="gh-text-replace">审批王</span></span></a></li>
-          <li class="gh-tab gh-tab-drive"><a class="gh-tab-link" href="/cn/drive/"><span class="gh-tab-inner"><span class="gh-text-replace">企业网盘</span></span></a></li>
-          <li class="gh-tab gh-tab-mail"><a class="gh-tab-link" href="/cn/omail/"><span class="gh-tab-inner"><span class="gh-text-replace">企业邮箱</span></span></a></li>
-          <li class="gh-tab gh-tab-chat"><a class="gh-tab-link" href="/cn/chat/"><span class="gh-tab-inner"><span class="gh-text-replace">即时通讯</span></span></a></li>
-          <li class="gh-tab gh-tab-task"><a class="gh-tab-link" href="/cn/otask/"><span class="gh-tab-inner"><span class="gh-text-replace">任务管理</span></span></a></li>
-          <!--
-          <li class="gh-tab gh-tab-support"><a class="gh-tab-link" href="http://support.steedos.com/" target="_blank"><span class="gh-tab-inner"><span class="gh-text-replace">技术支持</span></span></a></li>
-          -->
-          <li class="gh-tab gh-tab-singup"><a class="gh-tab-link" href="/system/steedos/?app=workflow#register" target="blank"><span class="gh-tab-inner"><span class="gh-text-replace">注册账户</span></span></a></li>
-          <li class="gh-tab gh-tab-singup"><a class="gh-tab-link" href="/system/steedos/"><span class="gh-tab-inner"><span class="gh-text-replace">客户登录</span></span></a></li>
-
-        </ul>
-      </div>
-    </div><!--/gh-nav-->
-  </div>
-</nav>
-<div id="wrapwrap">
-  <header>
-    <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-            <button data-toggle="collapse" type="button" class="navbar-toggle" data-target=".navbar-top-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="/cn/workflow/" class="navbar-brand">
-            <img src="/website/img/workflow/AppIcon76x76.png" width="30" height="30" class="logo"><span style="padding-top: 3px;">&nbsp;&nbsp;审批王</span></a>
-        </div>
-        <div class="collapse navbar-collapse navbar-top-collapse">
-          <ul class="nav navbar-nav navbar-right" id="top_menu">                              
-                    
-            <%= nav "功能", "cn/workflow" %>
-            <%= nav "报价", "cn/workflow/pricing" %>
-            <%= nav "下载", "cn/workflow/downloads" %>
-            <%= nav "教程", "cn/workflow/training" %>
-            <!-- <%= nav "手册", "cn/workflow/manual" %> -->
-            <%= nav "API", "cn/workflow/api" %>
-            <%= nav "案例", "cn/workflow/casestudy" %>
-            <!--
-            <%= nav "关于", "cn/workflow/aboutus" %>
-            -->
-          </ul>
+<div class="ui fixed inverted menu" id="topbar">
+    <a class="header item" href="/cn/"><i class="cloud icon"></i></a>
+    <%= link_to_unless_current "审批王", "/cn/workflow", allow_recursive: true %>
+    <%= link_to_unless_current "享聊", "/cn/chat", allow_recursive: true %>
+    <%= link_to_unless_current "云盘", "/cn/drive", allow_recursive: true %>
+    <%= link_to_unless_current "任我行", "/cn/otask", allow_recursive: true %>
+    <div class="right menu">
+      <div class="ui dropdown item">
+        Language <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item" href="/us/workflow/">English</a>
+          <a class="item" href="/cn/workflow/">中文</a>
         </div>
       </div>
     </div>
-  </header>
+</div>
+
+<div class="ui top secondary pointing menu" id="navbar">
+
+  <a class="header item" href="/cn/workflow">
+    <h2 class="ui header">
+      <img src="/website/img/workflow/AppIcon76x76.png" class="ui mini image">
+      <div class="ui content">审批王</div>
+    </h2>
+  </a>
+  <div class="right menu">
+    <%= link_to_unless_current "特色", "/cn/workflow/" %>
+    <%= link_to_unless_current "案例", "/cn/workflow/casestudy", allow_recursive: true %>
+    <%= link_to_unless_current "报价", "/cn/workflow/pricing", allow_recursive: true %>
+    <%= link_to_unless_current "下载", "/cn/workflow/downloads", allow_recursive: true %>
+    <%= link_to_unless_current "帮助", "/cn/help/workflow", allow_recursive: true %>
+    <div class="item">
+      <a class="ui primary button" target="_blank" href="https://www.steedos.com/system/steedos/?app=workflow">登录</a>
+    </div>
+  </div>
+
+</div>
   <%= yield %>
+<div id="wrapwrap">
   <main>
     <div id="wrap" class="oe_structure oe_empty">
     </div>

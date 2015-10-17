@@ -3,12 +3,5 @@ tmp
 .DS_Store
 .sass-cache
 
-nano.save
-
-view.save
-
-content/cn/chat/downloads.html
-
-content/cn/drive/downloads.html
-
-content/cn/workflow/downloads.html
+node_modules/
+semantic/
