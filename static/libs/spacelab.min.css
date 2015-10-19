@@ -4335,28 +4335,6 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 {
 	color: #fff;
 }
-.breadcrumb
-{
-	background-color: #f5f5f5;
-	border-radius: 4px;
-	list-style: none;
-	margin-bottom: 20px;
-	padding: 8px 15px;
-}
-.breadcrumb>li
-{
-	display: inline-block;
-}
-.breadcrumb>li+li:before
-{
-	color: #ccc;
-	content: "/\00a0";
-	padding: 0 5px;
-}
-.breadcrumb>.active
-{
-	color: #999;
-}
 .pagination
 {
 	border-radius: 4px;

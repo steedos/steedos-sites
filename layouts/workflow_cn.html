@@ -17,6 +17,8 @@
 
   <link href="/website/libs/spacelab.min.css" rel="stylesheet"/>
   <link href="/website/libs/spacelab.fix.css" rel="stylesheet"/>
+  <link href="/website/css/odoo/website.css" id="website_css" rel="stylesheet"/>
+  <link href="/website/css/steedos.css" id="steedos_css" rel="stylesheet"/>
 
   <style type="text/css">
     html, body {
@@ -88,71 +90,50 @@
   </div>
 
 </div>
-  <%= yield %>
-<div id="wrapwrap">
-  <main>
-    <div id="wrap" class="oe_structure oe_empty">
-    </div>
-  </main>
-  <footer>
-    <div class="container hidden-print" id="footer_container">
-        <div class="row">
-            <div class="col-md-3" name="product">
-                <h4>审批王</h4>
-                <ul class="list-unstyled" name="products">
-                      <li><a href="/cn/workflow">功能</a>
-                      <li><a href="/cn/workflow/downloads">下载</a>
-                      <li><a href="/cn/workflow/training">教程</a>
-                      <li><a href="/cn/workflow/casestudy">案例</a>
-                      <li>&nbsp;
-                      <li><a href="/cn/workflow/pricing">版本与报价</a>
-                      <li><a href="/system/steedos/?app=workflow#register" target="blank">注册账户</a>
-                </ul>
-            </div>
-            <div class="col-md-3" name="info">
-                <h4 name="info_title">联系我们</h4>
-                <ul class="list-unstyled">
-                    <li><a href="/cn/workflow/aboutus">关于我们</a></li>
-                    <li><a href="/cn/workflow/contactus">联系方式</a></li>
-                </ul>
-                <ul class="list-unstyled">
-                    <li><i class="fa fa-phone"></i> <span>400-820-1612</span></li>
-                    <li><i class="fa fa-envelope"></i>  <span>support@steedos.com</span></li>
-                </ul>
-                <h2>
-                    
-                </h2>
-            </div>
-            <div class="col-md-5 col-lg-offset-1" name="about_us">
-                <div>
-                    <h4>
-                        <span>关于审批王</span>
-                    </h4>
-                    <p>                        
-                      审批王是全新的企业级在线审批系统，可以快速的将公司的各类审批业务转换为可严格执行的电子流程。常见的审批业务包括：出差申请、差旅报销、请假销假、物品采购、付款申请、固定资产报废、会议室预约、退库管理、客服投诉、工作报告等均可通过审批王处理。
-                    </p>
-                </div>
-                <ul class="list-inline js_language_selector mt16"><li><a href="/us/workflow/" >English</a></li><li><a href="/cn/workflow/" >简体中文</a></li></ul>
-                
-            </div>
-        </div>
-    </div>
-    <div class="container mt16 mb8">
-        <!--
-        <div class="pull-right">
-            免费的<a href="http://www.steedos.com/">云端企业管理软件</a>，尽在
-            <a href="http://www.steedos.com/" class="label label-danger">SteedOS.com</a>
-        </div>
-        -->
 
-        <div class="pull-left text-muted">
-            版权所有 © 华炎软件. 保留所有权利. 
-                <a href="/cn/legal/terms/" target="_steedos_terms">条款与约定</a> | 
-                <a href="/cn/legal/privacy/" target="_steedos_privacy">隐私保护</a>
+
+<%= yield %>
+
+
+<div class="ui inverted vertical footer segment" style="margin: 3em 0em 0em; padding: 3em 0em;">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="four wide column">
+          <h4 class="ui inverted header">联系我们</h4>
+          <div class="ui inverted link list">
+            <a class="item" href="http://chat.steedos.com/channel/steedos-support" target="_blank">在线客服</a>
+            <span class="item">热线：400-820-1612</span>
+            <span class="item">邮箱：support@steedos.com</span>
+            <span class="item">QQ：1471093381</span>
+          </div>
         </div>
+        <div class="four wide column">
+          <h4 class="ui inverted header">下载客户端</h4>
+          <div class="ui inverted link list">
+            <a class="item" href="http://itunes.apple.com/cn/app/steedos-workflow/id686408407" target="_blank">iPhone / iPad</a>
+            <a class="item" href="http://oss.steedos.com/apps/workflow/android/workflow.apk" target="_blank">Android</a>
+            <a class="item" href="http://oss.steedos.com/apps/steedos/windows/steedos.msi" target="_blank">Windows</a>
+            <a class="item" href="http://oss.steedos.com/apps/steedos/mac/steedos.dmg" target="_blank">Mac</a>
+          </div>
+        </div>
+        <div class="eight wide column">
+          <h4 class="ui inverted header">关于审批王</h4>
+          <div class="ui inverted link list">
+            <span class="item">审批王是全新的企业级在线审批系统，可以快速的将公司的各类审批业务转换为可严格执行的电子流程。出差申请、差旅报销、请假销假、物品采购、付款申请、固定资产报废、会议室预约、退库管理、客服投诉、工作报告等均可通过审批王处理。</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui inverted section divider"></div>
+
+      <div class="ui horizontal inverted small divided link list">
+          <span>© 华炎软件. 保留所有权利. </span>
+          <a class="ui item" href="/cn/legal/terms/" target="_steedos_terms">条款与约定</a>
+          <a class="ui item" href="/cn/legal/privacy/" target="_steedos_privacy">隐私保护</a>
+      </div>
     </div>
-  </footer>
 </div>
+
 
 
 </body>
