@@ -25,7 +25,7 @@
       background-color: #FFFFFF;
     }
     .top.secondary.menu {
-      margin-top: 3em;
+      margin-top: 1em;
     }
     image {
       max-width: 100%;
@@ -53,41 +53,101 @@
 </head>
 <body>
  
-<div class="ui fixed inverted menu" id="topbar">
-    <a class="header item" href="/cn/"><i class="cloud icon"></i></a>
-    <%= link_to_unless_current "审批王", "/cn/workflow", allow_recursive: true %>
-    <%= link_to_unless_current "享聊", "/cn/chat", allow_recursive: true %>
-    <%= link_to_unless_current "云盘", "/cn/drive", allow_recursive: true %>
-    <%= link_to_unless_current "任我行", "/cn/otask", allow_recursive: true %>
-    <div class="right menu">
-      <a class="item" href="#"><i class="phone icon"></i>400-820-1612</a>
-      <a class="item" href="http://chat.steedos.com/channel/steedos-support" target="_blank">在线客服</a>
+
+<div class="ui one column grid">
+  <div class="mobile only column"> 
+    <div class="ui fixed inverted menu" id="topbar">
+      <div class="ui dropdown item">
+        <i class="sidebar icon"></i> 华炎云
+        <div class="ui menu">
+          <%= link_to_unless_current "审批王", "/cn/workflow", allow_recursive: true %>
+          <%= link_to_unless_current "享聊", "/cn/chat", allow_recursive: true %>
+          <%= link_to_unless_current "云盘", "/cn/drive", allow_recursive: true %>
+          <%= link_to_unless_current "任我行", "/cn/otask", allow_recursive: true %>
+        </div>
+      </div>
+      <div class="right menu">
+        <a class="item" href="#"><i class="phone icon"></i>400-820-1612</a>
+      </div>
     </div>
-</div>
 
-<div class="ui top secondary pointing menu" id="navbar">
-
-  <a class="header item" href="/cn/drive">
-    <h2 class="ui header" style="font-size: 1.4em">
-      <img src="/website/img/drive/AppIcon76x76.png" class="ui mini image">
-      <div class="ui content">华炎云盘</div>
-    </h2>
-  </a>
-  <div class="right menu">
-    <%= link_to_unless_current "特色", "/cn/drive/" %>
-    <%= link_to_unless_current "共享", "/cn/drive/features/sharing", allow_recursive: true %>
-    <%= link_to_unless_current "协作", "/cn/drive/features/collaboration", allow_recursive: true %>
-    <%= link_to_unless_current "移动", "/cn/drive/features/mobile", allow_recursive: true %>
-    <%= link_to_unless_current "同步", "/cn/drive/features/backup", allow_recursive: true %>
-    <%= link_to_unless_current "控制", "/cn/drive/features/security", allow_recursive: true %>
-
-    <%= link_to_unless_current "下载", "/cn/drive/downloads", allow_recursive: true %>
-    <%= link_to_unless_current "帮助", "/cn/help/drive", allow_recursive: true %>
-    <div class="item">
-      <a class="ui primary button" target="_blank" href="https://www.steedos.com/system/steedos/?app=drive">登录</a>
+  </div>
+  <div class="computer tablet only column"> 
+    <div class="ui fixed inverted menu" id="topbar">
+        <a class="header item" href="/cn/"><i class="cloud icon"></i></a>
+        <%= link_to_unless_current "审批王", "/cn/workflow", allow_recursive: true %>
+        <%= link_to_unless_current "享聊", "/cn/chat", allow_recursive: true %>
+        <%= link_to_unless_current "云盘", "/cn/drive", allow_recursive: true %>
+        <%= link_to_unless_current "任我行", "/cn/otask", allow_recursive: true %>
+        <div class="right menu">
+          <a class="item" href="#"><i class="phone icon"></i>400-820-1612</a>
+          <a class="item" href="http://chat.steedos.com/channel/steedos-support" target="_blank">在线客服</a>
+        </div>
     </div>
   </div>
 
+
+  <div class="mobile only column"> 
+
+    <div class="ui top secondary menu" id="navbar" style="border-bottom: 1px solid #CCC">
+
+      <a class="header item" href="/cn/drive">
+        <h2 class="ui header" style="font-size: 1.4em">
+          <img src="/website/img/drive/AppIcon76x76.png" class="ui mini image">
+          <div class="ui content">华炎云盘</div>
+        </h2>
+      </a>
+      <div class="right menu">
+        <div class="ui dropdown item">
+          <i class="chevron down icon"></i>
+          <div class="ui menu">
+              <%= link_to_unless_current "特色", "/cn/drive/" %>
+              <%= link_to_unless_current "共享", "/cn/drive/features/sharing", allow_recursive: true %>
+              <%= link_to_unless_current "协作", "/cn/drive/features/collaboration", allow_recursive: true %>
+              <%= link_to_unless_current "移动", "/cn/drive/features/mobile", allow_recursive: true %>
+              <%= link_to_unless_current "同步", "/cn/drive/features/backup", allow_recursive: true %>
+              <%= link_to_unless_current "控制", "/cn/drive/features/security", allow_recursive: true %>
+
+              <%= link_to_unless_current "下载", "/cn/drive/downloads", allow_recursive: true %>
+              <%= link_to_unless_current "帮助", "/cn/help/drive", allow_recursive: true %>
+              <div class="item">
+                <a class="ui primary button" target="_blank" href="https://www.steedos.com/system/steedos/?app=drive">登录</a>
+              </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="computer tablet only column"> 
+
+    <div class="ui top secondary pointing menu" id="navbar">
+      <a class="header item" href="/cn/drive">
+        <h2 class="ui header" style="font-size: 1.4em">
+          <img src="/website/img/drive/AppIcon76x76.png" class="ui mini image">
+          <div class="ui content">华炎云盘</div>
+        </h2>
+      </a>
+      <div class="right menu">
+        <%= link_to_unless_current "特色", "/cn/drive/" %>
+        <%= link_to_unless_current "共享", "/cn/drive/features/sharing", allow_recursive: true %>
+        <%= link_to_unless_current "协作", "/cn/drive/features/collaboration", allow_recursive: true %>
+        <%= link_to_unless_current "移动", "/cn/drive/features/mobile", allow_recursive: true %>
+        <%= link_to_unless_current "同步", "/cn/drive/features/backup", allow_recursive: true %>
+        <%= link_to_unless_current "控制", "/cn/drive/features/security", allow_recursive: true %>
+
+        <%= link_to_unless_current "下载", "/cn/drive/downloads", allow_recursive: true %>
+        <%= link_to_unless_current "帮助", "/cn/help/drive", allow_recursive: true %>
+        <div class="item">
+          <a class="ui primary button" target="_blank" href="https://www.steedos.com/system/steedos/?app=drive">登录</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 </div>
 
 

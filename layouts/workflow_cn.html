@@ -25,14 +25,12 @@
       background-color: #f2f2f2;
     }
     .top.secondary.menu {
-      margin-top: 3em;
-    }
-    image {
-      max-width: 100%;
+      margin-top: 1em;
     }
   </style>
 
   <script>
+
   $(document)
     .ready(function() {
       $('.ui.menu .ui.dropdown').dropdown({
@@ -43,69 +41,105 @@
           $(this)
             .addClass('active')
             .siblings()
-            .removeClass('active')
-          ;
-        })
-      ;
-    })
-  ;
+            .removeClass('active');
+      });
+
+    });
   </script>
 </head>
 <body>
- <!-- 
-<div class="ui mobile only fixed inverted menu" id="topbar">
 
-    <div class="ui dropdown item">
-      华炎云 <i class="dropdown icon"></i>
-      <div class="ui menu">
-          <a class="item" href="/cn/workflow/">审批王</a>
-          <a class="item" href="/cn/chat/">享聊</a>
-          <a class="item" href="/cn/drive/">云盘</a>
-          <a class="item" href="/cn/otask/">任我行</a>
+<div class="ui one column grid">
+  <div class="mobile only column"> 
+    <div class="ui fixed inverted menu" id="topbar">
+      <div class="ui dropdown item">
+        <i class="sidebar icon"></i> 华炎云
+        <div class="ui menu">
+          <%= link_to_unless_current "审批王", "/cn/workflow", allow_recursive: true %>
+          <%= link_to_unless_current "享聊", "/cn/chat", allow_recursive: true %>
+          <%= link_to_unless_current "云盘", "/cn/drive", allow_recursive: true %>
+          <%= link_to_unless_current "任我行", "/cn/otask", allow_recursive: true %>
+        </div>
+      </div>
+      <div class="right menu">
+        <a class="item" href="#"><i class="phone icon"></i>400-820-1612</a>
       </div>
     </div>
 
-    <div class="right menu">
-      <a class="item" href="#"><i class="phone icon"></i>400-820-1612</a>
-      <a class="item" href="http://chat.steedos.com/channel/steedos-support" target="_blank">在线客服</a>
-    </div>
-</div>
- -->
-<div class="ui desktop only fixed inverted menu" id="topbar">
-    <a class="header item" href="/cn/"><i class="cloud icon"></i></a>
-    <%= link_to_unless_current "审批王", "/cn/workflow", allow_recursive: true %>
-    <%= link_to_unless_current "享聊", "/cn/chat", allow_recursive: true %>
-    <%= link_to_unless_current "云盘", "/cn/drive", allow_recursive: true %>
-    <%= link_to_unless_current "任我行", "/cn/otask", allow_recursive: true %>
-    <div class="right menu">
-      <a class="item" href="#"><i class="phone icon"></i>400-820-1612</a>
-      <a class="item" href="http://chat.steedos.com/channel/steedos-support" target="_blank">在线客服</a>
-    </div>
-</div>
-
-<div class="ui top secondary pointing menu" id="navbar">
-
-  <a class="header item" href="/cn/workflow">
-    <h2 class="ui header" style="font-size: 1.4em">
-      <img src="/website/img/workflow/AppIcon76x76.png" class="ui mini image">
-      <div class="ui content">审批王</div>
-    </h2>
-  </a>
-  <div class="right menu">
-    <%= link_to_unless_current "特色", "/cn/workflow/" %>
-    <%= link_to_unless_current "案例", "/cn/workflow/casestudy", allow_recursive: true %>
-    <%= link_to_unless_current "报价", "/cn/workflow/pricing", allow_recursive: true %>
-    <%= link_to_unless_current "下载", "/cn/workflow/downloads", allow_recursive: true %>
-    <%= link_to_unless_current "帮助", "/cn/help/workflow", allow_recursive: true %>
-    <div class="item">
-      <a class="ui primary button" target="_blank" href="https://www.steedos.com/system/steedos/?app=workflow">登录</a>
+  </div>
+  <div class="computer tablet only column"> 
+    <div class="ui fixed inverted menu" id="topbar">
+        <a class="header item" href="/cn/"><i class="cloud icon"></i></a>
+        <%= link_to_unless_current "审批王", "/cn/workflow", allow_recursive: true %>
+        <%= link_to_unless_current "享聊", "/cn/chat", allow_recursive: true %>
+        <%= link_to_unless_current "云盘", "/cn/drive", allow_recursive: true %>
+        <%= link_to_unless_current "任我行", "/cn/otask", allow_recursive: true %>
+        <div class="right menu">
+          <a class="item" href="#"><i class="phone icon"></i>400-820-1612</a>
+          <a class="item" href="http://chat.steedos.com/channel/steedos-support" target="_blank">在线客服</a>
+        </div>
     </div>
   </div>
-
 </div>
 
 
-<%= yield %>
+<div class="ui one column grid">
+  <div class="mobile only column"> 
+
+    <div class="ui top secondary menu" id="navbar" style="border-bottom: 1px solid #CCC">
+
+      <a class="header item" href="/cn/workflow">
+        <h2 class="ui header" style="font-size: 1.4em">
+          <img src="/website/img/workflow/AppIcon76x76.png" class="ui mini image">
+          <div class="ui content">审批王</div>
+        </h2>
+      </a>
+      <div class="right menu">
+        <div class="ui dropdown item">
+          <i class="chevron down icon"></i>
+          <div class="ui menu">
+              <%= link_to_unless_current "特色", "/cn/workflow/" %>
+              <%= link_to_unless_current "案例", "/cn/workflow/casestudy", allow_recursive: true %>
+              <%= link_to_unless_current "报价", "/cn/workflow/pricing", allow_recursive: true %>
+              <%= link_to_unless_current "下载", "/cn/workflow/downloads", allow_recursive: true %>
+              <%= link_to_unless_current "帮助", "/cn/help/workflow", allow_recursive: true %>
+              <div class="item">
+                <a class="ui primary button" target="_blank" href="https://www.steedos.com/system/steedos/?app=workflow">登录</a>
+              </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="computer tablet only column"> 
+
+    <div class="ui top secondary pointing menu" id="navbar">
+      <a class="header item" href="/cn/workflow">
+        <h2 class="ui header" style="font-size: 1.4em">
+          <img src="/website/img/workflow/AppIcon76x76.png" class="ui mini image">
+          <div class="ui content">审批王</div>
+        </h2>
+      </a>
+      <div class="right menu">
+        <%= link_to_unless_current "特色", "/cn/workflow/" %>
+        <%= link_to_unless_current "案例", "/cn/workflow/casestudy", allow_recursive: true %>
+        <%= link_to_unless_current "报价", "/cn/workflow/pricing", allow_recursive: true %>
+        <%= link_to_unless_current "下载", "/cn/workflow/downloads", allow_recursive: true %>
+        <%= link_to_unless_current "帮助", "/cn/help/workflow", allow_recursive: true %>
+        <div class="item">
+          <a class="ui primary button" target="_blank" href="https://www.steedos.com/system/steedos/?app=workflow">登录</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+  <%= yield %>
 
 
 <div class="ui inverted vertical footer segment" style="margin: 3em 0em 0em; padding: 3em 0em;">

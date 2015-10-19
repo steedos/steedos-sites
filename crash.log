@@ -1,8 +1,8 @@
-Crashlog created at 2015-10-19 13:13:21 +0800
+Crashlog created at 2015-10-19 19:20:06 +0800
 
 ===== MESSAGE:
 
-ThreadError: deadlock; recursive locking
+RuntimeError: no acceptor (port is in use or requires root privileges)
 
 ===== COMPILATION STACK:
 
@@ -10,213 +10,147 @@ ThreadError: deadlock; recursive locking
 
 ===== STACK TRACE:
 
-  0. <internal:prelude>:8:in `lock'
-  1. <internal:prelude>:8:in `synchronize'
-  2. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib/guard/commander.rb:105:in `within_preserved_state'
-  3. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib/guard/commander.rb:39:in `stop'
-  4. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib/guard/setuper.rb:219:in `block in _setup_signal_traps'
-  5. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib/nanoc/extra/filesystem_tools.rb:63:in `call'
-  6. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib/nanoc/extra/filesystem_tools.rb:63:in `all_files_in'
-  7. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib/nanoc/data_sources/static.rb:59:in `all_files_in'
-  8. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib/nanoc/data_sources/static.rb:37:in `items'
-  9. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib/nanoc/base/source_data/site.rb:325:in `block in load_items'
-  10. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib/nanoc/base/source_data/site.rb:324:in `each'
-  11. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib/nanoc/base/source_data/site.rb:324:in `load_items'
-  12. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib/nanoc/base/source_data/site.rb:243:in `load'
-  13. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib/nanoc/base/compilation/compiler.rb:116:in `load'
-  14. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib/nanoc/base/compilation/compiler.rb:82:in `run'
-  15. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib/nanoc/base/source_data/site.rb:58:in `compile'
-  16. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-nanoc-1.0.2/lib/guard/nanoc.rb:65:in `block in recompile'
-  17. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-nanoc-1.0.2/lib/guard/nanoc.rb:63:in `chdir'
-  18. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-nanoc-1.0.2/lib/guard/nanoc.rb:63:in `recompile'
-  19. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-nanoc-1.0.2/lib/guard/nanoc.rb:55:in `block in recompile_in_subprocess'
-  20. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-nanoc-1.0.2/lib/guard/nanoc.rb:55:in `fork'
-  21. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-nanoc-1.0.2/lib/guard/nanoc.rb:55:in `recompile_in_subprocess'
-  22. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-nanoc-1.0.2/lib/guard/nanoc.rb:20:in `start'
-  23. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib/guard/runner.rb:74:in `block in run_supervised_task'
-  24. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib/guard/runner.rb:71:in `catch'
-  25. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib/guard/runner.rb:71:in `run_supervised_task'
-  26. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib/guard/runner.rb:22:in `block (2 levels) in run'
-  27. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib/guard/runner.rb:150:in `block (3 levels) in _scoped_plugins'
-  28. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib/guard/runner.rb:148:in `each'
-  29. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib/guard/runner.rb:148:in `block (2 levels) in _scoped_plugins'
-  30. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib/guard/runner.rb:147:in `catch'
-  31. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib/guard/runner.rb:147:in `block in _scoped_plugins'
-  32. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib/guard/runner.rb:145:in `each'
-  33. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib/guard/runner.rb:145:in `_scoped_plugins'
-  34. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib/guard/runner.rb:21:in `block in run'
-  35. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/lumberjack-1.0.5/lib/lumberjack.rb:32:in `unit_of_work'
-  36. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib/guard/runner.rb:20:in `run'
-  37. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib/guard/commander.rb:28:in `block in start'
-  38. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib/guard/commander.rb:108:in `block in within_preserved_state'
-  39. <internal:prelude>:10:in `synchronize'
-  40. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib/guard/commander.rb:105:in `within_preserved_state'
-  41. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib/guard/commander.rb:26:in `start'
-  42. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib/guard/cli.rb:107:in `start'
-  43. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/thor-0.19.1/lib/thor/command.rb:27:in `run'
-  44. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/thor-0.19.1/lib/thor/invocation.rb:126:in `invoke_command'
-  45. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/thor-0.19.1/lib/thor.rb:359:in `dispatch'
-  46. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/thor-0.19.1/lib/thor/base.rb:440:in `start'
-  47. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/bin/guard:6:in `<top (required)>'
-  48. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/bin/guard:23:in `load'
-  ... 51 more lines omitted. See full crash log for details.
+  0. /Library/Ruby/Gems/2.0.0/gems/eventmachine-1.0.7/lib/eventmachine.rb:526:in `start_tcp_server'
+  1. /Library/Ruby/Gems/2.0.0/gems/eventmachine-1.0.7/lib/eventmachine.rb:526:in `start_server'
+  2. /Library/Ruby/Gems/2.0.0/gems/thin-1.6.3/lib/thin/backends/tcp_server.rb:16:in `connect'
+  3. /Library/Ruby/Gems/2.0.0/gems/thin-1.6.3/lib/thin/backends/base.rb:63:in `block in start'
+  4. /Library/Ruby/Gems/2.0.0/gems/eventmachine-1.0.7/lib/eventmachine.rb:187:in `call'
+  5. /Library/Ruby/Gems/2.0.0/gems/eventmachine-1.0.7/lib/eventmachine.rb:187:in `run_machine'
+  6. /Library/Ruby/Gems/2.0.0/gems/eventmachine-1.0.7/lib/eventmachine.rb:187:in `run'
+  7. /Library/Ruby/Gems/2.0.0/gems/thin-1.6.3/lib/thin/backends/base.rb:73:in `start'
+  8. /Library/Ruby/Gems/2.0.0/gems/thin-1.6.3/lib/thin/server.rb:162:in `start'
+  9. /Library/Ruby/Gems/2.0.0/gems/rack-1.6.1/lib/rack/handler/thin.rb:19:in `run'
+  10. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/cli/commands/view.rb:55:in `run'
+  11. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/cli/command_runner.rb:12:in `block in call'
+  12. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/cli/error_handler.rb:72:in `handle_while'
+  13. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/cli/error_handler.rb:24:in `handle_while'
+  14. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/cli/command_runner.rb:11:in `call'
+  15. /Library/Ruby/Gems/2.0.0/gems/cri-2.3.0/lib/cri/command_dsl.rb:185:in `block in runner'
+  16. /Library/Ruby/Gems/2.0.0/gems/cri-2.3.0/lib/cri/command.rb:296:in `call'
+  17. /Library/Ruby/Gems/2.0.0/gems/cri-2.3.0/lib/cri/command.rb:296:in `run_this'
+  18. /Library/Ruby/Gems/2.0.0/gems/cri-2.3.0/lib/cri/command.rb:249:in `run'
+  19. /Library/Ruby/Gems/2.0.0/gems/cri-2.3.0/lib/cri/command.rb:262:in `run'
+  20. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/cli.rb:58:in `block in run'
+  21. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/cli/error_handler.rb:72:in `handle_while'
+  22. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/cli/error_handler.rb:24:in `handle_while'
+  23. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib/nanoc/cli.rb:56:in `run'
+  24. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/bin/nanoc:25:in `<top (required)>'
+  25. /usr/local/bin/nanoc:23:in `load'
 
 ===== VERSION INFORMATION:
 
-nanoc 3.6.3 © 2007-2013 Denis Defreyne.
-Running ruby 1.9.3 (2012-11-10) on x86_64-darwin12.2.0 with RubyGems 1.8.24.
+nanoc 3.8.0 © 2007-2015 Denis Defreyne.
+Running ruby 2.0.0 (2015-04-13) on universal.x86_64-darwin15 with RubyGems 2.0.14.
 
 ===== SYSTEM INFORMATION:
 
-Darwin baby.steedos.com 12.6.0 Darwin Kernel Version 12.6.0: Wed Mar 18 16:23:48 PDT 2015; root:xnu-2050.48.19~1/RELEASE_X86_64 x86_64
+Darwin hotoadeMacBook-Pro.local 15.0.0 Darwin Kernel Version 15.0.0: Wed Aug 26 16:57:32 PDT 2015; root:xnu-3247.1.106~1/RELEASE_X86_64 x86_64
 
 ===== INSTALLED GEMS:
 
-  activemodel 3.2.9
-  activesupport 3.2.9, 3.2.10
-  addressable 2.3.2, 2.3.5
+  CFPropertyList 2.2.8
+  addressable 2.3.5, 2.3.8
   adsf 1.1.1
-  aws-sdk 1.8.0
-  backports 2.6.5
-  bson 1.8.0, 1.8.1
-  bson_ext 1.8.0
-  builder 3.0.4
+  bigdecimal 1.2.0
   bundle 0.0.1
-  bundler 1.2.1
+  bundler 1.10.2, 1.10.6
   celluloid 0.15.2, 0.16.0
-  chunky_png 1.2.6, 1.2.8, 1.2.9
+  chunky_png 1.2.8, 1.2.9, 1.3.4
   coderay 1.1.0
   colored 1.2
-  compass 0.11.7, 0.12.2, 1.0.3
+  compass 0.12.2, 1.0.3
   compass-core 1.0.3
   compass-import-once 1.0.5
-  cookiejar 0.3.0
+  cookiejar 0.3.0, 0.3.2
   cri 2.3.0
-  daemons 1.1.9
-  em-http-request 1.0.3, 1.1.1, 1.1.2
-  em-socksify 0.2.1, 0.3.0
+  daemons 1.1.9, 1.2.2
+  em-http-request 1.1.1, 1.1.2
+  em-socksify 0.3.0
   erubis 2.7.0
-  eventmachine 1.0.0, 1.0.3
-  extlib 0.9.15, 0.9.16
-  fakes3 0.2.1
-  ffi 1.9.3
-  formatador 0.2.4
-  fssm 0.2.9, 0.2.10
-  guard 2.6.1
-  guard-nanoc 1.0.2
-  haml 3.1.7, 3.1.8, 4.0.6
+  eventmachine 1.0.3, 1.0.7
+  extlib 0.9.16
+  ffi 1.9.8
+  formatador 0.2.5
+  fssm 0.2.10
+  guard 2.13.0
+  guard-nanoc 1.0.3
+  haml 3.1.8, 4.0.6
   hitimes 1.2.2
-  http_parser.rb 0.5.3, 0.6.0.beta.2, 0.6.0
-  httparty 0.10.0
-  i18n 0.6.1
-  json 1.7.6
-  json_pure 1.4.6, 1.8.1
-  listen 2.7.5
-  lumberjack 1.0.5
-  mailfactory 1.4.0
+  http_parser.rb 0.6.0
+  io-console 0.4.2
+  json 1.7.7
+  json_pure 1.8.1, 1.8.2
+  libxml-ruby 2.6.0
+  listen 2.10.0
+  lumberjack 1.0.9
   method_source 0.8.2
-  mime-types 1.23
-  mongo 1.8.0
-  mongo_mapper 0.12.0
-  mongoid 3.0.15
-  moped 1.3.2
-  multi_json 1.5.0
-  multi_xml 0.5.1
-  nanoc 3.6.3
-  nginx 0.0.2
+  minitest 4.3.2
+  multi_json 1.11.0
+  nanoc 3.8.0
+  nenv 0.2.0
   nokogiri 1.5.6
-  origin 1.0.11
-  plucky 0.5.2
-  pry 0.9.12.6
-  r18n-core 1.1.5
-  rack 1.4.1, 1.5.2
-  rack-protection 1.3.2, 1.5.0
-  rack-test 0.6.2
-  rake 10.0.0
-  rb-fsevent 0.9.4
-  rb-inotify 0.9.4
-  rubygems-bundler 1.1.0
-  rvm 1.11.3.5
-  sass 3.1.21, 3.2.9, 3.2.13, 3.4.15
-  sinatra 1.3.3
-  sinatra-contrib 1.3.2
-  sinatra-r18n 1.1.5
-  slop 3.5.0
-  sproutcore 1.9.0, 1.9.1, 1.9.2, 1.11.0
-  thin 1.2.11, 1.5.0, 1.6.1
-  thor 0.14.6, 0.18.1, 0.19.1
-  tilt 1.3.3, 1.4.1
+  notiffany 0.0.8
+  pry 0.10.3
+  psych 2.0.0
+  rack 1.5.2, 1.6.1
+  rake 0.9.6
+  rb-fsevent 0.9.5
+  rb-inotify 0.9.5
+  rdoc 4.0.0
+  sass 3.2.9, 3.2.13, 3.4.14
+  shellany 0.0.1
+  slop 3.6.0
+  sproutcore 1.11.0
+  sqlite3 1.3.7
+  test-unit 2.0.0.0
+  thin 1.6.1, 1.6.3
+  thor 0.18.1, 0.19.1
+  tilt 2.0.1
   timers 1.1.0, 4.0.1
-  tzinfo 0.3.35
-  uuidtools 2.1.3
 
 ===== ENVIRONMENT:
 
-Apple_PubSub_Socket_Render => "/tmp/launch-TxMhii/Render"
-Apple_Ubiquity_Message => "/tmp/launch-6Bt93G/Apple_Ubiquity_Message"
-COMMAND_MODE => "unix2003"
-GEM_HOME => "/Users/Administrator/.rvm/gems/ruby-1.9.3-p327"
-GEM_PATH => "/Users/Administrator/.rvm/gems/ruby-1.9.3-p327:/Users/Administrator/.rvm/gems/ruby-1.9.3-p327@global"
-GUARD_NOTIFIERS => "---\n- :name: :terminal_title\n  :options:\n    :silent: true\n"
-GUARD_NOTIFY => "true"
-HOME => "/Users/Administrator"
-IRBRC => "/Users/Administrator/.rvm/rubies/ruby-1.9.3-p327/.irbrc"
+Apple_PubSub_Socket_Render => "/private/tmp/com.apple.launchd.vPqbO0IvSZ/Render"
+DISPLAY => "/private/tmp/com.apple.launchd.0DGgaGajVU/org.macosforge.xquartz:0"
+HOME => "/Users/zhuangjianguo"
 LANG => "zh_CN.UTF-8"
-LOGNAME => "Administrator"
-MY_RUBY_HOME => "/Users/Administrator/.rvm/rubies/ruby-1.9.3-p327"
-PATH => "/Users/Administrator/Library/Application Support/GoodSync:/Users/Administrator/.rvm/gems/ruby-1.9.3-p327/bin:/Users/Administrator/.rvm/gems/ruby-1.9.3-p327@global/bin:/Users/Administrator/.rvm/rubies/ruby-1.9.3-p327/bin:/Users/Administrator/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
-PWD => "/Users/Administrator/Github/steedos-sites"
-RUBY_VERSION => "ruby-1.9.3-p327"
-SECURITYSESSIONID => "186a4"
+LOGNAME => "zhuangjianguo"
+PATH => "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+PWD => "/Users/zhuangjianguo/github/steedos-sites"
+SECURITYSESSIONID => "186a8"
 SHELL => "/bin/bash"
 SHLVL => "1"
-SSH_AUTH_SOCK => "/tmp/launch-97PVGp/Listeners"
+SSH_AUTH_SOCK => "/private/tmp/com.apple.launchd.4BboDvh05c/Listeners"
 TERM => "xterm-256color"
 TERM_PROGRAM => "Apple_Terminal"
-TERM_PROGRAM_VERSION => "309"
-TERM_SESSION_ID => "A52E42A2-46D0-417C-BED7-403C17676FCA"
-TMPDIR => "/var/folders/72/r11d5jmn53bgdgl1jllzg1nh0000gn/T/"
-USER => "Administrator"
-_ => "/Users/Administrator/.rvm/gems/ruby-1.9.3-p327/bin/guard"
-__CF_USER_TEXT_ENCODING => "0x1F5:25:52"
-__array_start => "0"
-_first => "0"
-_second => "1"
-escape_flag => "1"
-rvm_bin_path => "/Users/Administrator/.rvm/bin"
-rvm_env_string => "ruby-1.9.3-p327"
-rvm_path => "/Users/Administrator/.rvm"
-rvm_prefix => "/Users/Administrator"
-rvm_ruby_string => "ruby-1.9.3-p327"
-rvm_version => "1.16.20 (stable)"
+TERM_PROGRAM_VERSION => "361"
+TERM_SESSION_ID => "D4E2E9CC-FAE7-4890-B04C-FEFEE57E9184"
+TMPDIR => "/var/folders/65/723zcthj34sfxkw74lgwx4h80000gq/T/"
+USER => "zhuangjianguo"
+XPC_FLAGS => "0x0"
+XPC_SERVICE_NAME => "0"
+_ => "/usr/local/bin/nanoc"
+__CF_USER_TEXT_ENCODING => "0x1F7:0x19:0x34"
 
 ===== LOAD PATHS:
 
-  0. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/rb-fsevent-0.9.4/lib
-  1. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/ffi-1.9.3/lib
-  2. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/ffi-1.9.3/ext/ffi_c
-  3. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/rb-inotify-0.9.4/lib
-  4. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/listen-2.7.5/lib
-  5. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/coderay-1.1.0/lib
-  6. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/slop-3.5.0/lib
-  7. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/method_source-0.8.2/lib
-  8. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/pry-0.9.12.6/lib
-  9. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/lumberjack-1.0.5/lib
-  10. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/formatador-0.2.4/lib
-  11. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-2.6.1/lib
-  12. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/thor-0.19.1/lib
-  13. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/hitimes-1.2.2/lib
-  14. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/timers-4.0.1/lib
-  15. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/celluloid-0.16.0/lib
-  16. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/colored-1.2/lib
-  17. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/cri-2.3.0/lib
-  18. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/nanoc-3.6.3/lib
-  19. /Users/Administrator/.rvm/gems/ruby-1.9.3-p327/gems/guard-nanoc-1.0.2/lib
-  20. /Users/Administrator/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/site_ruby/1.9.1
-  21. /Users/Administrator/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/site_ruby/1.9.1/x86_64-darwin12.2.0
-  22. /Users/Administrator/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/site_ruby
-  23. /Users/Administrator/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/vendor_ruby/1.9.1
-  24. /Users/Administrator/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/vendor_ruby/1.9.1/x86_64-darwin12.2.0
-  25. /Users/Administrator/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/vendor_ruby
-  26. /Users/Administrator/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1
-  27. /Users/Administrator/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/x86_64-darwin12.2.0
+  0. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib
+  1. /Library/Ruby/Gems/2.0.0/gems/colored-1.2/lib
+  2. /Library/Ruby/Gems/2.0.0/gems/cri-2.3.0/lib
+  3. /Library/Ruby/Gems/2.0.0/gems/nanoc-3.8.0/lib
+  4. /Library/Ruby/Gems/2.0.0/gems/adsf-1.1.1/lib
+  5. /Library/Ruby/Gems/2.0.0/gems/rack-1.6.1/lib
+  6. /Library/Ruby/Gems/2.0.0/gems/thin-1.6.3/lib
+  7. /Library/Ruby/Gems/2.0.0/gems/eventmachine-1.0.7/lib
+  8. /Library/Ruby/Gems/2.0.0/gems/daemons-1.2.2/lib
+  9. /Library/Ruby/Site/2.0.0
+  10. /Library/Ruby/Site/2.0.0/x86_64-darwin15
+  11. /Library/Ruby/Site/2.0.0/universal-darwin15
+  12. /Library/Ruby/Site
+  13. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/vendor_ruby/2.0.0
+  14. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/vendor_ruby/2.0.0/x86_64-darwin15
+  15. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/vendor_ruby/2.0.0/universal-darwin15
+  16. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/vendor_ruby
+  17. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0
+  18. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/x86_64-darwin15
+  19. /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/universal-darwin15
