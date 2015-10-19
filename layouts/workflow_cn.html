@@ -52,15 +52,33 @@
   </script>
 </head>
 <body>
- 
-<div class="ui fixed inverted menu" id="topbar">
+ <!-- 
+<div class="ui mobile only fixed inverted menu" id="topbar">
+
+    <div class="ui dropdown item">
+      华炎云 <i class="dropdown icon"></i>
+      <div class="ui menu">
+          <a class="item" href="/cn/workflow/">审批王</a>
+          <a class="item" href="/cn/chat/">享聊</a>
+          <a class="item" href="/cn/drive/">云盘</a>
+          <a class="item" href="/cn/otask/">任我行</a>
+      </div>
+    </div>
+
+    <div class="right menu">
+      <a class="item" href="#"><i class="phone icon"></i>400-820-1612</a>
+      <a class="item" href="http://chat.steedos.com/channel/steedos-support" target="_blank">在线客服</a>
+    </div>
+</div>
+ -->
+<div class="ui desktop only fixed inverted menu" id="topbar">
     <a class="header item" href="/cn/"><i class="cloud icon"></i></a>
     <%= link_to_unless_current "审批王", "/cn/workflow", allow_recursive: true %>
     <%= link_to_unless_current "享聊", "/cn/chat", allow_recursive: true %>
     <%= link_to_unless_current "云盘", "/cn/drive", allow_recursive: true %>
     <%= link_to_unless_current "任我行", "/cn/otask", allow_recursive: true %>
     <div class="right menu">
-      <a class="item" href="#">400-820-1612</a>
+      <a class="item" href="#"><i class="phone icon"></i>400-820-1612</a>
       <a class="item" href="http://chat.steedos.com/channel/steedos-support" target="_blank">在线客服</a>
     </div>
 </div>
@@ -68,7 +86,7 @@
 <div class="ui top secondary pointing menu" id="navbar">
 
   <a class="header item" href="/cn/workflow">
-    <h2 class="ui header">
+    <h2 class="ui header" style="font-size: 1.4em">
       <img src="/website/img/workflow/AppIcon76x76.png" class="ui mini image">
       <div class="ui content">审批王</div>
     </h2>
