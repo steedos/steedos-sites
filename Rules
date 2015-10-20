@@ -41,7 +41,7 @@ end
 
 compile '/cn/helpoem/*' do
   filter :erb
-  layout 'helpoem_cn'
+  layout 'help_cn'
 end
 
 compile '/cn/developer/*' do

@@ -1,151 +1,195 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html>
 <head>
   <meta charset="utf-8" />
-  <title><%= @item[:title] %></title>
+  <title>享聊 - <%= @item[:title] %></title>
   <link rel="shortcut icon" href="/website/img/chat/AppIcon76x76.png" />
   <meta name="Description" content="享聊是全新的企业级协同沟通系统，你可以向一个人单独发送信息，或同时向许多好友群发信息，而且可附带你喜欢的照片、视频或链接。每个人的回复，大家都会看到。人越多，收到的信息也越多，忘情地发吧！你使用的是享聊，每条通过无线网络发送的信息都是免费的。">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge"  >
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge"  >
-  <meta content="initial-scale=1" name="viewport"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
             
   <link href="/website/static/lib/fontawesome/css/font-awesome.css" rel="stylesheet"/>
+
+  <script src="/website/libs/jquery.min.js" type="text/javascript"></script>
             
-  <link href="/website/static/src/css/bootswatch/spacelab.min.css" rel="stylesheet"/>
-  <link href="/website/static/src/css/bootswatch/spacelab.fix.css" rel="stylesheet"/>
+  <link href="/website/libs/semantic.css" rel="stylesheet"/>
+  <script src="/website/libs/semantic.js" type="text/javascript"></script>
+
+  <link href="/website/libs/spacelab.min.css" rel="stylesheet"/>
+  <link href="/website/libs/spacelab.fix.css" rel="stylesheet"/>
   <link href="/website/css/odoo/website.css" id="website_css" rel="stylesheet"/>
   <link href="/website/css/steedos.css" id="steedos_css" rel="stylesheet"/>
 
+  <style type="text/css">
+    html, body {
+      background-color: #f2f2f2;
+    }
+    .top.secondary.menu {
+      margin-top: 1em;
+    }
+    image {
+      max-width: 100%;
+    }
+  </style>
 
-  <script src="/website/js/odoo/es5-shim.min.js" type="text/javascript"></script>
-  <script src="/website/js/odoo/underscore.js" type="text/javascript"></script>
-  <script src="/website/js/odoo/underscore_string.js" type="text/javascript"></script>
-  <script src="/website/js/odoo/jquery.js" type="text/javascript"></script>
-  <script type="text/javascript">
-      // Bootstrap and jQuery UI conflicts
-      $.fn.bstooltip = $.fn.tooltip;
-      $.fn.bsbutton = $.fn.button;
+  <script>
+  $(document)
+    .ready(function() {
+      $('.ui.menu .ui.dropdown').dropdown({
+        on: 'hover'
+      });
+      $('.ui.menu a.item')
+        .on('click', function() {
+          $(this)
+            .addClass('active')
+            .siblings()
+            .removeClass('active')
+          ;
+        })
+      ;
+    })
+  ;
   </script>
-
-  <script src="/website/js/odoo/qweb2.js" type="text/javascript"></script>
-  <script src="/website/js/odoo/openerpframework.js" type="text/javascript"></script>
-
-  <script src="/website/js/odoo/website.js" type="text/javascript"></script>
-  
-  <script type="text/javascript" src="/website/js/odoo/website_snippets_animation.js"></script>
-  <script src="/website/js/odoo/bootstrap.js" type="text/javascript"></script>
-
 </head>
 <body>
  
- <link href="/website/ac/globalheader/globalheader.css" rel="stylesheet"/>
- <nav id="globalheader" class="globalheader" role="navigation" aria-label="Global Navigation" data-hires="false" data-analytics-region="global nav" lang="zh-CN">
-  <div id="gh-content" class="gh-content">
-    <div class="gh-nav">
-      <div class="gh-nav-view">
-        <ul class="gh-nav-list">
-         
-          <li class="gh-tab gh-tab-steedos"><a class="gh-tab-link" href="/cn/"><span class="gh-tab-inner"><span class="gh-text-replace">华炎云</span></span></a></li>
-          <li class="gh-tab gh-tab-workflow"><a class="gh-tab-link" href="/cn/workflow/"><span class="gh-tab-inner"><span class="gh-text-replace">审批王</span></span></a></li>
-          <li class="gh-tab gh-tab-drive"><a class="gh-tab-link" href="/cn/drive/"><span class="gh-tab-inner"><span class="gh-text-replace">企业网盘</span></span></a></li>
-          <li class="gh-tab gh-tab-mail"><a class="gh-tab-link" href="/cn/omail/"><span class="gh-tab-inner"><span class="gh-text-replace">企业邮箱</span></span></a></li>
-          <li class="gh-tab gh-selected-tab gh-tab-chat"><a class="gh-tab-link" href="/cn/chat/"><span class="gh-tab-inner"><span class="gh-text-replace">即时通讯</span></span></a></li>
-          <li class="gh-tab gh-tab-task"><a class="gh-tab-link" href="/cn/otask/"><span class="gh-tab-inner"><span class="gh-text-replace">任务管理</span></span></a></li>
-          <!--
-          <li class="gh-tab gh-tab-support"><a class="gh-tab-link" href="http://support.steedos.com/" target="_blank"><span class="gh-tab-inner"><span class="gh-text-replace">技术支持</span></span></a></li>
-          -->
-          <li class="gh-tab gh-tab-singup"><a class="gh-tab-link" href="/system/steedos/?app=chat#register" target="blank"><span class="gh-tab-inner"><span class="gh-text-replace">注册账户</span></span></a></li>
-          <li class="gh-tab gh-tab-singup"><a class="gh-tab-link" href="/system/steedos/"><span class="gh-tab-inner"><span class="gh-text-replace">客户登录</span></span></a></li>
 
-        </ul>
+<div class="ui one column grid">
+  <div class="mobile only column"> 
+    <div class="ui fixed inverted menu" id="topbar">
+      <div class="ui dropdown item">
+        <i class="sidebar icon"></i> 华炎云
+        <div class="ui menu">
+          <%= link_to_unless_current "审批王", "/cn/workflow", allow_recursive: true %>
+          <%= link_to_unless_current "享聊", "/cn/chat", allow_recursive: true %>
+          <%= link_to_unless_current "云盘", "/cn/drive", allow_recursive: true %>
+          <%= link_to_unless_current "任我行", "/cn/otask", allow_recursive: true %>
+        </div>
       </div>
-    </div><!--/gh-nav-->
+      <div class="right menu">
+        <a class="item" href="#"><i class="phone icon"></i>400-820-1612</a>
+      </div>
+    </div>
+
   </div>
-</nav>
-<div id="wrapwrap">
-  <header>
-    <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-            <button data-toggle="collapse" type="button" class="navbar-toggle" data-target=".navbar-top-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="/cn/chat/" class="navbar-brand">
-            <img src="/website/img/chat/AppIcon76x76.png" width="30" height="30" class="logo"><span style="padding-top: 3px;">&nbsp;&nbsp;享聊</span></a>
+  <div class="computer tablet only column"> 
+    <div class="ui fixed inverted menu" id="topbar">
+        <a class="header item" href="/cn/"><i class="cloud icon"></i></a>
+        <%= link_to_unless_current "审批王", "/cn/workflow", allow_recursive: true %>
+        <%= link_to_unless_current "享聊", "/cn/chat", allow_recursive: true %>
+        <%= link_to_unless_current "云盘", "/cn/drive", allow_recursive: true %>
+        <%= link_to_unless_current "任我行", "/cn/otask", allow_recursive: true %>
+        <div class="right menu">
+          <a class="item" href="#"><i class="phone icon"></i>400-820-1612</a>
+          <a class="item" href="http://chat.steedos.com/channel/steedos-support" target="_blank">在线客服</a>
         </div>
-        <div class="collapse navbar-collapse navbar-top-collapse">
-          <ul class="nav navbar-nav navbar-right" id="top_menu">                              
-                    
-            <%= nav "功能", "cn/chat" %>
-            <%= nav "报价", "cn/chat/pricing" %>
-            <%= nav "下载", "cn/chat/downloads" %>
-            <%= nav "API", "cn/chat/api" %>
-            <%= nav "关于", "cn/chat/aboutus" %>
-          </ul>
+    </div>
+  </div>
+
+  <div class="mobile only column"> 
+
+    <div class="ui top secondary menu" id="navbar" style="border-bottom: 1px solid #CCC">
+
+      <a class="header item" href="/cn/chat">
+        <h2 class="ui header" style="font-size: 1.4em">
+          <img src="/website/img/chat/AppIcon76x76.png" class="ui mini image">
+          <div class="ui content">享聊</div>
+        </h2>
+      </a>
+      <div class="right menu">
+        <div class="ui dropdown item">
+          <i class="chevron down icon"></i>
+          <div class="ui menu">
+              <%= link_to_unless_current "特色", "/cn/chat/" %>
+              <%= link_to_unless_current "API", "/cn/chat/api", allow_recursive: true %>
+              <%= link_to_unless_current "报价", "/cn/chat/pricing", allow_recursive: true %>
+              <%= link_to_unless_current "下载", "/cn/chat/downloads", allow_recursive: true %>
+              <%= link_to_unless_current "帮助", "/cn/help/chat", allow_recursive: true %>
+              <div class="item">
+                <a class="ui primary button" target="_blank" href="https://chat.steedos.com">登录</a>
+              </div>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
-  <%= yield %>
-  <main>
-    <div id="wrap" class="oe_structure oe_empty">
-    </div>
-  </main>
-  <footer>
-    <div class="container hidden-print" id="footer_container">
-        <div class="row">
-            <div class="col-md-3" name="product">
-                <h4>享聊
-                </h4>
-                <ul class="list-unstyled" name="products">
-                    <li><a href="/cn/chat">功能</a>
-                    <li><a href="/cn/chat/pricing">报价</a>
-                    <li><a href="/cn/chat/api">API</a>
-                    <li><a href="/cn/chat/downloads">下载</a>
-                </ul>
-            </div>
-            <div class="col-md-3" name="info">
-                <h4 name="info_title">联系我们</h4>
-                <ul class="list-unstyled">
-                    <li><a href="/cn/chat/aboutus">关于我们</a></li>
-                    <li><a href="/cn/chat/contactus">联系方式</a></li>
-                </ul>
-                <ul class="list-unstyled">
-                    <li><i class="fa fa-phone"></i> <span>400-820-1612</span></li>
-                    <li><i class="fa fa-envelope"></i>  <span>support@steedos.com</span></li>
-                </ul>
-                <h2>
-                    
-                </h2>
-            </div>
-            <div class="col-md-5 col-lg-offset-1" name="about_us">
-                <div>
-                    <h4>
-                        <span>关于享聊</span>
-                    </h4>
-                    <p>                        
-                      享聊是全新的企业级协同沟通系统，你可以向一个人单独发送信息，或同时向许多好友群发信息，而且可附带你喜欢的照片、视频或链接。每个人的回复，大家都会看到。人越多，收到的信息也越多，忘情地发吧！你使用的是享聊，每条通过无线网络发送的信息都是免费的...
-                    </p>
-                </div>
-                <ul class="list-inline js_language_selector mt16"><li><a href="/us/chat/" >English</a></li><li><a href="/cn/chat/" >简体中文</a></li></ul>
-                
-            </div>
-        </div>
-    </div>
-    <div class="container mt16 mb8">
 
-        <div class="pull-left text-muted">
-            版权所有 © 华炎软件. 保留所有权利. 
-                <a href="/cn/legal/terms/" target="_steedos_terms">条款与约定</a> | 
-                <a href="/cn/legal/privacy/" target="_steedos_privacy">隐私保护</a>
-        </div>
     </div>
-  </footer>
+
+  </div>
+
+  <div class="computer tablet only column"> 
+
+    <div class="ui top secondary pointing menu" id="navbar">
+      <a class="header item" href="/cn/chat">
+        <h2 class="ui header" style="font-size: 1.4em">
+          <img src="/website/img/chat/AppIcon76x76.png" class="ui mini image">
+          <div class="ui content">享聊</div>
+        </h2>
+      </a>
+      <div class="right menu">
+        <%= link_to_unless_current "特色", "/cn/chat/" %>
+        <%= link_to_unless_current "API", "/cn/chat/api", allow_recursive: true %>
+        <%= link_to_unless_current "报价", "/cn/chat/pricing", allow_recursive: true %>
+        <%= link_to_unless_current "下载", "/cn/chat/downloads", allow_recursive: true %>
+        <%= link_to_unless_current "帮助", "/cn/help/chat", allow_recursive: true %>
+        <div class="item">
+          <a class="ui primary button" target="_blank" href="https://chat.steedos.com">登录</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 </div>
+
+
+<%= yield %>
+
+
+<div class="ui inverted vertical footer segment" style="margin: 3em 0em 0em; padding: 3em 0em;">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="four wide column">
+          <h4 class="ui inverted header">联系我们</h4>
+          <div class="ui inverted link list">
+            <a class="item" href="http://chat.steedos.com/channel/steedos-support" target="_blank">在线客服</a>
+            <span class="item">热线：400-820-1612</span>
+            <span class="item">邮箱：support@steedos.com</span>
+            <span class="item">QQ：1471093381</span>
+          </div>
+        </div>
+        <div class="four wide column">
+          <h4 class="ui inverted header">下载客户端</h4>
+          <div class="ui inverted link list">
+            <a class="item" href="http://itunes.apple.com/cn/app/steedos-chat/id789595916?l=zh&ls=1&mt=8" target="_blank">iPhone / iPad</a>
+            <a class="item" href="http://oss.steedos.com/apps/chat/android/chat.apk" target="_blank">Android</a>
+            <a class="item" href="http://oss.steedos.com/apps/chat/windows/chat.exe" target="_blank">Windows</a>
+            <a class="item" href="http://oss.steedos.com/apps/chat/mac/chat.dmg" target="_blank">Mac</a>
+          </div>
+        </div>
+        <div class="eight wide column">
+          <h4 class="ui inverted header">关于享聊</h4>
+          <div class="ui inverted link list">
+            <span class="item">享聊是全新的企业级协同沟通系统，你可以向一个人单独发送信息，或同时向许多好友群发信息，而且可附带你喜欢的照片、视频或链接。每个人的回复，大家都会看到。人越多，收到的信息也越多，忘情地发吧！你使用的是享聊，每条通过无线网络发送的信息都是免费的</span>
+          </div>
+          <div class="ui horizontal inverted small divided link list">
+            <a class="ui item" href="/cn/chat/" >中文版 </a>
+            <a class="ui item" href="/us/chat/">English</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui inverted section divider"></div>
+
+      <div class="ui horizontal inverted small divided link list">
+          <span>© 华炎软件. 保留所有权利. </span>
+          <a class="ui item" href="/cn/legal/terms/" target="_steedos_terms">条款与约定</a>
+          <a class="ui item" href="/cn/legal/privacy/" target="_steedos_privacy">隐私保护</a>
+      </div>
+    </div>
+</div>
+
 
 
 </body>
 </html>
+

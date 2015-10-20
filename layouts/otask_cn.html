@@ -1,163 +1,187 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html>
 <head>
   <meta charset="utf-8" />
-  <title><%= @item[:title] %></title>
-  <link rel="shortcut icon" href="/website/img/otask/AppIcon76x76.png" />
+  <title>任我行 - <%= @item[:title] %></title>
+  <link rel="shortcut icon" href="/website/img/workflow/AppIcon76x76.png" />
   <meta name="Description" content="任我行是全新的团队任务管理软件，您可以快速的将任务分解成一张张的工作清单，并通过手机等设备和任务负责人实时沟通任务，让您的团队更有效率地完成工作。">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge"  >
-  <meta content="initial-scale=1" name="viewport"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
             
   <link href="/website/static/lib/fontawesome/css/font-awesome.css" rel="stylesheet"/>
+
+  <script src="/website/libs/jquery.min.js" type="text/javascript"></script>
             
-  <link href="/website/static/src/css/bootswatch/spacelab.min.css" rel="stylesheet"/>
-  <link href="/website/static/src/css/bootswatch/spacelab.fix.css" rel="stylesheet"/>
+  <link href="/website/libs/semantic.css" rel="stylesheet"/>
+  <script src="/website/libs/semantic.js" type="text/javascript"></script>
+
+  <link href="/website/libs/spacelab.min.css" rel="stylesheet"/>
+  <link href="/website/libs/spacelab.fix.css" rel="stylesheet"/>
   <link href="/website/css/odoo/website.css" id="website_css" rel="stylesheet"/>
   <link href="/website/css/steedos.css" id="steedos_css" rel="stylesheet"/>
 
+  <style type="text/css">
+    html, body {
+      background-color: #f2f2f2;
+    }
+    .top.secondary.menu {
+      margin-top: 1em;
+    }
+  </style>
 
-  <script src="/website/js/odoo/es5-shim.min.js" type="text/javascript"></script>
-  <script src="/website/js/odoo/underscore.js" type="text/javascript"></script>
-  <script src="/website/js/odoo/underscore_string.js" type="text/javascript"></script>
-  <script src="/website/js/odoo/jquery.js" type="text/javascript"></script>
-  <script type="text/javascript">
-      // Bootstrap and jQuery UI conflicts
-      $.fn.bstooltip = $.fn.tooltip;
-      $.fn.bsbutton = $.fn.button;
+  <script>
+  $(document)
+    .ready(function() {
+      $('.ui.menu .ui.dropdown').dropdown({
+        on: 'hover'
+      });
+      $('.ui.menu a.item')
+        .on('click', function() {
+          $(this)
+            .addClass('active')
+            .siblings()
+            .removeClass('active')
+          ;
+        })
+      ;
+    })
+  ;
   </script>
-
-  <script src="/website/js/odoo/qweb2.js" type="text/javascript"></script>
-  <script src="/website/js/odoo/openerpframework.js" type="text/javascript"></script>
-
-  <script src="/website/js/odoo/website.js" type="text/javascript"></script>
-  
-  <script type="text/javascript" src="/website/js/odoo/website_snippets_animation.js"></script>
-  <script src="/website/js/odoo/bootstrap.js" type="text/javascript"></script>
-
-  <script src="/website/js/steedos/signup.js" type="text/javascript"></script>
-
 </head>
 <body>
  
- <link href="/website/ac/globalheader/globalheader.css" rel="stylesheet"/>
- <nav id="globalheader" class="globalheader" role="navigation" aria-label="Global Navigation" data-hires="false" data-analytics-region="global nav" lang="zh-CN">
-  <div id="gh-content" class="gh-content">
-    <ul class="gh-menu">
-      <li id="gh-menu-icon-toggle" class="gh-menu-icon gh-menu-icon-toggle enhance"><div id="gh-svg-icons" class="gh-svg-wrapper"><svg x="0px" y="0px" width="100%" viewBox="0 0 96 96" class="gh-svg gh-svg-top" enable-background="new 0 0 96 96"><rect width="32" height="4" x="32" y="46" class="gh-svg-rect gh-svg-rect-top"></rect></svg><svg x="0px" y="0px" width="100%" viewBox="0 0 96 96" class="gh-svg gh-svg-bottom" enable-background="new 0 0 96 96"><rect width="32" height="4" x="32" y="46" class="gh-svg-rect gh-svg-rect-bottom"></rect></svg></div><span class="gh-text-replace">Menu</span></li>
-      <li id="gh-menu-icon-home" class="gh-menu-icon gh-menu-icon-home"><a href="/cn/" onclick="s_objectID=&quot;http://www.apple.com/cn/_1&quot;;return this.s_oc?this.s_oc(e):true"><span class="gh-text-replace">Apple</span></a></li>
-    </ul><!--/gh-menu-->
-    <div class="gh-nav">
-      <div class="gh-nav-view">
-        <ul class="gh-nav-list">
-         
-          <li class="gh-tab gh-tab-steedos"><a class="gh-tab-link" href="/cn/"><span class="gh-tab-inner"><span class="gh-text-replace">华炎云</span></span></a></li>
-          <li class="gh-tab gh-tab-workflow"><a class="gh-tab-link" href="/cn/workflow/"><span class="gh-tab-inner"><span class="gh-text-replace">审批王</span></span></a></li>
-          <li class="gh-tab gh-tab-drive"><a class="gh-tab-link" href="/cn/drive/"><span class="gh-tab-inner"><span class="gh-text-replace">企业网盘</span></span></a></li>
-          <li class="gh-tab gh-tab-mail"><a class="gh-tab-link" href="/cn/omail/"><span class="gh-tab-inner"><span class="gh-text-replace">企业邮箱</span></span></a></li>
-          <li class="gh-tab gh-tab-chat"><a class="gh-tab-link" href="/cn/chat/"><span class="gh-tab-inner"><span class="gh-text-replace">即时通讯</span></span></a></li>
-          <li class="gh-tab gh-selected-tab gh-tab-task"><a class="gh-tab-link" href="/cn/otask/"><span class="gh-tab-inner"><span class="gh-text-replace">任务管理</span></span></a></li>
-          <!--
-          <li class="gh-tab gh-tab-support"><a class="gh-tab-link" href="http://support.steedos.com/" target="_blank"><span class="gh-tab-inner"><span class="gh-text-replace">技术支持</span></span></a></li>
-          -->
-          <li class="gh-tab gh-tab-singup"><a class="gh-tab-link" href="/system/steedos/?app=otask#register" target="blank"><span class="gh-tab-inner"><span class="gh-text-replace">注册账户</span></span></a></li>
-          <li class="gh-tab gh-tab-singup"><a class="gh-tab-link" href="/system/steedos/"><span class="gh-tab-inner"><span class="gh-text-replace">客户登录</span></span></a></li>
 
-        </ul>
+<div class="ui one column grid">
+  <div class="mobile only column"> 
+    <div class="ui fixed inverted menu" id="topbar">
+      <div class="ui dropdown item">
+        <i class="sidebar icon"></i> 华炎云
+        <div class="ui menu">
+          <%= link_to_unless_current "审批王", "/cn/workflow", allow_recursive: true %>
+          <%= link_to_unless_current "享聊", "/cn/chat", allow_recursive: true %>
+          <%= link_to_unless_current "云盘", "/cn/drive", allow_recursive: true %>
+          <%= link_to_unless_current "任我行", "/cn/otask", allow_recursive: true %>
+        </div>
       </div>
-    </div><!--/gh-nav-->
+      <div class="right menu">
+        <a class="item" href="#"><i class="phone icon"></i>400-820-1612</a>
+      </div>
+    </div>
+
   </div>
-</nav>
-<div id="wrapwrap">
-  <header>
-    <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-            <button data-toggle="collapse" type="button" class="navbar-toggle" data-target=".navbar-top-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="/cn/otask" class="navbar-brand">
-            <img src="/website/img/otask/AppIcon76x76.png" width="30" height="30" class="logo"><span style="padding-top: 3px;">&nbsp;&nbsp;任我行</span></a>
+  <div class="computer tablet only column"> 
+    <div class="ui fixed inverted menu" id="topbar">
+        <a class="header item" href="/cn/"><i class="cloud icon"></i></a>
+        <%= link_to_unless_current "审批王", "/cn/workflow", allow_recursive: true %>
+        <%= link_to_unless_current "享聊", "/cn/chat", allow_recursive: true %>
+        <%= link_to_unless_current "云盘", "/cn/drive", allow_recursive: true %>
+        <%= link_to_unless_current "任我行", "/cn/otask", allow_recursive: true %>
+        <div class="right menu">
+          <a class="item" href="#"><i class="phone icon"></i>400-820-1612</a>
+          <a class="item" href="http://chat.steedos.com/channel/steedos-support" target="_blank">在线客服</a>
         </div>
-        <div class="collapse navbar-collapse navbar-top-collapse">
-          <ul class="nav navbar-nav navbar-right" id="top_menu">                              
-                    
+    </div>
+  </div>
 
-            <%= nav "功能", "cn/otask" %>
-            <%= nav "报价", "cn/otask/pricing" %>
-            <%= nav "下载", "cn/otask/downloads" %>
-            <%= nav "教程", "cn/otask/training" %>
-            <%= nav "关于", "cn/otask/aboutus" %>
-            
-          </ul>
+
+  <div class="mobile only column"> 
+    <div class="ui top secondary menu" id="navbar" style="border-bottom: 1px solid #CCC">
+      <a class="header item" href="/cn/otask">
+        <h2 class="ui header" style="font-size: 1.4em">
+          <img src="/website/img/otask/AppIcon76x76.png" class="ui mini image">
+          <div class="ui content">任我行</div>
+        </h2>
+      </a>
+      <div class="right menu">
+        <div class="ui dropdown item">
+          <i class="chevron down icon"></i>
+          <div class="ui menu">
+              <%= link_to_unless_current "特色", "/cn/otask/" %>
+              <%= link_to_unless_current "报价", "/cn/otask/pricing", allow_recursive: true %>
+              <%= link_to_unless_current "下载", "/cn/otask/downloads", allow_recursive: true %>
+              <%= link_to_unless_current "帮助", "/cn/help/otask", allow_recursive: true %>
+              <div class="item">
+                <a class="ui primary button" target="_blank" href="https://www.steedos.com/system/steedos/?app=otask">登录</a>
+              </div>
+          </div>
         </div>
       </div>
     </div>
-  </header>
-  <main>
-    <div id="wrap" class="oe_structure oe_empty">
-  <%= yield %>
-    </div>
-  </main>
-  <footer>
-    <div class="container hidden-print" id="footer_container">
-        <div class="row">
-            <div class="col-md-3" name="product">
-                <h4>任我行</h4>
-                <ul class="list-unstyled" name="products">
-                    <li><a href="/cn/otask">功能</a>
-                    <li><a href="/cn/otask/pricing">报价</a>
-                    <li><a href="/cn/otask/downloads">下载</a>
-                    <li><a href="/cn/otask/training">教程</a>
-                </ul>
-            </div>
-            <div class="col-md-3" name="info">
-                <h4 name="info_title">联系我们</h4>
-                <ul class="list-unstyled">
-                    <li><a href="/cn/otask/aboutus">关于我们</a></li>
-                    <li><a href="/cn/otask/contactus">联系方式</a></li>
-                </ul>
-                <ul class="list-unstyled">
-                    <li><i class="fa fa-phone"></i> <span>400-820-1612</span></li>
-                    <li><i class="fa fa-envelope"></i>  <span>support@steedos.com</span></li>
-                </ul>
-                <h2>
-                    
-                </h2>
-            </div>
-            <div class="col-md-5 col-lg-offset-1" name="about_us">
-                <div>
-                    <h4>
-                        <span>任我行</span>
-                    </h4>
-                    <p>                        
-                      “任我行”是全新的团队任务管理软件，您可以快速的将任务分解成一张张的工作清单，并通过手机等设备和任务负责人实时沟通任务，让您的团队更有效率地完成工作。
-                    </p>
-                </div>
-                <ul class="list-inline js_language_selector mt16"><li><a href="/us/otask" >English</a></li><li><a href="/cn/otask" >简体中文</a></li></ul>
-                
-            </div>
-        </div>
-    </div>
-    <div class="container mt16 mb8">
-        <!--
-        <div class="pull-right">
-            免费的<a href="http://www.steedos.com/">云端企业管理软件</a>，尽在
-            <a href="http://www.steedos.com/" class="label label-danger">SteedOS.com</a>
-        </div>
-        -->
+  </div>
 
-        <div class="pull-left text-muted">
-            版权所有 © 华炎软件. 保留所有权利. 
-                <a href="/cn/legal/terms/" target="_steedos_terms">条款与约定</a> | 
-                <a href="/cn/legal/privacy/" target="_steedos_privacy">隐私保护</a>
+  <div class="computer tablet only column"> 
+    <div class="ui top secondary pointing menu" id="navbar">
+      <a class="header item" href="/cn/otask">
+        <h2 class="ui header" style="font-size: 1.4em">
+          <img src="/website/img/workflow/AppIcon76x76.png" class="ui mini image">
+          <div class="ui content">任我行</div>
+        </h2>
+      </a>
+      <div class="right menu">
+        <%= link_to_unless_current "特色", "/cn/otask/" %>
+        <%= link_to_unless_current "报价", "/cn/otask/pricing", allow_recursive: true %>
+        <%= link_to_unless_current "下载", "/cn/otask/downloads", allow_recursive: true %>
+        <%= link_to_unless_current "帮助", "/cn/help/otask", allow_recursive: true %>
+        <div class="item">
+          <a class="ui primary button" target="_blank" href="https://www.steedos.com/system/steedos/?app=otask">登录</a>
         </div>
+      </div>
     </div>
-  </footer>
+  </div>
+
 </div>
+
+
+
+<%= yield %>
+
+
+<div class="ui inverted vertical footer segment" style="margin: 3em 0em 0em; padding: 3em 0em;">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="four wide column">
+          <h4 class="ui inverted header">联系我们</h4>
+          <div class="ui inverted link list">
+            <a class="item" href="http://chat.steedos.com/channel/steedos-support" target="_blank">在线客服</a>
+            <span class="item">热线：400-820-1612</span>
+            <span class="item">邮箱：support@steedos.com</span>
+            <span class="item">QQ：1471093381</span>
+          </div>
+        </div>
+        <div class="four wide column">
+          <h4 class="ui inverted header">下载客户端</h4>
+          <div class="ui inverted link list">
+            <a class="item" href="https://itunes.apple.com/cn/app/otask-task-management-for/id901289839?l=zh&ls=1&mt=8" target="_blank">iPhone / iPad</a>
+            <a class="item" href="http://oss.steedos.com/apps/otask/android/otask.apk" target="_blank">Android</a>
+            <a class="item" href="http://oss.steedos.com/apps/steedos/windows/steedos.msi" target="_blank">Windows</a>
+            <a class="item" href="http://oss.steedos.com/apps/steedos/mac/steedos.dmg" target="_blank">Mac</a>
+          </div>
+        </div>
+        <div class="eight wide column">
+          <h4 class="ui inverted header">关于任我行</h4>
+          <div class="ui inverted link list">
+            <span class="item">任我行是全新的团队任务管理软件，您可以快速的将任务分解成一张张的工作清单，并通过手机等设备和任务负责人实时沟通任务，让您的团队更有效率地完成工作。</span>
+          </div>
+          <div class="ui horizontal inverted small divided link list">
+            <a class="ui item" href="/cn/otask/" >中文版 </a>
+            <a class="ui item" href="/us/otask/">English</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui inverted section divider"></div>
+
+      <div class="ui horizontal inverted small divided link list">
+          <span>© 华炎软件. 保留所有权利. </span>
+          <a class="ui item" href="/cn/legal/terms/" target="_steedos_terms">条款与约定</a>
+          <a class="ui item" href="/cn/legal/privacy/" target="_steedos_privacy">隐私保护</a>
+      </div>
+    </div>
+</div>
+
 
 
 </body>
 </html>
+
+

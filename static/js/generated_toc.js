@@ -127,7 +127,7 @@ generated_toc = {
     span.className = 'hidden';
     a = document.createElement('a');
     a.href = '#aftertoc';
-    a.appendChild(document.createTextNode('skip table of contents'));
+    a.appendChild(document.createTextNode('跳过目录'));
     span.appendChild(a);
     p.appendChild(span);
     tocparent.appendChild(p);
