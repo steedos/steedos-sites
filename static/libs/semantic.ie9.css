@@ -1,0 +1,12 @@
+/*解决: menu、column异常换行的问题. 原因IE9 不支持 display:flex;*/
+.ui div {
+  display:inline;
+}
+/*解决: right样式无效的问题. 原因IE9 不支持 display:flex;*/
+.right {
+  float:right;
+}
+/*解决: topbar 中的元素位置不居中的问题*/
+.ui.menu {
+  line-height:2.5;
+}
