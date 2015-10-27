@@ -1,7 +1,19 @@
 /*解决: menu、column异常换行的问题. 原因IE9 不支持 display:flex;*/
-.ui div {
+.ui > [class*="right menu"] div { 
   display:inline;
 }
+.ui.grid > .row > [class*="eight wide"].column,
+.ui.grid > .column.row > [class*="eight wide"].column,
+.ui.grid > [class*="eight wide"].column,
+.ui.column.grid > [class*="eight wide"].column {
+  width: calc(50% - 8px) !important;
+}
+
+/*
+.ui.grid > .column {
+  display:inline;  
+}
+*/
 /*解决: right样式无效的问题. 原因IE9 不支持 display:flex;*/
 .right {
   float:right;
@@ -9,4 +21,7 @@
 /*解决: topbar 中的元素位置不居中的问题*/
 .ui.menu {
   line-height:2.5;
+}
+h2 {
+  display: block;
 }
