@@ -1,0 +1,109 @@
+---
+title: 表单打印格式的编写规则
+---
+
+<div class="ui breadcrumb">
+  <a class="section" href="/cn/help/workflow">审批王</a>
+  <i class="right angle icon divider"></i>
+  <span class="section"><%= @item[:title] %></span>
+</div>
+
+
+  
+<h2>打印格式的编写规则</h2>
+
+<h3>可使用变量</h3>
+<ul>
+	<li>表单所有自定义变量；
+	<li>submit_date：提交时间；
+	<li>insname：表单名称；
+	<li>applicant_name：提交人名称；
+	<li>attachments：附件(Array)；
+	<li>traces：签核历程(Object),eg:{
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;'步骤名称1':[{
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; handler_name:'处理人名称',
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; handler_organization_name:'处理人部门'，
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; finish_date:'处理时间'，
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; judge：approved/rejected/terminated/reassigned/'&nbsp;'
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; judge_name：核准/驳回/取消申请/转签核/'&nbsp;'
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; description：意见
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;}];
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;'步骤名称2':[{
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;handler_name:'处理人名称',
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;handler_organization_name:'处理人部门'，
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;finish_date:'处理时间'，
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;judge：approved/rejected/terminated/reassigned/'&nbsp;'
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;judge_name：核准/驳回/取消申请/转签核/'&nbsp;'
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description：意见
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;}]
+	<br>&nbsp;&nbsp;}
+</ul>
+
+
+<h3>可使用函数</h3>
+<ul>
+	<li>empty、unempty;
+	<br>使用方式：{{#if (empty '参数1')}}...{{/if}}
+	<li>equals、unequals;
+	<br>使用方式：{{#if (equals '参数1' '参数2')}}...{{/if}}
+	<li>include、uninclude
+	<br>使用方式：{{#if (include code "a,b,c")}}
+	<li>formatDate
+	<br>使用方式，其中gmtoff的值为本地时区与UTC时区的时间差：
+	<br>&nbsp;&nbsp;&nbsp;&nbsp; # 1 {{#formatDate dateTime}}...{{/formatDate}}
+	<br>&nbsp;&nbsp;&nbsp;&nbsp; # 2 {{#formatDate dateTime '{"gmtoff": 28800}'}}...{{/formatDate}}
+	<br>&nbsp;&nbsp;&nbsp;&nbsp; # 3 {{#formatDate dateTime '{"gmtoff": 28800,"format":"%Y-%m-%d %H:%M CST"}'}}...{{/formatDate}}
+</ul>
+
+
+<h3>打印格式设计案例</h3>
+<img src="/website/img/help/cn/workflow/format1.png" style="max-height: 100%;max-width: 100%;">
+<br>
+<h4>绘制表格HTML＋CSS</h4>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;标签的使用</strong></p>
+<p style="text-indent: 2em">了解一些简单的html语言，使用常用的标签绘制打印表格。</p>
+<ul>
+	<li>&lt;table&gt;&lt;/table&gt;：定义表格
+	<li>&lt;tr&gt;&lt;/tr&gt;：定义行
+	<li>&lt;td&gt;&lt;/td&gt;：定义列
+</ul>
+<p style="text-indent: 2em">具体设置，参考： <a href="http://www.w3school.com.cn/html/" target="_blank">http://www.w3school.com.cn/html/</a></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;添加自定义的css</strong></p>
+<ul>
+	<li>border：设置边框属性
+	<li>front：设置字体属性
+	<li>padding：设置内边距属性
+	<li>table：设置表格属性
+	<li>color：设置颜色属性
+</ul>
+<p style="text-indent: 2em">具体设置，参考： <a href="http://www.w3school.com.cn/css/" target="_blank">http://www.w3school.com.cn/css/</a></p>
+
+
+<h4>添加字段及函数</h4>
+<p style="text-indent: 2em">首先了解 Handlebars的使用方法，Handlebars 是 JavaScript 一个语义模板库，通过对 view 和 data 的分离来快速构建 Web模板。</p>
+<p style="text-indent: 2em">具体使用方法请参考 Handlebars官网: <a href="http://handlebarsjs.com/" target="_blank">http://handlebarsjs.com/</a></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;使用“{{}}”引用字段</strong></p>
+<img src="/website/img/help/cn/workflow/format2.png" style="max-height: 100%;max-width: 100%;">
+<p></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;编写打印条件</strong></p>
+<img src="/website/img/help/cn/workflow/format3.png" style="max-height: 100%;max-width: 100%;">
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;附件：</p>
+<p style="text-indent: 2em">{{#each attachments}}{{filename}}; {{/each}}</p>
+<p style="text-indent: 2em">含义：遍历“attachments”,显示每个 “filename” ，并用 “;” 隔开。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;会稿：</p>
+<p style="text-indent: 2em">{{#each traces.会稿}} {{#if (include judge     "approved,rejected,submitted") }} {{judge_name}} {{description}}  --{{handler_name}} {{#formatDate finish_date}}{{/formatDate}} {{/if}} {{/each}}</p>
+<p style="text-indent: 2em">含义：遍历 “traces.会稿” ,判断 “judge” 处理结果中是否含有 “approved,rejected,submitted” 其中一种意见， “judge_name” 为处理结果所对应的中文， “description” 为处理人的意见， “--” 后显示 “handler_name” 处理人名字以及 “finish_date” 审批的日期， “formatDate” 对日期格式化。</p>
+<br>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;正式打印效果</strong></p>
+<img src="/website/img/help/cn/workflow/format4.jpg" style="max-height: 100%;max-width: 100%;">
+
+<br>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;注意事项</strong></p>
+<ul>
+	<li>引用字段名或者函数时+{{}}，如：{{filename}}
+	<li>所有符号必须是半角英文符号
+</ul>
+<br>
+<p style="text-indent: 2em">以上就是审批王中支持的打印格式编写规则，如果您还有其他的问题或者新的建议，欢迎致电：400-820-1612。</p>
