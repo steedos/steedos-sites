@@ -6,7 +6,7 @@ Website for SteedOS Apps. use nanoc
 
 1. Install the dependencies (mainly nanoc) so you can preview the SproutCore website:
 
-	sudo gem install nanoc
+    sudo gem install nanoc --version 3.7.4
 
 2. Compling the Site
     nanoc 
